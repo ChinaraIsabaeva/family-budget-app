@@ -1,14 +1,16 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Personal Financial Planner</title>
+    <link rel="stylesheet" type="text/css" href="{%  static 'style.css' %}">
 </head>
 <body>
-    <div>
-        <p>
-            Expenses form
-        </p>
-
+    <h3>Welcome to your personal financial planner</h3>
+    <div class="content">
+        <p>You can fill one or all forms</p>
+        <a href='forms'>Fill form</a>
     </div>
+
 </body>
 </html>

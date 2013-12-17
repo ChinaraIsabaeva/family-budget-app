@@ -7,7 +7,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^home/$', 'mybudget.finplanner.views.home'),
+    url(r'^$', 'mybudget.finplanner.views.home'),
+    url(r'^forms/$', 'mybudget.finplanner.views.forms'),
+    url(r'^submitted/$', 'mybudget.finplanner.views.submitted'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),

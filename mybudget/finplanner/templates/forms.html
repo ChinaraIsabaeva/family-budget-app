@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Financial Planner Forms</title>
+    <link rel="stylesheet" type="text/css" href="{%  static 'style.css' %}">
+</head>
+<body>
+{% csrf_token %}
+    <div class="column-left">
+        <p>Expenses form</p>
+        <form action="" method="post">
+            {{ expenses_form.as_p }}
+            <input type="submit" name="expenses_save" value="Save" />
+        </form>
+    </div>
+    <div class="column-center">
+        <p>Incomes form</p>
+        <form action="" method="post">
+            {{ incomes_form.as_p }}
+            <input type="submit" name="expenses_save" value="Save" />
+        </form>
+    </div>
+    <div class="column-right">
+        <p>Reserves form</p>
+        <form action="" method="post">
+            {{ reserves_form.as_p }}
+            <input type="submit" name="expenses_save" value="Save" />
+        </form>
+    </div>
+
+</body>
+</html>
