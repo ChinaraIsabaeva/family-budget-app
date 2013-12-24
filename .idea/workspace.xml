@@ -23,10 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybudget/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="33" selection-start="1631" selection-end="1644" vertical-scroll-proportion="0.10128388" vertical-offset="1009" max-vertical-offset="1710">
+            <state line="60" column="33" selection-start="1631" selection-end="1644" vertical-scroll-proportion="-2.84" vertical-offset="1009" max-vertical-offset="1710">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Procfile" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="726">
               <folding />
             </state>
           </provider>
@@ -102,6 +111,7 @@
         <option value="$PROJECT_DIR$/mybudget/finplanner/views.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/expenses.html" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/home.html" />
+        <option value="$PROJECT_DIR$/Procfile" />
       </list>
     </option>
   </component>
@@ -499,11 +509,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="28" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="198" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="20" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="378">
@@ -590,7 +595,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="33" selection-start="1631" selection-end="1644" vertical-scroll-proportion="0.10128388" vertical-offset="1009" max-vertical-offset="1710">
+        <state line="60" column="33" selection-start="1631" selection-end="1644" vertical-scroll-proportion="-2.84" vertical-offset="1009" max-vertical-offset="1710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="726">
           <folding />
         </state>
       </provider>

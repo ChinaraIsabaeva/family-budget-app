@@ -1,1 +1,1 @@
-web: gunicorn mybudget.wsgi:application
+web: ./manage.py runserver
