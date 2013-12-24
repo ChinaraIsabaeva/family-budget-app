@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="content">
+        <table>
+            <h3>Your expenses</h3>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        {% for expense in expenses %}
+            <tr>
+                <td>{{ expense.name|safe }}</td>
+                <td>{{ expense.amount|safe }}</td>
+                <td>{{ expense.date|date }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <p>Total spend: {{ expenses_sum|safe }}</p>
+        <p>Total saved in reserves: {{ reserves_sum|safe }}</p>
+        <p>Total saved in buffer: {{ buffer_sum|safe }}</p>
+    </div>
+</body>
+</html>

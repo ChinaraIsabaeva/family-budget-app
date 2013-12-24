@@ -9,21 +9,21 @@
 {% csrf_token %}
     <div class="column-left">
         <p>Expenses form</p>
-        <form action="" method="post">
+        <form action="" method="post">{% csrf_token %}
             {{ expenses_form.as_p }}
             <input type="submit" name="expenses_save" value="Save" />
         </form>
     </div>
     <div class="column-center">
         <p>Incomes form</p>
-        <form action="" method="post">
+        <form action="" method="post">{% csrf_token %}
             {{ incomes_form.as_p }}
             <input type="submit" name="expenses_save" value="Save" />
         </form>
     </div>
     <div class="column-right">
         <p>Reserves form</p>
-        <form action="" method="post">
+        <form action="" method="post">{% csrf_token %}
             {{ reserves_form.as_p }}
             <input type="submit" name="expenses_save" value="Save" />
         </form>

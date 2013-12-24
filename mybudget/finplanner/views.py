@@ -1,11 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404
 from django.http import HttpResponseRedirect
+from django.db.models import Sum
 from mybudget.finplanner.forms import *
+from mybudget.finplanner.models import *
 
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    expenses = get_list_or_404(Expenses)
+    expenses_sum = Expenses.objects.aggregate(Sum('amount'))['amount__sum']
+    reserves_sum = Reserves.objects.filter(category=10).aggregate(Sum('amount'))['amount__sum']
+    buffer_sum = Reserves.objects.filter(category=11).aggregate(Sum('amount'))['amount__sum']
+    return render(request, 'home.html',
+                  {'expenses': expenses,
+                   'expenses_sum': expenses_sum, 'reserves_sum': reserves_sum, 'buffer_sum': buffer_sum})
 
 
 def forms(request):

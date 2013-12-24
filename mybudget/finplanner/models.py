@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 PERIODICITY_YEAR = 1
@@ -21,9 +22,11 @@ PERIODICITY_CHOICES = (
 
 CATEGORY_TYPE_INCOMES = 8
 CATEGORY_TYPE_EXPENSES = 9
+CATEGORY_TYPE_RESERVES = 10
 CATEGORY_TYPE_CHOICES = (
     (CATEGORY_TYPE_INCOMES, u'Incomes'),
     (CATEGORY_TYPE_EXPENSES, u'Expenses'),
+    (CATEGORY_TYPE_RESERVES, u'Reserves')
 )
 
 class Category(models.Model):
@@ -41,22 +44,22 @@ class Category(models.Model):
 
 class Expenses(models.Model):
     name = models.CharField(max_length=255)
-    category = models.ForeignKey(Category, default=5)
-    amount = models.DecimalField(max_digits=19, decimal_places=2)
+    category = models.ForeignKey(Category, limit_choices_to={'type': CATEGORY_TYPE_EXPENSES}, default=5)
+    amount = models.FloatField()
     date = models.DateField()
 
     def __unicode__(self):
-        return self.name
+        return u'%s %s %s' % (self.name, self.amount, self.date)
 
     class Meta():
-       verbose_name = u'expense'
-       verbose_name_plural = u'expenses'
+        verbose_name = u'expense'
+        verbose_name_plural = u'expenses'
 
 
 class Reserves(models.Model):
     name = models.CharField(max_length=255)
     periodicity = models.IntegerField(choices=PERIODICITY_CHOICES, default=PERIODICITY_MONTH)
-    category = models.ForeignKey(Category, default=10)
+    category = models.ForeignKey(Category, limit_choices_to={'type': CATEGORY_TYPE_RESERVES}, default=10)
     amount = models.FloatField()
     date = models.DateField()
 
@@ -70,7 +73,7 @@ class Reserves(models.Model):
 class Incomes(models.Model):
     name = models.CharField(max_length=255)
     periodicity = models.IntegerField(choices=PERIODICITY_CHOICES, default=PERIODICITY_MONTH)
-    category = models.ForeignKey(Category, default=9)
+    category = models.ForeignKey(Category, limit_choices_to={'type': CATEGORY_TYPE_INCOMES}, default=9)
     amount = models.FloatField()
     date = models.DateField()
 

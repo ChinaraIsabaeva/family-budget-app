@@ -41,6 +41,7 @@ INSTALLED_APPS = (
 
     #3rd parties apps
     'south',
+    'django_cron',
 
     #my_app
     'mybudget.finplanner',
