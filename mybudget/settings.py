@@ -65,7 +65,7 @@ WSGI_APPLICATION = 'mybudget.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
 }
 
 # Internationalization
