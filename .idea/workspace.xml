@@ -23,19 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybudget/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="-1.2339514" vertical-offset="1099" max-vertical-offset="1800">
+            <state line="13" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="34.6" vertical-offset="1099" max-vertical-offset="1800">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wsgi.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="wsgi.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mybudget/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+            <state line="16" column="0" selection-start="427" selection-end="427" vertical-scroll-proportion="0.41084164" vertical-offset="0" max-vertical-offset="701">
               <folding />
             </state>
           </provider>
@@ -100,7 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/mybudget/finplanner/templates/submetted.html" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/calculation.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/admin.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/Forms.html" />
@@ -116,6 +115,7 @@
         <option value="$PROJECT_DIR$/mybudget/finplanner/models.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/home.html" />
         <option value="$PROJECT_DIR$/mybudget/settings.py" />
+        <option value="$PROJECT_DIR$/mybudget/wsgi.py" />
       </list>
     </option>
   </component>
@@ -562,13 +562,6 @@
         <state line="13" column="17" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="594" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="726">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="28" selection-end="28" vertical-scroll-proportion="0.024793388" vertical-offset="0" max-vertical-offset="726" />
@@ -608,7 +601,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="-1.2339514" vertical-offset="1099" max-vertical-offset="1800">
+        <state line="13" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="34.6" vertical-offset="1099" max-vertical-offset="1800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="427" selection-end="427" vertical-scroll-proportion="0.41084164" vertical-offset="0" max-vertical-offset="701">
           <folding />
         </state>
       </provider>
