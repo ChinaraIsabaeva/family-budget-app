@@ -44,7 +44,7 @@ class Category(models.Model):
 
 class Expenses(models.Model):
     name = models.CharField(max_length=255)
-    category = models.ForeignKey(Category, limit_choices_to={'type': CATEGORY_TYPE_EXPENSES}, default=5)
+    category = models.ForeignKey(Category, limit_choices_to={'type': CATEGORY_TYPE_EXPENSES}, default=3)
     amount = models.FloatField()
     date = models.DateField()
 
