@@ -32,19 +32,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wsgi.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="wsgi.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybudget/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="427" selection-end="427" vertical-scroll-proportion="0.41084164" vertical-offset="0" max-vertical-offset="701">
+            <state line="16" column="0" selection-start="427" selection-end="427" vertical-scroll-proportion="-11.52" vertical-offset="0" max-vertical-offset="396">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mybudget/finplanner/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="50" selection-start="858" selection-end="858" vertical-scroll-proportion="-14.4" vertical-offset="0" max-vertical-offset="882">
+            <state line="19" column="50" selection-start="770" selection-end="770" vertical-scroll-proportion="0.48787448" vertical-offset="0" max-vertical-offset="828">
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -75,7 +75,7 @@
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="47" selection-start="444" selection-end="444" vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="504">
+            <state line="22" column="7" selection-start="630" selection-end="630" vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="504">
               <folding />
             </state>
           </provider>
@@ -109,13 +109,13 @@
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/forms.html" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/forms.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/submitted.html" />
-        <option value="$PROJECT_DIR$/mybudget/finplanner/views.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/expenses.html" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/models.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/home.html" />
         <option value="$PROJECT_DIR$/mybudget/settings.py" />
         <option value="$PROJECT_DIR$/mybudget/wsgi.py" />
+        <option value="$PROJECT_DIR$/mybudget/finplanner/views.py" />
       </list>
     </option>
   </component>
@@ -567,35 +567,12 @@
         <state line="1" column="0" selection-start="28" selection-end="28" vertical-scroll-proportion="0.024793388" vertical-offset="0" max-vertical-offset="726" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="50" selection-start="858" selection-end="858" vertical-scroll-proportion="-14.4" vertical-offset="0" max-vertical-offset="882">
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/finplanner/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="38" selection-start="342" selection-end="342" vertical-scroll-proportion="-7.2" vertical-offset="0" max-vertical-offset="558">
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="26" selection-start="1371" selection-end="1371" vertical-scroll-proportion="-28.04" vertical-offset="181" max-vertical-offset="1584">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="47" selection-start="444" selection-end="444" vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="504">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -608,8 +585,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="427" selection-end="427" vertical-scroll-proportion="0.41084164" vertical-offset="0" max-vertical-offset="701">
+        <state line="16" column="0" selection-start="427" selection-end="427" vertical-scroll-proportion="-11.52" vertical-offset="0" max-vertical-offset="396">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="26" selection-start="1371" selection-end="1371" vertical-scroll-proportion="-28.04" vertical-offset="181" max-vertical-offset="1584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="7" selection-start="630" selection-end="630" vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="504">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="50" selection-start="770" selection-end="770" vertical-scroll-proportion="0.48787448" vertical-offset="0" max-vertical-offset="828">
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
