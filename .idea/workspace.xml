@@ -41,10 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mybudget/finplanner/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="75" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="900">
+            <state line="36" column="0" selection-start="1420" selection-end="1420" vertical-scroll-proportion="0.6280992" vertical-offset="192" max-vertical-offset="918">
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -85,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybudget/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="482" selection-end="482" vertical-scroll-proportion="0.37190083" vertical-offset="0" max-vertical-offset="726">
+            <state line="17" column="0" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
               <folding />
             </state>
           </provider>
@@ -118,8 +118,8 @@
         <option value="$PROJECT_DIR$/mybudget/wsgi.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/forms.html" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/expenses.html" />
-        <option value="$PROJECT_DIR$/mybudget/finplanner/views.py" />
         <option value="$PROJECT_DIR$/mybudget/urls.py" />
+        <option value="$PROJECT_DIR$/mybudget/finplanner/views.py" />
       </list>
     </option>
   </component>
@@ -563,19 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="7" selection-start="630" selection-end="630" vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="504">
-          <folding>
-            <marker date="1388054318660" expanded="true" signature="44:629" placeholder="..." />
-            <marker date="1388054318660" expanded="true" signature="51:182" placeholder="..." />
-            <marker date="1388054318660" expanded="true" signature="189:621" placeholder="..." />
-            <marker date="1388054318660" expanded="true" signature="275:369" placeholder="..." />
-            <marker date="1388054318660" expanded="true" signature="395:610" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/forms.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="21" selection-start="472" selection-end="472" vertical-scroll-proportion="0.38626608" vertical-offset="0" max-vertical-offset="702">
@@ -597,10 +584,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/expenses.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="51" selection-start="580" selection-end="580" vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="558">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="7" selection-start="630" selection-end="630" vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="504">
+          <folding>
+            <marker date="1388054318660" expanded="true" signature="44:629" placeholder="..." />
+            <marker date="1388054318660" expanded="true" signature="51:182" placeholder="..." />
+            <marker date="1388054318660" expanded="true" signature="189:621" placeholder="..." />
+            <marker date="1388054318660" expanded="true" signature="275:369" placeholder="..." />
+            <marker date="1388054318660" expanded="true" signature="395:610" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -613,17 +620,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/finplanner/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="75" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="900">
+        <state line="36" column="0" selection-start="1420" selection-end="1420" vertical-scroll-proportion="0.6280992" vertical-offset="192" max-vertical-offset="918">
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="482" selection-end="482" vertical-scroll-proportion="0.37190083" vertical-offset="0" max-vertical-offset="726">
-          <folding />
         </state>
       </provider>
     </entry>
