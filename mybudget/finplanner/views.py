@@ -36,6 +36,10 @@ def forms(request):
     })
 
 
-
 def submitted(request):
     return render(request, 'submitted.html')
+
+
+def expenses(request):
+    expenses_sum = Expenses.objects.aggregate(Sum('amount'))['amount__sum']
+    return render(request, 'expenses.html', {'expenses_sum': expenses_sum})
