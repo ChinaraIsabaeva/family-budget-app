@@ -26,7 +26,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybudget/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="-9.36" vertical-offset="0" max-vertical-offset="1800">
+            <state line="26" column="38" selection-start="797" selection-end="818" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="1800">
               <folding />
             </state>
           </provider>
@@ -44,10 +44,8 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybudget/finplanner/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1420" selection-end="1420" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="918">
-              <folding>
-                <element signature="e#0#52#0" expanded="true" />
-              </folding>
+            <state line="19" column="50" selection-start="770" selection-end="770" vertical-scroll-proportion="-6.0" vertical-offset="120" max-vertical-offset="846">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,37 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybudget/finplanner/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="26" selection-start="1371" selection-end="1371" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1584">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="76" selection-start="103" selection-end="175" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="504">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="expenses.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/expenses.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="29" selection-start="308" selection-end="308" vertical-scroll-proportion="0.3090129" vertical-offset="0" max-vertical-offset="699">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/forms.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="7" selection-start="1016" selection-end="1016" vertical-scroll-proportion="-22.0" vertical-offset="0" max-vertical-offset="702">
+            <state line="5" column="76" selection-start="103" selection-end="175" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="504">
               <folding />
             </state>
           </provider>
@@ -100,7 +71,16 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybudget/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+            <state line="17" column="0" selection-start="482" selection-end="482" vertical-scroll-proportion="-10.8" vertical-offset="0" max-vertical-offset="378">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mybudget/finplanner/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="71" selection-start="684" selection-end="684" vertical-scroll-proportion="0.43651927" vertical-offset="0" max-vertical-offset="701">
               <folding />
             </state>
           </provider>
@@ -120,7 +100,6 @@
         <option value="$PROJECT_DIR$/mybudget/finplanner/admin.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/Forms.html" />
         <option value="$PROJECT_DIR$/static/style.css" />
-        <option value="$PROJECT_DIR$/mybudget/finplanner/forms.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/submitted.html" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/models.py" />
@@ -132,14 +111,14 @@
         <option value="$PROJECT_DIR$/mybudget/finplanner/views.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/static/style.css" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/expenses.html" />
+        <option value="$PROJECT_DIR$/mybudget/finplanner/forms.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
     <option name="y" value="25" />
-    <option name="width" value="1604" />
-    <option name="height" value="877" />
+    <option name="width" value="1600" />
+    <option name="height" value="875" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -269,7 +248,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mbf-main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../temp" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
@@ -365,7 +344,27 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="mybudget" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -391,27 +390,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="mybudget" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -494,7 +473,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="25" width="1604" height="877" extended-state="6" />
+    <frame x="0" y="25" width="1600" height="875" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -563,47 +542,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="-9.36" vertical-offset="0" max-vertical-offset="1800">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/submitted.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="35" selection-start="131" selection-end="131" vertical-scroll-proportion="0.18025751" vertical-offset="0" max-vertical-offset="699">
+        <state line="7" column="35" selection-start="131" selection-end="131" vertical-scroll-proportion="0.18025751" vertical-offset="0" max-vertical-offset="699" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="76" selection-start="103" selection-end="175" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="504">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/forms.py">
+    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/expenses.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="38" selection-start="342" selection-end="342" vertical-scroll-proportion="0.20542082" vertical-offset="0" max-vertical-offset="701">
+        <state line="26" column="10" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="612">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/urls.py">
+    <entry file="file://$PROJECT_DIR$/mybudget/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="26" selection-start="1371" selection-end="1371" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1584">
+        <state line="26" column="38" selection-start="797" selection-end="818" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="1800">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/finplanner/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1420" selection-end="1420" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="918">
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
+        <state line="19" column="50" selection-start="770" selection-end="770" vertical-scroll-proportion="-6.0" vertical-offset="120" max-vertical-offset="846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/forms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="7" selection-start="1016" selection-end="1016" vertical-scroll-proportion="-21.88889" vertical-offset="3" max-vertical-offset="702">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="26" selection-start="1371" selection-end="1371" vertical-scroll-proportion="0.49643368" vertical-offset="534" max-vertical-offset="1584">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -614,23 +596,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/home.html">
+    <entry file="file://$PROJECT_DIR$/mybudget/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="76" selection-start="103" selection-end="175" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="504">
+        <state line="17" column="0" selection-start="482" selection-end="482" vertical-scroll-proportion="-10.8" vertical-offset="0" max-vertical-offset="378">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/forms.html">
+    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="7" selection-start="1016" selection-end="1016" vertical-scroll-proportion="-22.0" vertical-offset="0" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/finplanner/templates/expenses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="29" selection-start="308" selection-end="308" vertical-scroll-proportion="0.3090129" vertical-offset="0" max-vertical-offset="699">
+        <state line="19" column="71" selection-start="684" selection-end="684" vertical-scroll-proportion="0.43651927" vertical-offset="0" max-vertical-offset="701">
           <folding />
         </state>
       </provider>
