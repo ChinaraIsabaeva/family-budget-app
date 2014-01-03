@@ -54,6 +54,7 @@ class Expenses(models.Model):
     class Meta():
         verbose_name = u'expense'
         verbose_name_plural = u'expenses'
+        ordering = ['date']
 
 
 class Reserves(models.Model):
