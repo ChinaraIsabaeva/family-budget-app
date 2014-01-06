@@ -2,22 +2,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Personal Financial Planner</title>
     <link rel="stylesheet" type="text/css" href="{%  static 'style.css' %}">
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <div class="navigation">
-        make here navigation
+    <div id="navigation">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/forms/">Forms</a></li>
+            <li><a href="/expenses/">Expenses</a></li>
+        </ul>
     </div>
-    <h3>Welcome to your personal financial planner</h3>
-    <div class="column-left">
-        <p>You can fill one or all forms</p>
-        <a href='forms'>Fill form</a>
-    </div>
-    <div class="content">
-        <p><a href="expenses">See your expenses</a></p>
-        <p>Total saved in reserves from forts Veeqo salary: {{ reserves_sum|safe }}</p>
-        <p>Total saved in buffer: {{ buffer_sum|safe }}</p>
-    </div>
+    {% block content %}{% endblock %}
 </body>
 </html>

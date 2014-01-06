@@ -8,7 +8,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'mybudget.finplanner.views.home'),
-    url(r'^forms/$', 'mybudget.finplanner.views.forms'),
+    url(r'^form/$', 'mybudget.finplanner.views.forms'),
+    url(r'^forms/expense_form/$', 'mybudget.finplanner.views.expense_form'),
     url(r'^expenses/$', 'mybudget.finplanner.views.expenses'),
     url(r'^submitted/$', 'mybudget.finplanner.views.submitted'),
     # url(r'^blog/', include('blog.urls')),

@@ -1,34 +1,10 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Personal Financial Planner Forms</title>
-    <link rel="stylesheet" type="text/css" href="{%  static 'style.css' %}">
-</head>
-<body>
-{% csrf_token %}
+{% extends 'base.html' %}
+{% block title %}Personal Financial Planner{% endblock %}
+{% block content %}
+    <h3>Welcome to your personal financial planner</h3>
     <div class="column-left">
-        <p>Expenses form</p>
-        <form action="" method="post">{% csrf_token %}
-            {{ expenses_form.as_p }}
-            <input type="submit" name="expenses_save" value="Save" />
-        </form>
-        <p><a href="/">Home page</a></p>
-    </div>
-    <div class="column-center">
-        <p>Incomes form</p>
-        <form action="" method="post">{% csrf_token %}
-            {{ incomes_form.as_p }}
-            <input type="submit" name="expenses_save" value="Save" />
-        </form>
-    </div>
-    <div class="column-right">
-        <p>Reserves form</p>
-        <form action="" method="post">{% csrf_token %}
-            {{ reserves_form.as_p }}
-            <input type="submit" name="expenses_save" value="Save" />
-        </form>
-    </div>
+        <p>Select a form to fill in</p>
+        <p>Fill in expenses form</p>
 
-</body>
-</html>
+    </div>
+{% endblock %}

@@ -69,6 +69,7 @@ class Reserves(models.Model):
 
     class Meta():
         verbose_name_plural = u'reserves'
+        ordering = ['date']
 
 
 class Incomes(models.Model):
@@ -83,3 +84,4 @@ class Incomes(models.Model):
 
     class Meta():
         verbose_name_plural = u'incomes'
+        ordering = ['date']

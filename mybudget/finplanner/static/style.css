@@ -1,10 +1,73 @@
-.content a:link, a:visited {color:#0000FF;text-decoration:none;}
-.content a:hover {color:#B22222;text-decoration:underline;}
-.content {float: left; width: 70%;}
-.content table {border-collapse:collapse;}
-.content table,th, td {border: 1px solid black;padding:3px 7px 2px 7px;}
-.column-left a:link, a:visited {color:#0000FF;text-decoration:none;}
-.column-left a:hover {color:#B22222;text-decoration:underline;}
-.column-left {float:left;width: 30%}
-.column-right {float:left;width: 30%}
-.column-center {float: left;width: 30%}
+.content
+    {
+        float: left; width: 70%;
+    }
+.content
+    a:link, a:visited
+        {
+            color:#0000CD;text-decoration:none;
+        }
+.content
+    a:hover
+        {
+            text-decoration:underline;
+        }
+.content
+    table
+        {
+            border-collapse:collapse;
+        }
+.content
+    table,th, td
+        {
+            border: 1px solid black;padding:3px 7px 2px 7px;
+        }
+.column-left
+    a:link, a:visited
+        {
+            color:#0000FF;text-decoration:none;
+        }
+.column-left
+    a:hover
+        {
+            color:#B22222;text-decoration:underline;
+        }
+.column-left
+    {
+        float:left;width: 30%
+    }
+.column-right
+    {
+        float:left;width: 30%
+    }
+.column-center
+    {
+        float: left;width: 30%
+    }
+#navigation
+    ul
+        {
+            list-style-type:none;text-align:center;margin:5px;padding:5px;overflow:hidden;
+        }
+#navigation
+    ul li
+        {
+            display:inline;
+        }
+#navigation
+    ul li a:link, a:visited
+        {
+            display:inline-block;
+            font-weight:bold;
+            text-align:center;
+            padding:4px;
+            color:#0000CD;
+            text-decoration:none;
+            text-transform:uppercase;
+        }
+
+#navigation
+    ul li a:hover
+        {
+            text-decoration:underline;
+        }

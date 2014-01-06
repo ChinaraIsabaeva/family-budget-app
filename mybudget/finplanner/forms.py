@@ -22,4 +22,9 @@ class ReservesForm(ModelForm):
         model = Reserves
         widgets = {'amount': TextInput}
 
+class CategoriesForm(ModelForm):
+    class Meta:
+        model = Category
+
+
 
