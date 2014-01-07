@@ -19,6 +19,9 @@ def home(request):
     return render(request, 'home.html',
                   {'expenses_form': expenses_form, 'reserves_sum': reserves_sum, 'buffer_sum': buffer_sum})
 
+def forms(request):
+    return render(request, 'forms.html')
+
 
 def expense_form(request):
     if request.method == 'POST':
