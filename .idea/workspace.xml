@@ -23,22 +23,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybudget/finplanner/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="0" selection-start="3369" selection-end="3369" vertical-scroll-proportion="2.3865905" vertical-offset="1" max-vertical-offset="1782">
+            <state line="33" column="42" selection-start="1372" selection-end="1372" vertical-scroll-proportion="-23.76" vertical-offset="0" max-vertical-offset="1962">
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="submitted.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mybudget/templates/submitted.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="674" selection-end="674" vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="468">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -47,7 +38,15 @@
         <entry file="file://$PROJECT_DIR$/mybudget/templates/expenses.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="28" column="7" selection-start="768" selection-end="768" vertical-scroll-proportion="-18.666666" vertical-offset="0" max-vertical-offset="612">
-              <folding />
+              <folding>
+                <marker date="1388327866555" expanded="true" signature="44:767" placeholder="..." />
+                <marker date="1388327866555" expanded="true" signature="51:176" placeholder="..." />
+                <marker date="1388327866555" expanded="true" signature="183:759" placeholder="..." />
+                <marker date="1388327866555" expanded="true" signature="209:751" placeholder="..." />
+                <marker date="1388327866555" expanded="true" signature="225:647" placeholder="..." />
+                <marker date="1388327866555" expanded="true" signature="277:387" placeholder="..." />
+                <marker date="1388327866555" expanded="true" signature="442:609" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,8 +74,28 @@
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mybudget/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="14" selection-start="627" selection-end="627" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="378">
+            <state line="15" column="14" selection-start="0" selection-end="627" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="378">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home_submitted.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mybudget/templates/home_submitted.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="45" selection-start="446" selection-end="446" vertical-scroll-proportion="0.23175965" vertical-offset="0" max-vertical-offset="699">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="submitted.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mybudget/templates/submitted.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="252" selection-end="252" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="306">
+              <folding>
+                <marker date="1389628152181" expanded="true" signature="188:234" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,7 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/mybudget/finplanner/static/style.css" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/models.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/forms.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/expenseform.html" />
@@ -112,10 +130,11 @@
         <option value="$PROJECT_DIR$/mybudget/finplanner/templates/expenses_list.html" />
         <option value="$PROJECT_DIR$/mybudget/settings.py" />
         <option value="$PROJECT_DIR$/mybudget/templates/home.html" />
-        <option value="$PROJECT_DIR$/mybudget/templates/submitted.html" />
         <option value="$PROJECT_DIR$/mybudget/templates/finplanner/expenses_list.html" />
-        <option value="$PROJECT_DIR$/mybudget/finplanner/views.py" />
         <option value="$PROJECT_DIR$/mybudget/urls.py" />
+        <option value="$PROJECT_DIR$/mybudget/templates/submitted.html" />
+        <option value="$PROJECT_DIR$/mybudget/finplanner/views.py" />
+        <option value="$PROJECT_DIR$/mybudget/templates/home_submitted.html" />
       </list>
     </option>
   </component>
@@ -480,6 +499,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980132" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24875" sideWeight="0.6701987" order="0" side_tool="false" content_ui="combo" />
@@ -491,7 +511,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -577,20 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/templates/expenses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="7" selection-start="768" selection-end="768" vertical-scroll-proportion="-18.666666" vertical-offset="0" max-vertical-offset="612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="627" selection-end="627" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="378">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="-2.16" vertical-offset="0" max-vertical-offset="450">
@@ -600,19 +605,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/templates/expenses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="7" selection-start="768" selection-end="768" vertical-scroll-proportion="-18.666666" vertical-offset="0" max-vertical-offset="612">
+          <folding>
+            <marker date="1388327866555" expanded="true" signature="44:767" placeholder="..." />
+            <marker date="1388327866555" expanded="true" signature="51:176" placeholder="..." />
+            <marker date="1388327866555" expanded="true" signature="183:759" placeholder="..." />
+            <marker date="1388327866555" expanded="true" signature="209:751" placeholder="..." />
+            <marker date="1388327866555" expanded="true" signature="225:647" placeholder="..." />
+            <marker date="1388327866555" expanded="true" signature="277:387" placeholder="..." />
+            <marker date="1388327866555" expanded="true" signature="442:609" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/templates/submitted.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="674" selection-end="674" vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="468">
+        <state line="9" column="0" selection-start="252" selection-end="252" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="306">
+          <folding>
+            <marker date="1389628152181" expanded="true" signature="188:234" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="14" selection-start="0" selection-end="627" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="378">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/finplanner/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="3369" selection-end="3369" vertical-scroll-proportion="2.3865905" vertical-offset="1" max-vertical-offset="1782">
+        <state line="33" column="42" selection-start="1372" selection-end="1372" vertical-scroll-proportion="-23.76" vertical-offset="0" max-vertical-offset="1962">
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/templates/home_submitted.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="45" selection-start="446" selection-end="446" vertical-scroll-proportion="0.23175965" vertical-offset="0" max-vertical-offset="699">
+          <folding />
         </state>
       </provider>
     </entry>
