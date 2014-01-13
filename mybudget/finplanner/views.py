@@ -88,8 +88,6 @@ def submitted(request):
 def expenses(request):
     my_expenses = get_list_or_404(Expenses)
     expenses_sum = Expenses.objects.aggregate(Sum('amount'))['amount__sum']
-    return render(request, 'expenses.html', {'expenses':my_expenses, 'expenses_sum': expenses_sum})
+    return render(request, 'expenses.html', {'expenses': my_expenses, 'expenses_sum': expenses_sum})
 
 
-class ExpensesList(ListView):
-    model = Expenses
