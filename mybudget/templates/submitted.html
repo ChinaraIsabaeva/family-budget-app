@@ -3,7 +3,8 @@
 {% block content %}
     <h3>Welcome to your personal financial planner</h3>
     <div class="column-left">
-        <p>Fill in expenses form</p>
+        <p>Your data was saved</p>
+        <p>Insert your another data in expenses form</p>
         <form action="" method="post">{% csrf_token %}
             {{ expenses_form.as_p }}
             <input type="submit" name="expenses_save" value="Save" />
@@ -14,3 +15,6 @@
         <p>Total saved in buffer: {{ buffer_sum|safe }}</p>
     </div>
 {% endblock %}
+
+
+

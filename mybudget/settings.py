@@ -24,7 +24,8 @@ SECRET_KEY = '4wcr-7lv-9mjm!4v#ktnd$uew=%-((gih_ex26uh%@v(z7k7xf'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
-TEMPLATE_DIRS = (os.path.join(BASE_DIR, "mybudget/finplanner/templates"))
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, "mybudget/templates"),)
+
 
 ALLOWED_HOSTS = ['*', ]
 
