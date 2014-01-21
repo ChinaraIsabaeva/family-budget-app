@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.db.models import Sum
 from mybudget.finplanner.forms import *
 from mybudget.finplanner.models import *
+import datetime
 
 
 # Create your views here.
@@ -96,8 +97,9 @@ def reserve_form(request):
 
 
 def expenses(request):
-    my_expenses = get_list_or_404(Expenses)
+    month = datetime.date.today().strftime('%B %Y')
+    my_expenses = get_list_or_404(Expenses.objects.filter(date__month=datetime.date.today().strftime('%m')))
     expenses_sum = Expenses.objects.aggregate(Sum('amount'))['amount__sum']
-    return render(request, 'expenses.html', {'expenses': my_expenses, 'expenses_sum': expenses_sum})
+    return render(request, 'expenses.html', {'expenses': my_expenses, 'expenses_sum': expenses_sum, 'month': month})
 
 

@@ -1,14 +1,9 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Expenses Information</title>
-    <link rel="stylesheet" type="text/css" href="{%  static 'style.css' %}">
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Your expenses{% endblock %}
+{% block content %}
     <div class="content">
         <table>
-            <h3>Your expenses</h3>
+            <h3>Your expenses for {{ month }}</h3>
             <tr>
                 <th>Name</th>
                 <th>Amount</th>
@@ -23,7 +18,5 @@
         {% endfor %}
         </table>
         <p>Total spend: {{ expenses_sum|safe }}</p>
-        <p><a href="/">Home page</a></p>
     </div>
-</body>
-</html>
+{% endblock %}
