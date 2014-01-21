@@ -12,7 +12,7 @@
         {% for expense in expenses %}
             <tr>
                 <td>{{ expense.name|safe }}</td>
-                <td>{{ expense.amount|safe }}</td>
+                <td id = 'amount'>{{ expense.amount|safe }}</td>
                 <td>{{ expense.date|date }}</td>
             </tr>
         {% endfor %}
