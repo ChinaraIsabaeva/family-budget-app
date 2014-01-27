@@ -4,6 +4,7 @@ from django.db.models import Sum
 from mybudget.finplanner.forms import *
 from mybudget.finplanner.models import *
 import datetime
+from mybudget.finplanner.lib.show_expenses_date import show_expenses_start_date
 
 
 # Create your views here.
@@ -98,10 +99,8 @@ def reserve_form(request):
 
 def expenses(request):
     date = datetime.date.today().strftime('%B %Y')
-    start_date = datetime.date(int((datetime.date.today()-datetime.timedelta(days=28)).strftime('%Y')), int((datetime.date.today()-datetime.timedelta(days=28)).strftime('%m')), 28)
-    end_date = datetime.date(int(datetime.date.today().strftime('%Y')), int(datetime.date.today().strftime('%m')), 28)
-    my_expenses = get_list_or_404(Expenses.objects.filter(date__range=(start_date, end_date)))
-    expenses_sum = Expenses.objects.filter(date__range=(start_date, end_date)).aggregate(Sum('amount'))['amount__sum']
+    my_expenses = get_list_or_404(Expenses.objects.filter(date__range=(show_expenses_start_date(), datetime.date.today())))
+    expenses_sum = Expenses.objects.filter(date__range=(show_expenses_start_date(), datetime.date.today())).aggregate(Sum('amount'))['amount__sum']
     return render(request, 'expenses.html', {'expenses': my_expenses, 'expenses_sum': expenses_sum, 'date': date})
 
 
