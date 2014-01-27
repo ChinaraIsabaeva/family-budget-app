@@ -3,8 +3,8 @@ import datetime
 
 
 
-def show_expenses_start_date(date):
-    #date = datetime.date.today()
+def show_expenses_start_date():
+    date = datetime.date.today()
     if date.day > 27:
         start_date = datetime.date(date.year, date.month, 28)
     else:
