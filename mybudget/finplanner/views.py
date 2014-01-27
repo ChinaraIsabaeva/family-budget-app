@@ -97,9 +97,11 @@ def reserve_form(request):
 
 
 def expenses(request):
-    month = datetime.date.today().strftime('%B %Y')
-    my_expenses = get_list_or_404(Expenses.objects.filter(date__month=datetime.date.today().strftime('%m')))
-    expenses_sum = Expenses.objects.filter(date__month=datetime.date.today().strftime('%m')).aggregate(Sum('amount'))['amount__sum']
-    return render(request, 'expenses.html', {'expenses': my_expenses, 'expenses_sum': expenses_sum, 'month': month})
+    date = datetime.date.today().strftime('%B %Y')
+    start_date = datetime.date(int((datetime.date.today()-datetime.timedelta(days=28)).strftime('%Y')), int((datetime.date.today()-datetime.timedelta(days=28)).strftime('%m')), 28)
+    end_date = datetime.date(int(datetime.date.today().strftime('%Y')), int(datetime.date.today().strftime('%m')), 28)
+    my_expenses = get_list_or_404(Expenses.objects.filter(date__range=(start_date, end_date)))
+    expenses_sum = Expenses.objects.filter(date__range=(start_date, end_date)).aggregate(Sum('amount'))['amount__sum']
+    return render(request, 'expenses.html', {'expenses': my_expenses, 'expenses_sum': expenses_sum, 'date': date})
 
 
