@@ -9,8 +9,6 @@ from mybudget.finplanner.lib.show_expenses_date import show_expenses_start_date
 
 # Create your views here.
 def home(request):
-    reserves_sum = Reserves.objects.filter(category=10).aggregate(Sum('amount'))['amount__sum']
-    buffer_sum = Reserves.objects.filter(category=11).aggregate(Sum('amount'))['amount__sum']
     if request.method == 'POST':
         expenses_form = ExpensesForm(request.POST)
         if expenses_form.is_valid():
@@ -19,13 +17,11 @@ def home(request):
     else:
         expenses_form = ExpensesForm()
     return render(request, 'home.html',
-                  {'expenses_form': expenses_form, 'reserves_sum': reserves_sum, 'buffer_sum': buffer_sum})
+                  {'expenses_form': expenses_form})
 
 
 
 def submitted(request):
-    reserves_sum = Reserves.objects.filter(category=10).aggregate(Sum('amount'))['amount__sum']
-    buffer_sum = Reserves.objects.filter(category=11).aggregate(Sum('amount'))['amount__sum']
     if request.method == 'POST':
         expenses_form = ExpensesForm(request.POST)
         if expenses_form.is_valid():
@@ -34,7 +30,7 @@ def submitted(request):
     else:
         expenses_form = ExpensesForm()
     return render(request, 'home_submitted.html',
-                  {'expenses_form': expenses_form, 'reserves_sum': reserves_sum, 'buffer_sum': buffer_sum})
+                  {'expenses_form': expenses_form})
 
 def forms(request):
     return render(request, 'forms.html')
@@ -104,3 +100,7 @@ def expenses(request):
     return render(request, 'expenses.html', {'expenses': my_expenses, 'expenses_sum': expenses_sum, 'date': date})
 
 
+def reserves(request):
+    reserves_sum = Reserves.objects.filter(category=10).aggregate(Sum('amount'))['amount__sum']
+    buffer_sum = Reserves.objects.filter(category=11).aggregate(Sum('amount'))['amount__sum']
+    return render(request, 'reserves.html', {'reserves_sum': reserves_sum, 'buffer_sum': buffer_sum})

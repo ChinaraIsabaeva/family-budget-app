@@ -1,16 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}Personal Financial Planner{% endblock %}
 {% block content %}
-    <h3>Welcome to your personal financial planner</h3>
-    <div class="column-left">
+    <div class="content">
+        <h3>Welcome to your personal financial planner</h3>
         <p>Insert your data in expenses form</p>
         <form action="" method="post">{% csrf_token %}
             {{ expenses_form.as_p }}
             <input type="submit" name="expenses_save" value="Save" />
         </form>
-    </div>
-    <div class="content">
-        <p>Total saved in reserves from first Veeqo salary: {{ reserves_sum|safe }}</p>
-        <p>Total saved in buffer: {{ buffer_sum|safe }}</p>
     </div>
 {% endblock %}
