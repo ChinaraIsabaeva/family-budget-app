@@ -8,7 +8,7 @@ class ExpensesForm(ModelForm):
     date = DateField(widget=SelectDateWidget(years=range(2013, 2023, 1)), initial=datetime.today())
     class Meta:
         model = Expenses
-        widgets = {'amount': TextInput}
+        widgets = {'amount': TextInput, 'name': TextInput(attrs={'autofocus':'autofocus'})}
 
 class IncomesForm(ModelForm):
     date = DateField(widget=SelectDateWidget(years=range(2013, 2023, 1)), initial=datetime.today())
