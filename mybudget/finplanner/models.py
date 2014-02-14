@@ -65,14 +65,16 @@ class Reserves(models.Model):
     date = models.DateField()
 
     def __unicode__(self):
-        return self.name
+        return u'%s %s %s %s' % (self.name, self.amount,  self.periodicity, self.date)
 
     def get_absolute_url(self):
         return reverse('reserves-detail', kwargs={'pk': self.pk})
 
+
     class Meta():
         verbose_name_plural = u'reserves'
         ordering = ['date']
+
 
 
 class Incomes(models.Model):
