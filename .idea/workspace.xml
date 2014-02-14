@@ -86,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reserves.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mybudget/templates/reserves.html">
+      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mybudget/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="34" selection-start="191" selection-end="191" vertical-scroll-proportion="0.12875536" vertical-offset="0" max-vertical-offset="699">
+            <state line="10" column="41" selection-start="276" selection-end="276" vertical-scroll-proportion="0.25751072" vertical-offset="0" max-vertical-offset="699">
               <folding />
             </state>
           </provider>
@@ -121,7 +121,6 @@
         <option value="$PROJECT_DIR$/mybudget/finplanner/lib/__init__.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/tests.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/lib/show_expenses_date.py" />
-        <option value="$PROJECT_DIR$/mybudget/templates/base.html" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/views.py" />
         <option value="$PROJECT_DIR$/mybudget/urls.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/static/style.css" />
@@ -130,6 +129,7 @@
         <option value="$PROJECT_DIR$/mybudget/finplanner/models.py" />
         <option value="$PROJECT_DIR$/mybudget/finplanner/forms.py" />
         <option value="$PROJECT_DIR$/mybudget/templates/reserves.html" />
+        <option value="$PROJECT_DIR$/mybudget/templates/base.html" />
       </list>
     </option>
   </component>
@@ -583,11 +583,6 @@
         <state line="9" column="0" selection-start="252" selection-end="252" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="306" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="45" selection-start="426" selection-end="426" vertical-scroll-proportion="0.34666666" vertical-offset="0" max-vertical-offset="675" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/finplanner/lib/show_expenses_date.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="29" selection-start="70" selection-end="70" vertical-scroll-proportion="0.12838802" vertical-offset="0" max-vertical-offset="701" />
@@ -657,6 +652,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mybudget/templates/reserves.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="34" selection-start="191" selection-end="191" vertical-scroll-proportion="0.12875536" vertical-offset="0" max-vertical-offset="699">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mybudget/finplanner/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="88" selection-start="418" selection-end="418" vertical-scroll-proportion="-5.76" vertical-offset="0" max-vertical-offset="612">
@@ -664,9 +666,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mybudget/templates/reserves.html">
+    <entry file="file://$PROJECT_DIR$/mybudget/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="34" selection-start="191" selection-end="191" vertical-scroll-proportion="0.12875536" vertical-offset="0" max-vertical-offset="699">
+        <state line="10" column="41" selection-start="276" selection-end="276" vertical-scroll-proportion="0.25751072" vertical-offset="0" max-vertical-offset="699">
           <folding />
         </state>
       </provider>
