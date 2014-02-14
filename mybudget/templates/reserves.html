@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Personal Financial Planner{% endblock %}
 {% block content %}
-    <h3>Your reserves</h3>
     <div class="content">
-        <p>Total saved in reserves from first Veeqo salary: {{ reserves_sum|safe }}</p>
+        <h3>Your reserves</h3>
+        <p>Total saved in reserves: {{ reserves_sum|safe }}</p>
         <p>Total saved in buffer: {{ buffer_sum|safe }}</p>
     </div>
 {% endblock %}

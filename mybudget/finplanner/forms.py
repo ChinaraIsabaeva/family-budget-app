@@ -1,5 +1,6 @@
 from django.forms import ModelForm, TextInput, DateField
 from django.forms.extras.widgets import SelectDateWidget
+from datetime import datetime
 from mybudget.finplanner.models import *
 
 

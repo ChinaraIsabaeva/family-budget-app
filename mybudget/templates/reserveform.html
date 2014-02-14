@@ -3,9 +3,9 @@
 {% block content %}
 {% csrf_token %}
     <div class="column-left">
-        <p>Expenses form</p>
+        <p>Reserve form</p>
         <form action="" method="post">{% csrf_token %}
-            {{ expenses_form.as_p }}
+            {{ form.as_p }}
             <input type="submit" name="expenses_save" value="Save" />
         </form>
     </div>

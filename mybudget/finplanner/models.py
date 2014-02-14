@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import datetime
+from django.core.urlresolvers import reverse
 
 # Create your models here.
 PERIODICITY_YEAR = 1
@@ -66,6 +66,9 @@ class Reserves(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('reserves-detail', kwargs={'pk': self.pk})
 
     class Meta():
         verbose_name_plural = u'reserves'
