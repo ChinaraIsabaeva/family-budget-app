@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}Personal Financial Planner{% endblock %}
 {% block content %}
-    <h3>Your reserves</h3>
     <div class="content">
+<<<<<<< HEAD
+=======
+        <h3>Your reserves</h3>
+>>>>>>> urls
         <p>Total saved in reserves: {{ reserves_sum|safe }}</p>
         <p>Total saved in buffer: {{ buffer_sum|safe }}</p>
+    </div>
+    <div class="column-left">
+        <p><a href="add/">Fill reserve form</a></p>
     </div>
 {% endblock %}
