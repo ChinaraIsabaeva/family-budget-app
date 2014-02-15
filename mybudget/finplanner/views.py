@@ -16,7 +16,7 @@ def home(request):
         if expenses_form.is_valid():
             expenses_form.save()
             messages.info(request, "Your data was saved")
-            return redirect('/')
+            return redirect('/expenses/add/')
     else:
         expenses_form = ExpensesForm()
     return render(request, 'home.html', {'expenses_form': expenses_form})
@@ -28,7 +28,7 @@ def reserves(request):
     return render(request, 'reserves.html', {'reserves_sum': reserves_sum, 'buffer_sum': buffer_sum})
 
 
-class ReservesCreate(CreateView):
+class ReserveCreate(CreateView):
     form_class = ReservesForm
     fields = ['name', 'amount', 'category', 'periodicity', 'date']
     template_name = 'reserveform.html'
@@ -39,12 +39,12 @@ class ReservesCreate(CreateView):
         return redirect(self.success_ulr)
 
     
-class ReservesUpdate(UpdateView):
+class ReserveUpdate(UpdateView):
     model = Reserves
     fields = ['name']
 
 
-class ReservesDelete(DeleteView):
+class ReserveDelete(DeleteView):
     model = Reserves
     success_url = reverse_lazy('reserves-list')
 
@@ -54,3 +54,14 @@ def expenses(request):
     my_expenses = get_list_or_404(Expenses.objects.filter(date__range=(show_expenses_start_date(), datetime.date.today())))
     expenses_sum = Expenses.objects.filter(date__range=(show_expenses_start_date(), datetime.date.today())).aggregate(Sum('amount'))['amount__sum']
     return render(request, 'expenses.html', {'expenses': my_expenses, 'expenses_sum': expenses_sum, 'date': date})
+
+class ExpenseCreate(CreateView):
+    form_class = ExpensesForm
+    fields = '__all__'
+    template_name = 'expenseform.html'
+    success_url = '/add/'
+
+    def form_valid(self, form):
+        form.save()
+        messages.info(request, "Your data was saved")
+        return redirect(self.success_url)
