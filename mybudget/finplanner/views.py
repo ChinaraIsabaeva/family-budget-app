@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_list_or_404
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_list_or_404, redirect
 from django.db.models import Sum
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.core.urlresolvers import reverse_lazy
+from django.contrib import messages
 from mybudget.finplanner.forms import *
 from mybudget.finplanner.models import *
 import datetime
@@ -15,11 +15,11 @@ def home(request):
         expenses_form = ExpensesForm(request.POST)
         if expenses_form.is_valid():
             expenses_form.save()
-            return HttpResponseRedirect('/submitted/')
+            messages.info(request, "Your data was saved")
+            return redirect('/')
     else:
         expenses_form = ExpensesForm()
-    return render(request, 'home.html',
-                  {'expenses_form': expenses_form})
+    return render(request, 'home.html', {'expenses_form': expenses_form})
 
 
 def reserves(request):
@@ -36,10 +36,9 @@ class ReservesCreate(CreateView):
 
     def form_valid(self, form):
         form.save()
-        return HttpResponseRedirect(self.success_ulr)
+        return redirect(self.success_ulr)
 
     
-
 class ReservesUpdate(UpdateView):
     model = Reserves
     fields = ['name']

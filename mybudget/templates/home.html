@@ -4,7 +4,7 @@
     <div class="content">
         <h3>Welcome to your personal financial planner</h3>
         <p>Insert your data in expenses form</p>
-        <form action="/expenses" method="post">{% csrf_token %}
+        <form action="" method="post">{% csrf_token %}
             {{ expenses_form.as_p }}
             <input type="submit" name="expenses_save" value="Save" />
         </form>

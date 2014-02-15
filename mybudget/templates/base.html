@@ -12,6 +12,13 @@
             <li><a href="/expenses/">Expenses</a></li>
             <li><a href="/reserves/">Reserves</a></li>
         </ul>
+        <p><b>
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+        </b></p>
     </div>
     {% block content %}{% endblock %}
 </body>
