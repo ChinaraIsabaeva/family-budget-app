@@ -15,7 +15,7 @@ def home(request):
         expenses_form = ExpensesForm(request.POST)
         if expenses_form.is_valid():
             expenses_form.save()
-            messages.info(request, "Your data was saved")
+            messages.info(request, "Data updates")
             return redirect('/expenses/add/')
     else:
         expenses_form = ExpensesForm()
@@ -36,6 +36,7 @@ class ReserveCreate(CreateView):
 
     def form_valid(self, form):
         form.save()
+        messages.success(self.request, 'Data updates')
         return redirect(self.success_ulr)
 
     
@@ -59,9 +60,9 @@ class ExpenseCreate(CreateView):
     form_class = ExpensesForm
     fields = '__all__'
     template_name = 'expenseform.html'
-    success_url = '/add/'
+    success_url = '/expenses/add/'
 
     def form_valid(self, form):
         form.save()
-        messages.info(request, "Your data was saved")
+        messages.success(self.request, 'Data updates')
         return redirect(self.success_url)
