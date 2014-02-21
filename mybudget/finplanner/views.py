@@ -12,14 +12,14 @@ from mybudget.finplanner.lib.show_expenses_date import show_expenses_start_date
 # Create your views here.
 def home(request):
     if request.method == 'POST':
-        expenses_form = ExpensesForm(request.POST)
-        if expenses_form.is_valid():
-            expenses_form.save()
+        form = ExpensesForm(request.POST)
+        if form.is_valid():
+            form.save()
             messages.info(request, "Data updates")
             return redirect('/expenses/add/')
     else:
-        expenses_form = ExpensesForm()
-    return render(request, 'home.html', {'expenses_form': expenses_form})
+        form = ExpensesForm()
+    return render(request, 'home.html', {'form': form})
 
 
 def reserves(request):

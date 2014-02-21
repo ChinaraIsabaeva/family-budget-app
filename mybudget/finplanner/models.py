@@ -29,10 +29,10 @@ CATEGORY_TYPE_CHOICES = (
     (CATEGORY_TYPE_RESERVES, u'Reserves')
 )
 
+
 class Category(models.Model):
     name = models.CharField(max_length=150)
     type = models.IntegerField(choices=CATEGORY_TYPE_CHOICES, default=CATEGORY_TYPE_EXPENSES)
-
 
     def __unicode__(self):
         return self.name
@@ -70,11 +70,9 @@ class Reserves(models.Model):
     def get_absolute_url(self):
         return reverse('reserves-detail', kwargs={'pk': self.pk})
 
-
     class Meta():
         verbose_name_plural = u'reserves'
         ordering = ['date']
-
 
 
 class Incomes(models.Model):

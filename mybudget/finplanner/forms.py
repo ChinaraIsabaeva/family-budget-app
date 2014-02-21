@@ -1,31 +1,44 @@
-from django.forms import ModelForm, TextInput, DateField
-from django.forms.extras.widgets import SelectDateWidget
 from datetime import datetime
-from mybudget.finplanner.models import *
+from django import forms
+from django.forms.extras.widgets import SelectDateWidget
+from .models import *
 
 
+class ExpensesForm(forms.ModelForm):
+    date = forms.DateField(widget=SelectDateWidget(years=range(2013, 2023, 1)), initial=datetime.today())
 
-class ExpensesForm(ModelForm):
-    date = DateField(widget=SelectDateWidget(years=range(2013, 2023, 1)), initial=datetime.today())
     class Meta:
         model = Expenses
-        widgets = {'amount': TextInput, 'name': TextInput(attrs={'autofocus':'autofocus'})}
+        widgets = {'amount': forms.TextInput, 'name': forms.TextInput(attrs={'autofocus':'autofocus'})}
 
-class IncomesForm(ModelForm):
-    date = DateField(widget=SelectDateWidget(years=range(2013, 2023, 1)), initial=datetime.today())
+
+class IncomesForm(forms.ModelForm):
+    date = forms.DateField(widget=SelectDateWidget(years=range(2013, 2023, 1)), initial=datetime.today())
+
     class Meta:
         model = Incomes
-        widgets = {'amount': TextInput}
+        widgets = {'amount': forms.TextInput}
 
-class ReservesForm(ModelForm):
-    date = DateField(widget=SelectDateWidget(years=range(2013, 2023, 1)), initial=datetime.today())
+
+class ReservesForm(forms.ModelForm):
+    date = forms.DateField(widget=SelectDateWidget(years=range(2013, 2023, 1)), initial=datetime.today())
+
     class Meta:
         model = Reserves
-        widgets = {'amount': TextInput, 'name': TextInput(attrs={'autofocus':'autofocus'})}
+        widgets = {'amount': forms.TextInput, 'name': forms.TextInput(attrs={'autofocus':'autofocus'})}
 
-class CategoriesForm(ModelForm):
+
+class CategoriesForm(forms.ModelForm):
+
     class Meta:
         model = Category
+
+
+class ReportForm(forms.Form):
+    start_date = forms.DateField(widget=SelectDateWidget(years=range(2013, 2023, 1)), initial=datetime.today())
+    end_date = forms.DateField(widget=SelectDateWidget(years=range(2013, 2023, 1)), initial=datetime.today())
+    category = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label=None)
+
 
 
 

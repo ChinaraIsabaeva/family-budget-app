@@ -2,7 +2,6 @@ __author__ = 'dachee'
 import datetime
 
 
-
 def show_expenses_start_date():
     date = datetime.date.today()
     if date.day > 27:
