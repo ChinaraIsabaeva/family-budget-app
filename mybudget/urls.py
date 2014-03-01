@@ -14,7 +14,8 @@ urlpatterns = patterns('',
     url(r'^expenses/add/$', ExpenseCreate.as_view(), name='expense_add'),
     url(r'^reserves/$', 'mybudget.finplanner.views.reserves'),
     url(r'^reserves/add/$', ReserveCreate.as_view(), name='reserve_add'),
-    url(r'^reports/$', 'mybudget.finplanner.views.reports'),
+    url(r'^reports/$', 'mybudget.finplanner.views.report'),
+    url(r'^reports/show/$', 'mybudget.finplanner.views.report_show'),
     url(r'^admin/', include(admin.site.urls)),
 
 )

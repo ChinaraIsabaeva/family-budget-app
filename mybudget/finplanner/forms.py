@@ -39,6 +39,8 @@ class ReportForm(forms.Form):
     end_date = forms.DateField(widget=SelectDateWidget(years=range(2013, 2023, 1)), initial=datetime.today())
     category = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label=None)
 
+    def __unicode__(self):
+        return u'%s, %s, %s' % (self.start_date, self.end_date, self.category)
 
 
 
