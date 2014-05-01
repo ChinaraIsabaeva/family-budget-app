@@ -15,7 +15,7 @@ class Migration(SchemaMigration):
             ('periodicity', self.gf('django.db.models.fields.IntegerField')(default=4)),
             ('amount', self.gf('django.db.models.fields.FloatField')()),
         ))
-        db.send_create_signal(u'finplanner', ['Reserves'])
+        db.send_create_signal(u'main', ['Reserves'])
 
 
     def backwards(self, orm):
@@ -24,20 +24,20 @@ class Migration(SchemaMigration):
 
 
     models = {
-        u'finplanner.category': {
+        u'main.category': {
             'Meta': {'object_name': 'Category'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '150'})
         },
-        u'finplanner.expenses': {
+        u'main.expenses': {
             'Meta': {'object_name': 'Expenses'},
             'amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '19', 'decimal_places': '2'}),
-            'category': ('django.db.models.fields.related.ForeignKey', [], {'default': '5', 'to': u"orm['finplanner.Category']"}),
+            'category': ('django.db.models.fields.related.ForeignKey', [], {'default': '5', 'to': u"orm['main.Category']"}),
             'date': ('django.db.models.fields.DateField', [], {}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
-        u'finplanner.reserves': {
+        u'main.reserves': {
             'Meta': {'object_name': 'Reserves'},
             'amount': ('django.db.models.fields.FloatField', [], {}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -46,4 +46,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['finplanner']
+    complete_apps = ['main']

@@ -20,18 +20,18 @@ class Migration(SchemaMigration):
 
 
     models = {
-        u'finplanner.category': {
+        u'main.category': {
             'Meta': {'object_name': 'Category'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '150'})
         },
-        u'finplanner.expenses': {
+        u'main.expenses': {
             'Meta': {'object_name': 'Expenses'},
             'amount': ('django.db.models.fields.IntegerField', [], {}),
-            'category': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['finplanner.Category']"}),
+            'category': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['main.Category']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         }
     }
 
-    complete_apps = ['finplanner']
+    complete_apps = ['main']

@@ -10,7 +10,7 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         # Adding field 'Reserves.category'
         db.add_column(u'finplanner_reserves', 'category',
-                      self.gf('django.db.models.fields.related.ForeignKey')(default=5, to=orm['finplanner.Category']),
+                      self.gf('django.db.models.fields.related.ForeignKey')(default=5, to=orm['main.Category']),
                       keep_default=False)
 
         # Adding field 'Reserves.date'
@@ -25,7 +25,7 @@ class Migration(SchemaMigration):
 
         # Adding field 'Incomes.category'
         db.add_column(u'finplanner_incomes', 'category',
-                      self.gf('django.db.models.fields.related.ForeignKey')(default=5, to=orm['finplanner.Category']),
+                      self.gf('django.db.models.fields.related.ForeignKey')(default=5, to=orm['main.Category']),
                       keep_default=False)
 
         # Adding field 'Incomes.date'
@@ -52,33 +52,33 @@ class Migration(SchemaMigration):
 
 
     models = {
-        u'finplanner.category': {
+        u'main.category': {
             'Meta': {'object_name': 'Category'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '150'}),
             'type': ('django.db.models.fields.IntegerField', [], {'default': '9'})
         },
-        u'finplanner.expenses': {
+        u'main.expenses': {
             'Meta': {'object_name': 'Expenses'},
             'amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '19', 'decimal_places': '2'}),
-            'category': ('django.db.models.fields.related.ForeignKey', [], {'default': '5', 'to': u"orm['finplanner.Category']"}),
+            'category': ('django.db.models.fields.related.ForeignKey', [], {'default': '5', 'to': u"orm['main.Category']"}),
             'date': ('django.db.models.fields.DateField', [], {}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
-        u'finplanner.incomes': {
+        u'main.incomes': {
             'Meta': {'object_name': 'Incomes'},
             'amount': ('django.db.models.fields.FloatField', [], {}),
-            'category': ('django.db.models.fields.related.ForeignKey', [], {'default': '5', 'to': u"orm['finplanner.Category']"}),
+            'category': ('django.db.models.fields.related.ForeignKey', [], {'default': '5', 'to': u"orm['main.Category']"}),
             'date': ('django.db.models.fields.DateField', [], {}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'periodicity': ('django.db.models.fields.IntegerField', [], {'default': '4'})
         },
-        u'finplanner.reserves': {
+        u'main.reserves': {
             'Meta': {'object_name': 'Reserves'},
             'amount': ('django.db.models.fields.FloatField', [], {}),
-            'category': ('django.db.models.fields.related.ForeignKey', [], {'default': '5', 'to': u"orm['finplanner.Category']"}),
+            'category': ('django.db.models.fields.related.ForeignKey', [], {'default': '5', 'to': u"orm['main.Category']"}),
             'date': ('django.db.models.fields.DateField', [], {}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
@@ -86,4 +86,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['finplanner']
+    complete_apps = ['main']

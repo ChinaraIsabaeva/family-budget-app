@@ -25,7 +25,10 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, "mybudget/templates"),)
-
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth'
+)
 
 ALLOWED_HOSTS = ['*', ]
 
@@ -33,6 +36,7 @@ ALLOWED_HOSTS = ['*', ]
 # Application definition
 
 INSTALLED_APPS = (
+    'wpadmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,7 +49,9 @@ INSTALLED_APPS = (
     'django_cron',
 
     #my_app
-    'mybudget.finplanner',
+    'mybudget.apps.main',
+    'mybudget.apps.reports',
+    'mybudget.apps.expenses',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -14,16 +14,16 @@ class Migration(SchemaMigration):
             ('name', self.gf('django.db.models.fields.CharField')(max_length=150)),
             ('periodicity', self.gf('django.db.models.fields.IntegerField')(default=4)),
         ))
-        db.send_create_signal(u'finplanner', ['Category'])
+        db.send_create_signal(u'main', ['Category'])
 
         # Adding model 'Expenses'
         db.create_table(u'finplanner_expenses', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('category', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['finplanner.Category'])),
+            ('category', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['main.Category'])),
             ('amount', self.gf('django.db.models.fields.IntegerField')()),
         ))
-        db.send_create_signal(u'finplanner', ['Expenses'])
+        db.send_create_signal(u'main', ['Expenses'])
 
 
     def backwards(self, orm):
@@ -35,19 +35,19 @@ class Migration(SchemaMigration):
 
 
     models = {
-        u'finplanner.category': {
+        u'main.category': {
             'Meta': {'object_name': 'Category'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '150'}),
             'periodicity': ('django.db.models.fields.IntegerField', [], {'default': '4'})
         },
-        u'finplanner.expenses': {
+        u'main.expenses': {
             'Meta': {'object_name': 'Expenses'},
             'amount': ('django.db.models.fields.IntegerField', [], {}),
-            'category': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['finplanner.Category']"}),
+            'category': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['main.Category']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         }
     }
 
-    complete_apps = ['finplanner']
+    complete_apps = ['main']
