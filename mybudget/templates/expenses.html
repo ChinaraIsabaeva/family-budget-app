@@ -2,24 +2,27 @@
 {% block title %}Your expenses{% endblock %}
 {% block content %}
     <div class="content">
-        <table>
-            <h3>Your expenses for {{ date }}</h3>
-            <tr>
-                <th>Name</th>
-                <th>Amount</th>
-                <th>Date</th>
-            </tr>
-        {% for expense in expenses %}
-            <tr>
-                <td>{{ expense.name|safe }}</td>
-                <td id = 'amount'>{{ expense.amount|safe }}</td>
-                <td>{{ expense.date|date }}</td>
-            </tr>
-        {% endfor %}
-        </table>
-        <p>Total spent: {{ expenses_sum|safe }}</p>
-    </div>
-    <div>
-       <p><a href="/expenses/add/">Add expense</a></p>
+        <div class="column-center">
+            <table>
+                <h3>Your expenses for {{ date }}</h3>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            {% for expense in expenses %}
+                <tr>
+                    <td>{{ expense.name|safe }}</td>
+                    <td id = 'amount'>{{ expense.amount|safe }}</td>
+                    <td>{{ expense.date|date }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+            <p>Total spent: {{ expenses_sum|safe }}</p>
+        </div>
+        <div class="column-left">
+            <p><a href="/expenses/add/">Add expense</a></p>
+        </div>
+
     </div>
 {% endblock %}

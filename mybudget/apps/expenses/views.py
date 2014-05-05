@@ -8,10 +8,11 @@ from mybudget.lib import *
 
 # Create your views here.
 
+
 def expenses(request):
     date = datetime.datetime.today().strftime('%B %Y')
-    my_expenses = get_list_or_404(Expenses.objects.filter(date__range=(show_expenses_start_date(), datetime.datetime.today())))
-    expenses_sum = Expenses.objects.filter(date__range=(show_expenses_start_date(),
+    my_expenses = get_list_or_404(Expenses.objects.filter(date__range=(start_date(), datetime.datetime.today())))
+    expenses_sum = Expenses.objects.filter(date__range=(start_date(),
                                                         datetime.datetime.today())).aggregate(Sum('amount'))['amount__sum']
     return render(request, 'expenses.html', {'expenses': my_expenses, 'expenses_sum': expenses_sum, 'date': date})
 

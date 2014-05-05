@@ -3,10 +3,12 @@
 {% block content %}
 {% csrf_token %}
     <div class="content">
-        <p>Expenses form</p>
-        <form action="" method="post">{% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" name="expenses_save" value="Save" />
-        </form>
+        <div class="column-center">
+            <p>Expenses form</p>
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" name="expenses_save" value="Save" />
+             </form>
+        </div>
     </div>
 {% endblock %}

@@ -1,8 +1,12 @@
+body
+{
+    margin: 20px 300px;
+    padding: 20px;
+}
 .content
     {
-        float:right;width:70%;
+        margin-left: 100px;
     }
-.content
     a:link, a:visited
         {
             color:#0000CD;text-decoration:none;
@@ -26,27 +30,26 @@
     {
         text-align:right;
     }
-.column-left
+.column-right
     a:link, a:visited
         {
             color:#0000FF;text-decoration:none;
         }
-.column-left
+.column-right
     a:hover
         {
             color:#B22222;text-decoration:underline;
         }
-.column-left
-    {
-        float:left;width: 30%
-    }
 .column-right
     {
-        float:left;width: 30%
+        float:right;
+        width: 30%;
     }
 .column-center
     {
-        float: left;width: 30%
+        float: left;
+        margin: 0px 0px 0px 100px;
+        width: 70%;
     }
 #navigation
     ul
