@@ -10,7 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'mybudget.apps.main.views.home'),
-    url(r'^expenses/', include('mybudget.apps.expenses.urls')),
+    url(r'^expenses/', include('mybudget.apps.expenses.urls', namespace='expenses')),
     url(r'^reports/', include('mybudget.apps.reports.urls')),
     url(r'^reserves/$', 'mybudget.apps.main.views.reserves'),
     url(r'^reserves/add/$', ReserveCreate.as_view(), name='reserve_add'),
