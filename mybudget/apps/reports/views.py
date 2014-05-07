@@ -16,8 +16,11 @@ def report(request):
                                                                      category_id=category_id))
             expenses_sum = Expenses.objects.filter(date__range=(start_date, end_date),
                                                    category_id=category_id).aggregate(Sum('amount'))['amount__sum']
-            return render(request, 'report_show.html',
-                          {'expenses': shown_expenses, 'category': category, 'expenses_sum': expenses_sum})
+            return render(request, 'report_show.html', {
+                'expenses': shown_expenses,
+                'category': category,
+                'expenses_sum': expenses_sum
+            })
     else:
         form = ReportForm()
     return render(request, 'reports.html', {'form': form})

@@ -2,11 +2,13 @@
 {% block title %}Personal Financial Planner{% endblock %}
 {% block content %}
     <div class="content">
-        <h3>Welcome to your personal financial planner</h3>
-        <p>Insert your expense</p>
-        <form action="" method="post">{% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" name="expenses_save" value="Save" />
-        </form>
+        <div class="column-center">
+            <h3>Welcome to your personal financial planner</h3>
+            <p>Insert your expense</p>
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" name="expenses_save" value="Save" />
+            </form>
+        </div>
     </div>
 {% endblock %}

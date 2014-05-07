@@ -5,7 +5,7 @@ from .views import ExpenseCreate
 admin.autodiscover()
 
 urlpatterns = patterns('mybudget.apps.expenses.views',
-    url(r'', 'expenses'),
-    url(r'^add/', ExpenseCreate.as_view, name='expenses add'),
+    url(r'^add/$', ExpenseCreate.as_view(), name='expenses add'),
+    url(r'^$', 'expenses', name='expenses'),
 
 )
