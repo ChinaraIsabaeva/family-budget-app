@@ -1,5 +1,7 @@
 .idea/
 *.pyc
 .idea/workspace.xml
+Procfile
+list_of_products.txt
 testcases
 
