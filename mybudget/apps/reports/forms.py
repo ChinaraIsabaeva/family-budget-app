@@ -1,4 +1,4 @@
-__author__ = 'dachee'
+__author__ = 'mybudget'
 from datetime import datetime
 from django import forms
 from django.forms.extras.widgets import SelectDateWidget

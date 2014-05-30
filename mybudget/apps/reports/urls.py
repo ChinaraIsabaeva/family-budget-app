@@ -1,4 +1,4 @@
-__author__ = 'dachee'
+__author__ = 'mybudget'
 from django.conf.urls import patterns, url
 from django.contrib import admin
 
