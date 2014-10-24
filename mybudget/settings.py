@@ -31,7 +31,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
-ALLOWED_HOSTS = ['*', ]
+ALLOWED_HOSTS = ['dachee.heroku.app']
 
 
 # Application definition
