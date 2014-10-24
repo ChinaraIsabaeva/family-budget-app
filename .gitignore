@@ -1,7 +1,8 @@
 **.idea/
 *.pyc
 .idea/workspace.xml
-**Procfile
-**list_of_products.txt
-**testcases
+testcases
+list_of_products.txt
+Procfile
+.sass-cache/
 

@@ -1,0 +1,50 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Настройка бюджета{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div>
+            <table>
+                <tr>
+                    <td>Доход</td>
+                    <td>sum of all incomes from relation Incomes</td>
+                </tr>
+
+                <tr>
+                    <td>Сумма на текущий момент</td>
+                    <td>Sum of all accounts from relation Accounts</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="column">
+            <h4>Постоянные месячные расходы</h4>
+            {% for expense in regexpenses %}
+                <table>
+                    <tr>
+                        <td>{{ expense.name }}</td>
+                        <td>{{ expense.amount }}</td>
+                    </tr>
+                </table>
+            {% endfor %}
+        </div>
+
+         <div class="column">
+             <h4>Конверты</h4>
+             <form action="" method="post">
+                 {% csrf_token %}
+                 {{ form.as_p}}
+                 <input type="submit" value="Сохранить">
+                   {% for envelope in envelopes %}
+                        <table>
+                            <tr>
+                                <td>{{ envelope.name }}</td>
+                                <td>{{ envelope.current_amount }}</td>
+                            </tr>
+                        </table>
+                   {% endfor %}
+             </form>
+        </div>
+    </div>
+{% endblock %}
