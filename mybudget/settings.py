@@ -23,7 +23,7 @@ SECRET_KEY = '4wcr-7lv-9mjm!4v#ktnd$uew=%-((gih_ex26uh%@v(z7k7xf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, "mybudget/templates"),)
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
