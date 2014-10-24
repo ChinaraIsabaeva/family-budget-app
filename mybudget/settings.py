@@ -21,7 +21,7 @@ import dj_database_url
 SECRET_KEY = '4wcr-7lv-9mjm!4v#ktnd$uew=%-((gih_ex26uh%@v(z7k7xf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, "mybudget/templates"),)
