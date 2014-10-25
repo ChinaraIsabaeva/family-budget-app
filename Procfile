@@ -1,1 +1,1 @@
-web: gunicorn mybudget.wsgi:app
+web: gunicorn mybudget.wsgi
