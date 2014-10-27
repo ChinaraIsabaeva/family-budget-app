@@ -38,22 +38,31 @@ header {
   float: right; }
   .container .table {
     padding: 10px;
-    width: 700px; }
+    width: 600px; }
     .container .table table, .container .table tr, .container .table td {
       padding: 5px; }
+    .container .table th, .container .table td {
+      width: 170px;
+      text-align: center; }
   .container .amount {
     text-align: right; }
   .container .form {
     margin: 5px;
     padding: 10px;
-    width: 500px; }
+    width: 80%;
+    float: right; }
     .container .form h4 {
-      text-align: center;
       text-decoration: none;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      color: #204b95; }
     .container .form form {
       padding: 10px; }
     .container .form input {
       padding: 10px; }
+
+.data {
+  margin: 0px 30px;
+  padding: 0px 30px;
+  width: 60%; }
 
 /*# sourceMappingURL=base.css.map */
