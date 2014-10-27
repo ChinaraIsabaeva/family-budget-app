@@ -37,9 +37,9 @@
                     </tr>
                     {% for envelope in envelopes %}
                         <tr>
-                            <td>{{ envelope.name }}</td>
-                            <td>{{ envelope.current_amount }}</td>
-                            <td>{{ envelope.cash|yesno }}</td>
+                            <td class="table_column_name">{{ envelope.name }}</td>
+                            <td class="table_column_amount">{{ envelope.current_amount }}</td>
+                            <td class="table_column_amount">{{ envelope.cash|yesno }}</td>
                         </tr>
                     {% endfor %}
                 </table>
