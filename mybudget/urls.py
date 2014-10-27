@@ -5,8 +5,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'mybudget.views.home'),
-    url(r'^budget/$', 'mybudget.apps.budget.views.budget', name='budget'),
+    url(r'^$', 'mybudget.views.home', name='home'),
+    url(r'^envelopes', 'mybudget.views.dashboard', name='envelopes'),
 
+    # admin page
     (r'^admin/', include(admin.site.urls)),
 )

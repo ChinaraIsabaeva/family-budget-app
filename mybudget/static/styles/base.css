@@ -1,38 +1,60 @@
 body {
-  margin: 0; }
-  body .nav header {
-    margin: 10px 0px;
-    padding: 5px 0px; }
-  body .nav ul {
-    list-style-type: none;
-    text-align: center;
-    margin: 15px 0px;
-    padding: 5px 0 px;
-    overflow: hidden;
-    height: 40px;
-    background-color: #07113e; }
-  body .nav li {
-    display: inline-block;
-    margin-top: 10px; }
-  body .nav a:link, body .nav a:visited {
-    width: 350px;
-    font-weight: bold;
-    color: #cae7ff;
-    text-align: center;
-    padding: 10px 20px;
-    text-decoration: none; }
-  body .container {
-    margin: auto;
+  margin: 0;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
+
+header {
+  margin: 10px 0px;
+  padding: 5px 0px;
+  background-color: #07113e; }
+
+.nav ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 15px 10px;
+  margin-left: 20px;
+  padding: 5px 0 px;
+  overflow: hidden;
+  height: 40px;
+  background-color: #07113e; }
+.nav li {
+  display: inline-block;
+  margin-top: 10px; }
+.nav a:link, .nav a:visited {
+  font-weight: bold;
+  color: #cae7ff;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none; }
+.nav h1 {
+  height: 30px;
+  margin-top: 10px;
+  color: #cae7ff;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+.container {
+  margin: 10px 50px;
+  width: 70%;
+  float: right; }
+  .container .table {
+    padding: 10px;
     width: 700px; }
-    body .container .column {
-      margin: 10px auto;
-      display: inline-block;
-      float: left;
-      width: 50%; }
-      body .container .column h4 {
-        color: #07113e;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase; }
+    .container .table table, .container .table tr, .container .table td {
+      padding: 5px; }
+  .container .amount {
+    text-align: right; }
+  .container .form {
+    margin: 5px;
+    padding: 10px;
+    width: 500px; }
+    .container .form h4 {
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase; }
+    .container .form form {
+      padding: 10px; }
+    .container .form input {
+      padding: 10px; }
 
 /*# sourceMappingURL=base.css.map */

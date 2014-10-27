@@ -8,11 +8,14 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <header class="nav">
-        <ul>
-            <li><a href="/">В начало</a></li>
-            <li><a href="{% url 'budget' %}">Наш бюджет</a></li>
-        </ul>
+    <header>
+        <div class="nav">
+            <ul>
+                <li><h1><a href="{% url 'home' %}">наш бюджет</a></h1></li>
+                <li><h1><a href="{% url 'envelopes' %}">конверты</a></h1></li>
+            </ul>
+        </div>
     </header>
     {% block content %}{% endblock %}</body>
+</html>
 </html>

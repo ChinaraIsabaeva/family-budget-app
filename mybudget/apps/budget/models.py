@@ -40,16 +40,7 @@ class Envelopes(models.Model):
         verbose_name_plural = u'Конверты'
 
     def __unicode__(self):
-        return u'%s %s %s' % (self.name, self.monthly_replenishment, self.current_amount)
-
-    def save(self, *args, **kwargs):
-        if self.current_amount is None:
-            self.current_amount = self.monthly_replenishment
-            super(Envelopes, self).save(*args, **kwargs)
-        else:
-            new_amount = self.current_amount + self.monthly_replenishment
-            self.current_amount = new_amount
-            super(Envelopes, self).save(*args, **kwargs)
+        return u'%s' % (self.name)
 
 
 class Expenses(models.Model):
@@ -64,6 +55,16 @@ class Expenses(models.Model):
     def __unicode__(self):
         return u'%s %s %s' % (self.name, self.amount, self.envelope)
 
+    def save(self, *args, **kwargs):
+        envelope = Envelopes.objects.get(name=self.envelope)
+        envelope.current_amount = envelope.current_amount - self.amount
+        envelope.save()
+        if envelope.cash is False:
+            account = Accounts.objects.get(id=envelope.account.id)
+            account.current_amount = account.current_amount - self.amount
+            account.save()
+        super(Expenses, self).save(*args, **kwargs)
+
 
 class Incomes(models.Model):
     name = models.CharField(max_length=255)
@@ -75,6 +76,6 @@ class Incomes(models.Model):
         verbose_name_plural = u'Доходы'
 
     def __unicode__(self):
-        return u'%s %s' % (self.name, self.amount)
+        return u'%s' % (self.amount)
 
 

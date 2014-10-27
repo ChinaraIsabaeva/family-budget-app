@@ -1,8 +1,9 @@
 from django.contrib import admin
 
-from .models import RegularMonthlyExpenses, Incomes, Accounts
+from .models import RegularMonthlyExpenses, Incomes, Accounts, Envelopes
 
 # Register your models here.
 admin.site.register(RegularMonthlyExpenses)
 admin.site.register(Incomes)
 admin.site.register(Accounts)
+admin.site.register(Envelopes)
