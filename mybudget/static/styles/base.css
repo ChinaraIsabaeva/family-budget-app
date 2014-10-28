@@ -40,7 +40,8 @@ header {
     padding: 0px 20px;
     width: 500px; }
     .container .table table, .container .table .table_column_amount, .container .table .table_column_name, .container .table tr, .container .table td {
-      padding: 5px; }
+      padding: 5px;
+      vertical-align: middle; }
     .container .table th, .container .table td {
       width: 170px; }
   .container .table_column_amount {

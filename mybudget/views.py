@@ -39,3 +39,5 @@ def dashboard(request):
                   'envelopes': envelopes,
                   'income': income,
                   'account': account})
+
+
