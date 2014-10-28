@@ -11,7 +11,7 @@ class RegularExpensesForm(ModelForm):
 class EnvelopesForm(ModelForm):
     class Meta:
         model = Envelopes
-        fields = '__all__'
+        fields = ['name', 'monthly_replenishment', 'cash', 'account']
 
 
 class ExpensesForm(ModelForm):

@@ -33,7 +33,7 @@ class Envelopes(models.Model):
     current_amount = models.DecimalField(max_digits=8, decimal_places=2, blank=True)
     monthly_replenishment = models.DecimalField(max_digits=8, decimal_places=2)
     cash = models.BooleanField(blank=True)
-    account = models.ForeignKey(Accounts)
+    account = models.ForeignKey(Accounts, blank=True, null=True)
 
     class Meta:
         verbose_name = u"конверт"
