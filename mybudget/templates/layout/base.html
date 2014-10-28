@@ -17,6 +17,25 @@
             </ul>
         </div>
     </header>
+    <div class="container">
+        <div class="data">
+            <table class="table">
+                <tr>
+                    <td>Доход</td>
+                    <td><span class="amount">{{ income.total }}</span></td>
+                </tr>
+
+                <tr>
+                    <td>Сумма на текущий момент</td>
+                    <td><span class="amount">{{ account.total }}</span></td>
+                </tr>
+                <tr>
+                    <td>Доступная сумма</td>
+                    <td><span class="amount">{{ available_amount }}</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
     {% block content %}{% endblock %}</body>
 </html>
 </html>

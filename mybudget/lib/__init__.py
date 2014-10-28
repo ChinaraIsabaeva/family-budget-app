@@ -1,14 +1,11 @@
 from django.db.models import Sum
 
-from apps.budget.models import Envelopes, Incomes, Accounts, RegularMonthlyExpenses
+from mybudget.apps.budget.models import Envelopes, Incomes, Accounts, RegularMonthlyExpenses
 
 
-def month_begin():
-    envelopes_cash = Envelopes.objects.all().exclude(cash=False).aggregate(total=Sum('current_amount'))
-    accounts_beginning = Accounts.objects.all().aggregate(total=Sum('current_amount'))
-    regular_expenses = RegularMonthlyExpenses.objects.all().aggregate(total=Sum('amount'))
+def disposable_income():
     incomes = Incomes.objects.all().aggregate(total=Sum('amount'))
-    accounts_ending = accounts_beginning['total'] + incomes['total'] - regular_expenses['total'] - envelopes_cash['total']
-    account = Accounts.objects.get(id=1)
-    account.current_amount = accounts_ending
-    account.save()
+    regular_expenses = RegularMonthlyExpenses.objects.all().aggregate(total=Sum('amount'))
+    envelopes = Envelopes.objects.all().aggregate(total=Sum('monthly_replenishment'))
+    available_amount = incomes['total'] - regular_expenses['total'] - envelopes['total']
+    return available_amount

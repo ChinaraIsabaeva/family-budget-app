@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.db.models import Sum
 
+from mybudget.lib import disposable_income
+
 from apps.budget.forms import ExpensesForm, EnvelopesForm
 from apps.budget.models import Envelopes, Incomes, Accounts
 
@@ -10,6 +12,7 @@ def home(request):
     envelopes = Envelopes.objects.all()
     income = Incomes.objects.all().aggregate(total=Sum('amount'))
     account = Accounts.objects.all().aggregate(total=Sum('current_amount'))
+    available_amount = disposable_income()
     if form.is_valid():
         form.save()
         return redirect('/')
@@ -19,7 +22,8 @@ def home(request):
                   {'form': form,
                   'envelopes': envelopes,
                   'income': income,
-                  'account': account})
+                  'account': account,
+                  'available_amount': available_amount})
 
 
 def dashboard(request):
@@ -27,6 +31,7 @@ def dashboard(request):
     envelopes = Envelopes.objects.all()
     income = Incomes.objects.all().aggregate(total=Sum('amount'))
     account = Accounts.objects.all().aggregate(total=Sum('current_amount'))
+    available_amount = disposable_income()
     if form.is_valid():
         form.save(commit=False)
         form.cleaned_data['current_amount'] = form.cleaned_data['monthly_replenishment']
@@ -38,6 +43,7 @@ def dashboard(request):
                   {'form': form,
                   'envelopes': envelopes,
                   'income': income,
-                  'account': account})
+                  'account': account,
+                  'available_amount': available_amount})
 
 

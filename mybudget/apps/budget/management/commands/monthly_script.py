@@ -7,6 +7,11 @@ class Command(BaseCommand):
     can_import_settings = True
 
     def handle(self, *args, **options):
+        """ Команда для расчета суммы счета на начало месяца. К текущей сумме счета прибавляется доход (ЗП)
+        вычитаются все регулярные месячные расходы и месячная сумма наличных конвертов. Это сумма становится
+        "текушей суммой" счета.
+        """
+
         envelopes_cash = Envelopes.objects.all().exclude(cash=False).aggregate(total=Sum('monthly_replenishment'))
         accounts_beginning = Accounts.objects.all().aggregate(total=Sum('current_amount'))
         regular_expenses = RegularMonthlyExpenses.objects.all().aggregate(total=Sum('amount'))
