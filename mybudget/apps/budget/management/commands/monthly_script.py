@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.core.management.base import BaseCommand
 from django.db.models import Sum
 from mybudget.apps.budget.models import Envelopes, Incomes, Accounts, RegularMonthlyExpenses
