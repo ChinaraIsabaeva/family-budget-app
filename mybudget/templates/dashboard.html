@@ -17,13 +17,13 @@
             <table class="table">
                 <tr>
                     <th>Конверт</th>
-                    <th>Отложенная сумма</th>
+                    <th>Месячное пополнение</th>
                     <th>Наличными</th>
                 </tr>
                 {% for envelope in envelopes %}
                     <tr>
                         <td>{{ envelope.name }}</td>
-                        <td>{{ envelope.current_amount }}</td>
+                        <td>{{ envelope.monthly_replenishment }}</td>
                         <td>{{ envelope.cash|yesno }}</td>
                     </tr>
                 {% endfor %}
