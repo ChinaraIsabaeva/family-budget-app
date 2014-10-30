@@ -21,9 +21,7 @@ def home(request):
     return render(request, 'home.html',
                   {'form': form,
                   'envelopes': envelopes,
-                  'income': income,
-                  'account': account,
-                  'available_amount': available_amount})
+                  'account': account})
 
 
 def dashboard(request):
@@ -43,7 +41,6 @@ def dashboard(request):
                   {'form': form,
                   'envelopes': envelopes,
                   'income': income,
-                  'account': account,
                   'available_amount': available_amount})
 
 

@@ -5,31 +5,39 @@
 {% block content %}
     <div class="container">
 
-         <div class="form">
-             <h4>Расходы</h4>
-             <form action="" method="post">
-                 {% csrf_token %}
-                 {{ form.as_p}}
-                 <input type="submit" value="Сохранить">
-             </form>
+        <div class="data">
+            <table class="table">
+                <tr>
+                    <td>Сумма на текущий момент</td>
+                    <td><span class="amount">{{ account.total }}</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="form">
+            <h4>Расходы</h4>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p}}
+                <input type="submit" value="Сохранить">
+            </form>
         </div>
 
         <div>
-
-                <table class="table">
+            <table class="table">
+                <tr>
+                    <th>Конверт</th>
+                    <th>Отложенная сумма</th>
+                    <th>Наличными</th>
+                </tr>
+                {% for envelope in envelopes %}
                     <tr>
-                        <th>Конверт</th>
-                        <th>Отложенная сумма</th>
-                        <th>Наличными</th>
+                        <td class="table_column_name">{{ envelope.name }}</td>
+                        <td class="table_column_amount">{{ envelope.current_amount }}</td>
+                        <td class="table_column_amount">{{ envelope.cash|yesno }}</td>
                     </tr>
-                    {% for envelope in envelopes %}
-                        <tr>
-                            <td class="table_column_name">{{ envelope.name }}</td>
-                            <td class="table_column_amount">{{ envelope.current_amount }}</td>
-                            <td class="table_column_amount">{{ envelope.cash|yesno }}</td>
-                        </tr>
-                    {% endfor %}
-                </table>
+                {% endfor %}
+            </table>
         </div>
     </div>
 {% endblock %}
