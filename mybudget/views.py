@@ -10,9 +10,7 @@ from apps.budget.models import Envelopes, Incomes, Accounts
 def home(request):
     form = ExpensesForm(request.POST or None)
     envelopes = Envelopes.objects.all().order_by('cash', 'name')
-    income = Incomes.objects.all().aggregate(total=Sum('amount'))
     account = Accounts.objects.all().aggregate(total=Sum('current_amount'))
-    available_amount = disposable_income()
     if form.is_valid():
         form.save()
         return redirect('/')
@@ -28,7 +26,6 @@ def dashboard(request):
     form = EnvelopesForm(request.POST or None)
     envelopes = Envelopes.objects.all().order_by('cash', 'name')
     income = Incomes.objects.all().aggregate(total=Sum('amount'))
-    account = Accounts.objects.all().aggregate(total=Sum('current_amount'))
     available_amount = disposable_income()
     if form.is_valid():
         form.save(commit=False)

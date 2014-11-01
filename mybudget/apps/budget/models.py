@@ -30,7 +30,7 @@ class RegularMonthlyExpenses(models.Model):
 
 class Envelopes(models.Model):
     name = models.CharField(max_length=255)
-    current_amount = models.DecimalField(max_digits=8, decimal_places=2, blank=True)
+    current_amount = models.DecimalField(max_digits=8, decimal_places=2, null=True)
     monthly_replenishment = models.DecimalField(max_digits=8, decimal_places=2)
     cash = models.BooleanField(blank=True)
     account = models.ForeignKey(Accounts, blank=True, null=True)
