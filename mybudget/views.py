@@ -27,6 +27,8 @@ def dashboard(request):
     envelopes = Envelopes.objects.all().order_by('cash', 'name')
     income = Incomes.objects.all().aggregate(total=Sum('amount'))
     available_amount = disposable_income()
+    if available_amount is None:
+        available_amount = 0
     if form.is_valid():
         form.save(commit=False)
         form.cleaned_data['current_amount'] = form.cleaned_data['monthly_replenishment']
