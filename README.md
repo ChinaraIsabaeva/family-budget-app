@@ -18,3 +18,5 @@ How it works.
 The main idea is to divide all expenses into two group: regular (such as rental fee, tax, insurance which are fixed in long term) and all others. We also divided all other expenses into different parts and called them envelopes. For example we have such envelopes as "food and household", "wishlist", "clothes", "unplanned expenses" etc.
 
 Thus our native language is Russian, currently app is in Russian, however internationalization is in the progress
+
+demo of app: http://chinarademo.herokuapp.com/
