@@ -5,11 +5,12 @@ open source application to manage family expenses
  
 To see examples of code, please open:
  
-/mybudget/templates/ to see HTML
+	/mybudget/templates/ to see HTML
 
-/mybudget/static/styles to see CSS/SASS
+	/mybudget/static/styles to see CSS/SASS
 
-/mybudget/templates/apps/budget/ to see Django code
+	/mybudget/templates/apps/budget/ to see Django code
+
 
  
 How it works.
