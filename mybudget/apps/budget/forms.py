@@ -15,13 +15,13 @@ class EnvelopesForm(ModelForm):
         model = Envelopes
         fields = ['name', 'monthly_replenishment', 'cash', 'account']
         widgets = {
-            'name': TextInput(attrs={'class': 'form-input', 'placeholder': u'Name'}),
-            'monthly_replenishment': TextInput(attrs={'class': 'form-input', 'placeholder': u'Monthly_replenishment'}),
+            'name': TextInput(attrs={'class': 'form-input', 'placeholder': u'Название'}),
+            'monthly_replenishment': TextInput(attrs={'class': 'form-input', 'placeholder': u'Месячное пополнение'}),
         }
 
         labels = {
-            'cash': u'Cash',
-            'account': u'Account'
+            'cash': u'Наличными',
+            'account': u'Счет'
         }
 
 
@@ -30,11 +30,11 @@ class ExpensesForm(ModelForm):
         model = Expenses
         fields = ['name', 'amount', 'envelope']
         widgets = {
-            'name': TextInput(attrs={'class': 'form-input', 'placeholder': u'Name'}),
-            'amount': TextInput(attrs={'class': 'form-input', 'placeholder': u'Amount'})
+            'name': TextInput(attrs={'class': 'form-input', 'placeholder': u'Название'}),
+            'amount': TextInput(attrs={'class': 'form-input', 'placeholder': u'Сумма'})
         }
 
         labels = {
-            'envelope': u'Envelope'
+            'envelope': u'Конверт'
         }
 
