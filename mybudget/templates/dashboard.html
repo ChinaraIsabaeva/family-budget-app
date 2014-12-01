@@ -21,12 +21,30 @@
             <h4>Конверты</h4>
             <form action="" method="post">
                 {% csrf_token %}
-                {{ form.as_p}}
-                <input type="submit" value="Сохранить">
+                <div>
+                    {{ form.name }}
+                    {{ form.name.errors }}
+                </div>
+
+                <div>
+                    {{ form.monthly_replenishment }}
+                    {{ form.monthly_replenishment.errors }}
+                </div>
+
+                <div class="form-input">
+                    {{ form.cash.label }}: {{ form.cash }}
+                    {{ form.cah.errors }}
+                </div>
+
+                <div class="form-input">
+                    {{ form.account.label }}: {{ form.account }}
+                    {{ form.account.errors }}
+                </div>
+                <input class="button" type="submit" value="Сохранить">
             </form>
         </div>
 
-        <div>
+        <div class="data">
             <table class="table">
                 <tr>
                     <th>Конверт</th>

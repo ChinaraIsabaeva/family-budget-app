@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from django.utils.translation import ugettext_lazy as _
 
 from django.db import models
 
@@ -8,11 +9,11 @@ class Accounts(models.Model):
     current_amount = models.DecimalField(max_digits=7, decimal_places=2)
 
     class Meta:
-        verbose_name = u'Счет'
-        verbose_name_plural = u'Счета'
+        verbose_name = _(u'Счет')
+        verbose_name_plural = _(u'Счета')
 
     def __unicode__(self):
-        return u'%s %s' % (self.name, self.current_amount)
+        return u'%(name)s %(amount)s' % {'name': self.name, 'amount': self.current_amount}
 
 
 class RegularMonthlyExpenses(models.Model):
@@ -40,7 +41,7 @@ class Envelopes(models.Model):
         verbose_name_plural = u'Конверты'
 
     def __unicode__(self):
-        return u'%s' % (self.name)
+        return u'%s' % self.name
 
 
 class Expenses(models.Model):

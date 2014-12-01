@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
+
 from django.shortcuts import render, redirect
 from django.db.models import Sum
 
 from mybudget.lib import disposable_income
 
 from apps.budget.forms import ExpensesForm, EnvelopesForm
-from apps.budget.models import Envelopes, Incomes, Accounts
+from apps.budget.models import Envelopes, Incomes, Accounts, Expenses
 
 
 def home(request):
@@ -40,4 +42,10 @@ def dashboard(request):
                   'income': income,
                   'available_amount': available_amount})
 
+
+def expenses(request):
+    our_expenses = Expenses.objects.all()
+    if our_expenses is None:
+        return
+    return render(request, 'expenses.html', {'expenses': our_expenses})
 

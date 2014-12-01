@@ -33,9 +33,7 @@ header {
   text-transform: uppercase; }
 
 .container {
-  margin: 10px 50px;
-  width: 70%;
-  float: right; }
+  margin: 10px 100px; }
   .container .table {
     padding: 0px 20px;
     width: 500px; }
@@ -49,22 +47,26 @@ header {
   .container .table_column_name {
     text-align: left; }
   .container .form {
-    margin: 5px;
-    padding: 10px;
-    width: 80%;
-    float: right; }
+    margin-right: 450px;
+    margin-left: 350px;
+    padding: 5px; }
     .container .form h4 {
       text-decoration: none;
       text-transform: uppercase;
-      color: #204b95; }
+      color: #204b95;
+      text-align: center; }
     .container .form form {
       padding: 10px; }
-    .container .form input {
-      padding: 10px; }
-
-.data {
-  margin: 0px 30px;
-  padding: 0px 30px;
-  width: 60%; }
+    .container .form .button {
+      margin: 10px; }
+    .container .form .form-input {
+      margin: 5px;
+      padding: 2px;
+      width: 200px; }
+  .container .data {
+    margin-right: 250px;
+    margin-left: 300px;
+    padding-bottom: 30px;
+    padding-top: 5px; }
 
 /*# sourceMappingURL=base.css.map */
