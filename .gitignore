@@ -1,7 +1,5 @@
 **.idea/
 *.pyc
 .idea/workspace.xml
-testcases
-list_of_products.txt
 .sass-cache/
 
