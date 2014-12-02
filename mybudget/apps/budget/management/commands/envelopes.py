@@ -14,12 +14,9 @@ class Command(BaseCommand):
         "текушей суммой" счета.
         """
 
-        envelopes_cash = Envelopes.objects.all().exclude(cash=False).aggregate(total=Sum('monthly_replenishment'))
-        accounts_beginning = Accounts.objects.all().aggregate(total=Sum('current_amount'))
-        regular_expenses = RegularMonthlyExpenses.objects.all().aggregate(total=Sum('amount'))
-        incomes = Incomes.objects.all().aggregate(total=Sum('amount'))
-        accounts_ending = accounts_beginning['total'] + incomes['total'] - regular_expenses['total'] - envelopes_cash['total']
-        account = Accounts.objects.get(id=1)
-        account.current_amount = accounts_ending
-        account.save()
+        envelopes = Envelopes.objects.all()
+        for envelope in envelopes:
+            envelope.current_amount = envelope.current_amount + envelope.monthly_replenishment
+            envelope.save()
+
 
