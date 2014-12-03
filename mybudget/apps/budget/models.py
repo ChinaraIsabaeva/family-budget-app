@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.utils.translation import ugettext_lazy as _
-
 from django.db import models
+from django.db import transaction
 
 
 class Accounts(models.Model):
@@ -57,14 +57,19 @@ class Expenses(models.Model):
         return u'%s %s %s' % (self.name, self.amount, self.envelope)
 
     def save(self, *args, **kwargs):
-        envelope = Envelopes.objects.get(name=self.envelope)
-        envelope.current_amount = envelope.current_amount - self.amount
-        envelope.save()
-        if envelope.cash is False:
-            account = Accounts.objects.get(id=envelope.account.id)
-            account.current_amount = account.current_amount - self.amount
-            account.save()
-        super(Expenses, self).save(*args, **kwargs)
+        try:
+            with transaction.atomic():
+                envelope = Envelopes.objects.get(name=self.envelope)
+                envelope.current_amount = envelope.current_amount - self.amount
+                envelope.save()
+                if envelope.cash is False:
+                    account = Accounts.objects.get(id=envelope.account.id)
+                    account.current_amount = account.current_amount - self.amount
+                    account.save()
+                super(Expenses, self).save(*args, **kwargs)
+                print 'transaction goes!'
+        except:
+            'Something goes wrong!'
 
 
 class Incomes(models.Model):

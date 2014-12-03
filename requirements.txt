@@ -9,6 +9,7 @@ django-cron==0.3.5
 django-wpadmin==1.6.1
 ecdsa==0.11
 gunicorn==18.0
+mixer==4.10.1
 paramiko==1.15.1
 psycopg2==2.5.1
 pycrypto==2.6.1
