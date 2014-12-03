@@ -13,6 +13,10 @@ def home(request):
     form = ExpensesForm(request.POST or None)
     envelopes = Envelopes.objects.all().order_by('cash', 'name')
     account = Accounts.objects.all().aggregate(total=Sum('current_amount'))
+    if account['total'] is None:
+        account_total = 0
+    else:
+        account_total = account['total']
     if form.is_valid():
         form.save()
         return redirect('/')
@@ -21,7 +25,7 @@ def home(request):
     return render(request, 'home.html',
                   {'form': form,
                   'envelopes': envelopes,
-                  'account': account})
+                  'account': account_total})
 
 
 def dashboard(request):
@@ -29,6 +33,10 @@ def dashboard(request):
     envelopes = Envelopes.objects.all().order_by('cash', 'name')
     income = Incomes.objects.all().aggregate(total=Sum('amount'))
     available_amount = disposable_income()
+    if income['total'] is None:
+        income_total = 0
+    else:
+        income_total = income['total']
     if form.is_valid():
         form.save(commit=False)
         form.cleaned_data['current_amount'] = form.cleaned_data['monthly_replenishment']
@@ -39,7 +47,7 @@ def dashboard(request):
     return render(request, 'dashboard.html',
                   {'form': form,
                   'envelopes': envelopes,
-                  'income': income,
+                  'income': income_total,
                   'available_amount': available_amount})
 
 
