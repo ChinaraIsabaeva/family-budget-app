@@ -38,9 +38,9 @@ def dashboard(request):
     else:
         income_total = income['total']
     if form.is_valid():
-        form.save(commit=False)
-        form.cleaned_data['current_amount'] = form.cleaned_data['monthly_replenishment']
-        form.save()
+        my_form = form.save(commit=False)
+        my_form.current_amount = form.cleaned_data['monthly_replenishment']
+        my_form.save()
         return redirect('/envelopes')
     else:
         form = EnvelopesForm()
@@ -52,7 +52,7 @@ def dashboard(request):
 
 
 def expenses(request):
-    our_expenses = Expenses.objects.all()
+    our_expenses = Expenses.objects.all().order_by('-created_date', 'name')
     if our_expenses is None:
         return
     return render(request, 'expenses.html', {'expenses': our_expenses})
