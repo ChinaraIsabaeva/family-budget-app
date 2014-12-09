@@ -30,7 +30,7 @@ def home(request):
 
 def dashboard(request):
     form = EnvelopesForm(request.POST or None)
-    envelopes = Envelopes.objects.all().order_by('cash', 'name')
+    envelopes = Envelopes.objects.all().order_by('name', 'cash')
     income = Incomes.objects.all().aggregate(total=Sum('amount'))
     available_amount = disposable_income()
     if income['total'] is None:
