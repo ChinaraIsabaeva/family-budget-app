@@ -5,15 +5,15 @@
 {% block content %}
     <div class="container">
         <div class="data">
-            <table class="table">
+            <table>
                 <tr>
-                    <td>Доход</td>
-                    <td><span class="amount">{{ income.total }}</span></td>
+                    <td class="data-table-name-column">Доход</td>
+                    <td>{{ income.total }}</td>
                 </tr>
 
                 <tr>
-                    <td>Нераспределенные деньги</td>
-                    <td><span class="amount">{{ available_amount }}</span></td>
+                    <td class="data-table-name-column">Нераспределенные деньги</td>
+                    <td>{{ available_amount }}</td>
                 </tr>
             </table>
         </div>
@@ -44,8 +44,8 @@
             </form>
         </div>
 
-        <div class="data">
-            <table class="table">
+        <div class="table">
+            <table>
                 <tr>
                     <th>Конверт</th>
                     <th>Месячное пополнение</th>
@@ -53,9 +53,9 @@
                 </tr>
                 {% for envelope in envelopes %}
                     <tr>
-                        <td>{{ envelope.name }}</td>
-                        <td>{{ envelope.monthly_replenishment }}</td>
-                        <td>{{ envelope.cash|yesno }}</td>
+                        <td class="table_column_name">{{ envelope.name }}</td>
+                        <td class="table_column_amount">{{ envelope.monthly_replenishment }}</td>
+                        <td class="table_column_amount">{{ envelope.cash|yesno }}</td>
                     </tr>
                 {% endfor %}
             </table>
