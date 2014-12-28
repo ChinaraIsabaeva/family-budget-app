@@ -3,4 +3,4 @@
 .idea/workspace.xml
 .sass-cache/
 monthly_script
-run -watcher.txt
+run_watcher.txt
