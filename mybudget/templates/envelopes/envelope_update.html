@@ -1,0 +1,12 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Финансовый кнут Вартаново-Исабаевых{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% block form %}
+             {% include 'envelopes/envelope_form.html' %}
+        {% endblock form %}
+    </div>
+
+{% endblock content %}

@@ -9,12 +9,12 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
 
-        # Changing field 'Envelopes.current_amount'
+        # Changing field 'envelopes.current_amount'
         db.alter_column(u'budget_envelopes', 'current_amount', self.gf('django.db.models.fields.DecimalField')(default=0, max_digits=8, decimal_places=2))
 
     def backwards(self, orm):
 
-        # Changing field 'Envelopes.current_amount'
+        # Changing field 'envelopes.current_amount'
         db.alter_column(u'budget_envelopes', 'current_amount', self.gf('django.db.models.fields.DecimalField')(null=True, max_digits=8, decimal_places=2))
 
     models = {
@@ -25,7 +25,7 @@ class Migration(SchemaMigration):
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
         u'budget.envelopes': {
-            'Meta': {'object_name': 'Envelopes'},
+            'Meta': {'object_name': 'envelopes'},
             'account': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.Accounts']", 'null': 'True', 'blank': 'True'}),
             'cash': ('django.db.models.fields.BooleanField', [], {}),
             'current_amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '8', 'decimal_places': '2'}),
@@ -36,7 +36,7 @@ class Migration(SchemaMigration):
         u'budget.expenses': {
             'Meta': {'object_name': 'Expenses'},
             'amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '8', 'decimal_places': '2'}),
-            'envelope': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.Envelopes']"}),
+            'envelope': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.envelopes']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },

@@ -25,7 +25,7 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal(u'budget', ['RegularMonthlyExpenses'])
 
-        # Adding model 'Envelopes'
+        # Adding model 'envelopes'
         db.create_table(u'budget_envelopes', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
@@ -34,14 +34,14 @@ class Migration(SchemaMigration):
             ('cash', self.gf('django.db.models.fields.BooleanField')()),
             ('account', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['budget.Account'], null=True)),
         ))
-        db.send_create_signal(u'budget', ['Envelopes'])
+        db.send_create_signal(u'budget', ['envelopes'])
 
         # Adding model 'Expenses'
         db.create_table(u'budget_expenses', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('amount', self.gf('django.db.models.fields.DecimalField')(max_digits=8, decimal_places=2)),
-            ('envelope', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['budget.Envelopes'])),
+            ('envelope', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['budget.envelopes'])),
         ))
         db.send_create_signal(u'budget', ['Expenses'])
 
@@ -62,7 +62,7 @@ class Migration(SchemaMigration):
         # Deleting model 'RegularMonthlyExpenses'
         db.delete_table(u'budget_regularmonthlyexpenses')
 
-        # Deleting model 'Envelopes'
+        # Deleting model 'envelopes'
         db.delete_table(u'budget_envelopes')
 
         # Deleting model 'Expenses'
@@ -80,7 +80,7 @@ class Migration(SchemaMigration):
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
         u'budget.envelopes': {
-            'Meta': {'object_name': 'Envelopes'},
+            'Meta': {'object_name': 'envelopes'},
             'account': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.Account']", 'null': 'True'}),
             'cash': ('django.db.models.fields.BooleanField', [], {}),
             'current_amount': ('django.db.models.fields.DecimalField', [], {'null': 'True', 'max_digits': '8', 'decimal_places': '2'}),
@@ -91,7 +91,7 @@ class Migration(SchemaMigration):
         u'budget.expenses': {
             'Meta': {'object_name': 'Expenses'},
             'amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '8', 'decimal_places': '2'}),
-            'envelope': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.Envelopes']"}),
+            'envelope': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.envelopes']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },

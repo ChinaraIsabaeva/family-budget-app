@@ -16,4 +16,4 @@ class OpenPagesTests(MyTests):
     def test_open_expenses(self):
         response = self.client.get('/expenses')
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, template_name='expenses.html')
+        self.assertTemplateUsed(response, template_name='expenses/expenses.html')

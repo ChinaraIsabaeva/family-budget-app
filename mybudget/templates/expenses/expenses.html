@@ -1,9 +1,17 @@
 {% extends 'layout/base.html' %}
+{% load static %}
 
 {% block title %}Финансовый кнут Варатаново-Исабаевых{% endblock %}
 
 {% block content %}
     <div class="container">
+
+        {% if message %}
+            <div class="data">
+                <h3> {{ message }} </h3>
+            </div>
+        {% endif %}
+
         <div class="table">
             <table>
                 <tr>
@@ -11,11 +19,12 @@
                     <th>Сумма</th>
                     <th>Конверт</th>
                 </tr>
-                {% for expense in expenses %}
+                {% for expense in object_list %}
                     <tr>
                         <td class="table_column_name">{{ expense.name }}</td>
                         <td class="table_column_amount">{{ expense.amount }}</td>
                         <td class="table_column_amount">{{ expense.envelope }}</td>
+                        <td><a href="{% url 'expense_update' expense.id %}}"><img src="{% static 'images/edit_button.png' %}"/></a></td>
                     </tr>
                 {% endfor %}
             </table>

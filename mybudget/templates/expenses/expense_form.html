@@ -1,0 +1,21 @@
+<div class="form">
+    <h4>Расходы</h4>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.name }}
+            {{ form.name.errors }}
+        </div>
+
+        <div>
+            {{ form.amount }}
+            {{ form.amount.errors }}
+        </div>
+
+        <div class="form-input">
+            {{ form.envelope.label }}: {{ form.envelope }}
+            {{ form.envelope.errors }}
+        </div>
+        <input class="button" type="submit" value="Сохранить">
+    </form>
+</div>

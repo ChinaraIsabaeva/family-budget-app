@@ -8,6 +8,11 @@ header
   padding: 5px 0px
   background-color: #07113e
 
+img
+  width: 15px
+  height: 15px
+  padding-left: 30px
+
 .nav
 
   ul
@@ -45,27 +50,32 @@ header
   .table
     padding: 5px
     margin-right: 200px
-    margin-left: 250px
+    margin-left: 420px
 
     table, tr, td
       margin: 5px
       padding: 5px
       vertical-align: middle
 
-    th, td
-      width: 170px
+    th
+      width: auto
+      padding: 10px
 
   .table_column_amount
     @extend table
     text-align: center
+    td
+      width: 170px
 
   .table_column_name
     @extend table
     text-align: left
+    td
+      width: 170px
 
   .form
     margin-right: 400px
-    margin-left: 400px
+    margin-left: 420px
     padding: 5px
 
 
@@ -79,10 +89,16 @@ header
       padding: 10px
 
     .button
-      margin: 10px
+      margin-top: 5px
+      margin-bottom: 5px
+      margin-left: 155px
+      margin-right: 5px
 
     .form-input
-      margin: 5px
+      margin-top: 5px
+      margin-bottom: 5px
+      margin-left: 155px
+      margin-right: 5px
       padding: 2px
       width: 200px
 
@@ -97,5 +113,5 @@ header
       padding: 5px
       vertical-align: middle
 
-    .data-table-name-column
+    .data-table-column
       width: 230px

@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+
 from django.utils.translation import ugettext_lazy as _
-from django.db import models
-from django.db import transaction
+from django.db import models, transaction
+from django.core.urlresolvers import reverse
 
 
 class Accounts(models.Model):
@@ -33,8 +34,11 @@ class Envelopes(models.Model):
     name = models.CharField(max_length=255)
     current_amount = models.DecimalField(max_digits=8, decimal_places=2)
     monthly_replenishment = models.DecimalField(max_digits=8, decimal_places=2)
-    cash = models.BooleanField(blank=True)
-    account = models.ForeignKey(Accounts, blank=True, null=True)
+    cash = models.BooleanField()
+    account = models.ForeignKey(Accounts, null=True)
+    closed = models.BooleanField()
+    onetime_envelope = models.BooleanField()
+    max_amount = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
 
     class Meta:
         verbose_name = u"конверт"
@@ -43,6 +47,9 @@ class Envelopes(models.Model):
 
     def __unicode__(self):
         return u'%s' % self.name
+
+    def get_absolute_url(self):
+        return '/%i/' % self.id
 
 
 class Expenses(models.Model):
@@ -72,6 +79,12 @@ class Expenses(models.Model):
                 print 'transaction goes!'
         except:
             'Something goes wrong!'
+
+    def get_absolute_url(self):
+        return reverse('expense_edit', kwargs={'pk': self.pk})
+
+    def update(self):
+        super(Expenses, self).save()
 
 
 class Incomes(models.Model):

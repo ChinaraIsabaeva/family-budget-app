@@ -27,7 +27,7 @@ class EnvelopeFormTest(MyTests):
         self.account.current_amount = 1000
         self.account.save()
 
-    def text_envelope_form(self):
+    def test_envelope_form(self):
         response = self.client.post('/envelopes',
                                     {'name': 'food',
                                     'monthly_replenishment': 300,
@@ -35,7 +35,7 @@ class EnvelopeFormTest(MyTests):
                                     'cash': False,
                                     'account': self.account.id},
                                     follow=False)
-        self.assertRedirects(response, expected_url='/envelopes', status_code=302)
+        self.assertRedirects(response, expected_url='/envelopes/', status_code=302)
         envelopes = Envelopes.objects.all()
         accounts = Accounts.objects.all()
         self.assertEqual(len(envelopes), 1)

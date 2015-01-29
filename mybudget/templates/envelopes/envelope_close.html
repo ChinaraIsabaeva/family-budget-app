@@ -1,0 +1,22 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Финансовый кнут Вартаново-Исабаевых{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="form">
+            <form action="" method="post">
+            {% csrf_token %}
+                <div class="form-input">
+                    {{ envelope_name }}
+                </div>
+
+                <div class="form-input">
+                    {{ envelope_amount }}
+                </div>
+                <input class="button" type="submit" value="Закрыть">
+            </form>
+        </div>
+    </div>
+
+{% endblock content %}

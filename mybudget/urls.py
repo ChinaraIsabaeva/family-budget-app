@@ -1,13 +1,19 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
+from .views import ExpensesList, ExpenseUpdate, EnvelopeUpdate
+
+
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('mybudget.views',
     # Examples:
-    url(r'^$', 'mybudget.views.home', name='home'),
-    url(r'^envelopes', 'mybudget.views.dashboard', name='envelopes'),
-    url(r'^expenses', 'mybudget.views.expenses', name='expenses'),
+    url(r'^$', 'home', name='home'),
+    url(r'^envelopes/$', 'dashboard', name='envelopes'),
+    url(r'^envelopes/(?P<pk>\d+)/update/$', EnvelopeUpdate.as_view(), name='envelope_update'),
+    url(r'^envelopes/(?P<pk>\d+)/close/$', 'envelope_close', name='envelope_close'),
+    url(r'^expenses/$', ExpensesList.as_view(), name='expenses'),
+    url(r'^expenses/(?P<pk>\d+)/update/', ExpenseUpdate.as_view(), name='expense_update'),
 
     # admin page
     (r'^admin/', include(admin.site.urls)),

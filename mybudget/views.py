@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Sum
+from django.views.generic import ListView, UpdateView
 
 from mybudget.lib import disposable_income
 
@@ -41,7 +42,7 @@ def dashboard(request):
         my_form = form.save(commit=False)
         my_form.current_amount = form.cleaned_data['monthly_replenishment']
         my_form.save()
-        return redirect('/envelopes')
+        return redirect('/envelopes/')
     else:
         form = EnvelopesForm()
     return render(request, 'dashboard.html',
@@ -51,9 +52,56 @@ def dashboard(request):
                   'available_amount': available_amount})
 
 
-def expenses(request):
-    our_expenses = Expenses.objects.all().order_by('-created_date', 'name')
-    if our_expenses is None:
-        return
-    return render(request, 'expenses.html', {'expenses': our_expenses})
+class EnvelopeUpdate(UpdateView):
+    model = Envelopes
+    success_url = '/envelopes/'
+    template_name = 'envelopes/envelope_update.html'
+    form_class = EnvelopesForm
+
+    def post(self, request, pk):
+        envelope = Envelopes.objects.get(pk=pk)
+        form = EnvelopesForm(request.POST or None, instance=envelope)
+        if form.is_valid():
+            envelope.save()
+            return redirect('/envelopes/')
+        else:
+            message = "Envelope didn't update, some problem occurred"
+            return redirect('/envelopes/', message=message)
+
+
+def envelope_close(request, pk):
+    envelope = Envelopes.objects.get(pk=pk)
+    name = envelope.name
+    amount = envelope.current_amount
+    if request.POST or None:
+        envelope.closed = True
+        envelope.save()
+        return redirect('/envelopes/')
+    return render(request, 'envelopes/envelope_close.html',
+                  {'envelope_name': name, 'envelope_amount': amount})
+
+
+class ExpensesList(ListView):
+    model = Expenses
+    queryset = Expenses.objects.all().order_by('-created_date', 'name')
+    template_name = 'expenses/expenses.html'
+
+
+class ExpenseUpdate(UpdateView):
+    model = Expenses
+    success_url = '/expenses/'
+    template_name = 'expenses/expense_update.html'
+    form_class = ExpensesForm
+
+    def post(self, request, pk):
+        expense = Expenses.objects.get(pk=pk)
+        form = ExpensesForm(request.POST or None, instance=expense)
+        if form.is_valid():
+            expense.update()
+            return redirect('/expenses/')
+        else:
+            message = "Expense didn't update, some problem occurred"
+            return redirect('/expenses/', message=message)
+
+
 

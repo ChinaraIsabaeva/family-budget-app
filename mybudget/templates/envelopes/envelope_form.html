@@ -1,0 +1,37 @@
+<div class="form">
+    <h4>Конверты</h4>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.name }}
+            {{ form.name.errors }}
+        </div>
+
+        <div>
+            {{ form.monthly_replenishment }}
+            {{ form.monthly_replenishment.errors }}
+        </div>
+
+        <div class="form-input">
+            {{ form.cash.label }}: {{ form.cash }}
+            {{ form.cah.errors }}
+        </div>
+
+        <div class="form-input">
+            {{ form.account.label }}: {{ form.account }}
+            {{ form.account.errors }}
+        </div>
+
+        <div class="form-input">
+            {{ form.onetime_envelope.label }}: {{ form.onetime_envelope }}
+            {{ form.onetime_envelope.errors }}
+        </div>
+
+        <div>
+            {{ form.max_amount }}
+            {{ form.max_amount.errors }}
+        </div>
+
+        <input class="button" type="submit" value="Сохранить">
+    </form>
+</div>

@@ -7,11 +7,6 @@ header {
   padding: 5px 0px;
   background-color: #07113e; }
 
-img {
-  width: 15px;
-  height: 15px;
-  padding-left: 30px; }
-
 .nav ul {
   list-style-type: none;
   text-align: center;
@@ -42,25 +37,20 @@ img {
   .container .table {
     padding: 5px;
     margin-right: 200px;
-    margin-left: 420px; }
+    margin-left: 250px; }
     .container .table table, .container .table .table_column_amount, .container .table .table_column_name, .container .table tr, .container .table td {
       margin: 5px;
       padding: 5px;
       vertical-align: middle; }
-    .container .table th {
-      width: auto;
-      padding: 10px; }
+    .container .table th, .container .table td {
+      width: 170px; }
   .container .table_column_amount {
     text-align: center; }
-    .container .table_column_amount td {
-      width: 170px; }
   .container .table_column_name {
     text-align: left; }
-    .container .table_column_name td {
-      width: 170px; }
   .container .form {
     margin-right: 400px;
-    margin-left: 420px;
+    margin-left: 400px;
     padding: 5px; }
     .container .form h4 {
       text-decoration: none;
@@ -70,15 +60,9 @@ img {
     .container .form form {
       padding: 10px; }
     .container .form .button {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      margin-left: 155px;
-      margin-right: 5px; }
+      margin: 10px; }
     .container .form .form-input {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      margin-left: 155px;
-      margin-right: 5px;
+      margin: 5px;
       padding: 2px;
       width: 200px; }
   .container .data {
@@ -90,7 +74,7 @@ img {
       margin: 5px;
       padding: 5px;
       vertical-align: middle; }
-    .container .data .data-table-column {
+    .container .data .data-table-name-column {
       width: 230px; }
 
-/*# sourceMappingURL=base.css.map */
+/*# sourceMappingURL=narrow.css.map */

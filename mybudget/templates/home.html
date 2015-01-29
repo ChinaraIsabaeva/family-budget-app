@@ -8,33 +8,15 @@
         <div class="data">
             <table>
                 <tr>
-                    <td class="data-table-name-column">Сумма на текущий момент</td>
+                    <td class="data-table-column">Сумма на текущий момент</td>
                     <td>{{ account }}</td>
                 </tr>
             </table>
         </div>
 
-        <div class="form">
-            <h4>Расходы</h4>
-            <form action="" method="post">
-               {% csrf_token %}
-                <div>
-                    {{ form.name }}
-                    {{ form.name.errors }}
-                </div>
-
-                <div>
-                    {{ form.amount }}
-                    {{ form.amount.errors }}
-                </div>
-
-                <div class="form-input">
-                    {{ form.envelope.label }}: {{ form.envelope }}
-                    {{ form.envelope.errors }}
-                </div>
-                <input class="button" type="submit" value="Сохранить">
-            </form>
-        </div>
+        {% block form %}
+             {% include 'expenses/expense_form.html' %}
+        {% endblock form %}
 
         <div class="table">
             <table>
@@ -53,4 +35,4 @@
             </table>
         </div>
     </div>
-{% endblock %}
+{% endblock content%}

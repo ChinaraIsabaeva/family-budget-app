@@ -27,7 +27,8 @@ class Command(BaseCommand):
                 account.save()
                 envelopes = Envelopes.objects.all()
                 for envelope in envelopes:
-                    envelope.current_amount = envelope.current_amount + envelope.monthly_replenishment
-                    envelope.save()
+                    if envelope.closed is False:
+                        envelope.current_amount = envelope.current_amount + envelope.monthly_replenishment
+                        envelope.save()
         except:
             'Something goes wrong!'

@@ -1,4 +1,5 @@
 {% extends 'layout/base.html' %}
+{% load static %}
 
 {% block title %}Финансовый кнут Варатаново-Исабаевых{% endblock %}
 
@@ -7,42 +8,26 @@
         <div class="data">
             <table>
                 <tr>
-                    <td class="data-table-name-column">Доход</td>
+                    <td class="data-table-column">Доход</td>
                     <td>{{ income }}</td>
                 </tr>
 
                 <tr>
-                    <td class="data-table-name-column">Нераспределенные деньги</td>
+                    <td class="data-table-column">Нераспределенные деньги</td>
                     <td>{{ available_amount }}</td>
                 </tr>
             </table>
         </div>
-        <div class="form">
-            <h4>Конверты</h4>
-            <form action="" method="post">
-                {% csrf_token %}
-                <div>
-                    {{ form.name }}
-                    {{ form.name.errors }}
-                </div>
 
-                <div>
-                    {{ form.monthly_replenishment }}
-                    {{ form.monthly_replenishment.errors }}
-                </div>
+        {% block form %}
+            {% include 'envelopes/envelope_form.html' %}
+        {% endblock form %}
 
-                <div class="form-input">
-                    {{ form.cash.label }}: {{ form.cash }}
-                    {{ form.cah.errors }}
-                </div>
-
-                <div class="form-input">
-                    {{ form.account.label }}: {{ form.account }}
-                    {{ form.account.errors }}
-                </div>
-                <input class="button" type="submit" value="Сохранить">
-            </form>
-        </div>
+        {% if message %}
+            <div class="data">
+                <h3> {{ message }} </h3>
+            </div>
+        {% endif %}
 
         <div class="table">
             <table>
@@ -50,12 +35,16 @@
                     <th>Конверт</th>
                     <th>Месячное пополнение</th>
                     <th>Наличными</th>
+                    <th>Закрыт</th>
                 </tr>
                 {% for envelope in envelopes %}
                     <tr>
                         <td class="table_column_name">{{ envelope.name }}</td>
                         <td class="table_column_amount">{{ envelope.monthly_replenishment }}</td>
                         <td class="table_column_amount">{{ envelope.cash|yesno }}</td>
+                        <td class="table_column_amount">{{ envelope.closed|yesno }}</td>
+                        <td><a href="{% url 'envelope_update' envelope.id %}"><img src="{% static 'images/edit_button.png' %} "/></a></td>
+                        <td><a href="{% url 'envelope_close' envelope.id %}"><img src="{% static 'images/close_button.png' %} "/></a></td>
                     </tr>
                 {% endfor %}
             </table>

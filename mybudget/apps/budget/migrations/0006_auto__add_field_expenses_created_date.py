@@ -27,7 +27,7 @@ class Migration(SchemaMigration):
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
         u'budget.envelopes': {
-            'Meta': {'ordering': "['name']", 'object_name': 'Envelopes'},
+            'Meta': {'ordering': "['name']", 'object_name': 'envelopes'},
             'account': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.Accounts']", 'null': 'True', 'blank': 'True'}),
             'cash': ('django.db.models.fields.BooleanField', [], {}),
             'current_amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '8', 'decimal_places': '2'}),
@@ -39,7 +39,7 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Expenses'},
             'amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '8', 'decimal_places': '2'}),
             'created_date': ('django.db.models.fields.DateField', [], {'auto_now_add': 'True', 'blank': 'True'}),
-            'envelope': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.Envelopes']"}),
+            'envelope': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.envelopes']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
