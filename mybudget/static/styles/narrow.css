@@ -51,14 +51,15 @@ img {
     .container .container-block form {
       padding: 10px;
       margin: auto;
-      width: 80%; }
+      width: 100%; }
     .container .container-block .form-section {
       width: 100%;
       padding: 15px;
       margin-right: auto;
       margin-left: auto;
       text-align: center;
-      align-items: center; }
+      align-items: center;
+      font-size: 170%; }
       .container .container-block .form-section .button {
         margin-left: auto;
         margin-right: auto;
@@ -67,10 +68,9 @@ img {
         margin-left: auto;
         margin-right: auto;
         width: 70%;
-        height: 20px; }
+        height: auto; }
       .container .container-block .form-section input {
-        padding: 2px;
-        font-size: 90%; }
+        padding: 3px 5px; }
       .container .container-block .form-section span {
         color: #123a95;
         font-weight: bold; }
