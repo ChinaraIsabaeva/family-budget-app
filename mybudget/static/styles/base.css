@@ -1,4 +1,16 @@
 @import url(reset.css);
+@media (max-width: 480px) {
+  body {
+    font-size: 100%; }
+
+  .container {
+    width: 100%; }
+    .container .container-block {
+      width: 100%; }
+    .container .data {
+      width: 100%; }
+      .container .data td {
+        width: 100%; } }
 body {
   margin: 0;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
