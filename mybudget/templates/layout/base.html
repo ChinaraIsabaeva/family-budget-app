@@ -8,8 +8,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="{% static 'styles/reset.css' %}" rel="stylesheet" type="text/css" >
-    <link href="{% static 'styles/base.css' %}" rel="stylesheet" type="text/css" >
+    <link href="{% static 'styles/reset.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'styles/base.css' %}" rel="stylesheet" type="text/css" media="screen">
+    <link href="{% static 'styles/narrow.css' %}" rel="stylesheet" type="text/css" media="(max-device-width: 360px)">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
