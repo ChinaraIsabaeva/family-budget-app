@@ -4,17 +4,21 @@
 
 {% block content %}
     <div class="container">
-        <div class="form">
+        <div class="container-block">
+            <h4>Закрыть конверт</h4>
             <form action="" method="post">
             {% csrf_token %}
-                <div class="form-input">
-                    {{ envelope_name }}
+                <div class="form-section">
+                    <p><span>Название конверта:</span> {{ envelope_name }}</p>
                 </div>
 
-                <div class="form-input">
-                    {{ envelope_amount }}
+                <div class="form-section">
+                    <p><span>Накопленная сумма:</span> {{ envelope_amount }}</p>
                 </div>
-                <input class="button" type="submit" value="Закрыть">
+
+                <div class="form-section">
+                    <input class="button" type="submit" value="Закрыть">
+                </div>
             </form>
         </div>
     </div>

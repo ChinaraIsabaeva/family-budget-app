@@ -1,37 +1,39 @@
-<div class="form">
-    <h4>Конверты</h4>
+<div class="container-block">
+    {% block header %} {% endblock header %}
     <form action="" method="post">
         {% csrf_token %}
-        <div>
+        <div class="form-section">
             {{ form.name }}
             {{ form.name.errors }}
         </div>
 
-        <div>
+        <div class="form-section">
             {{ form.monthly_replenishment }}
             {{ form.monthly_replenishment.errors }}
         </div>
 
-        <div class="form-input">
-            {{ form.cash.label }}: {{ form.cash }}
+        <div class="form-section">
+            <label>{{ form.cash.label }}</label>: {{ form.cash }}
             {{ form.cah.errors }}
         </div>
 
-        <div class="form-input">
-            {{ form.account.label }}: {{ form.account }}
+        <div class="form-section">
+            <label>{{ form.account.label }}<label>: {{ form.account }}
             {{ form.account.errors }}
         </div>
 
-        <div class="form-input">
-            {{ form.onetime_envelope.label }}: {{ form.onetime_envelope }}
+        <div class="form-section">
+            <label>{{ form.onetime_envelope.label }}</label>: {{ form.onetime_envelope }}
             {{ form.onetime_envelope.errors }}
         </div>
 
-        <div>
+        <div class="form-section">
             {{ form.max_amount }}
             {{ form.max_amount.errors }}
         </div>
 
-        <input class="button" type="submit" value="Сохранить">
+        <div class="form-section">
+            <input class="button" type="submit" value="Сохранить">
+        </div>
     </form>
 </div>

@@ -41,7 +41,7 @@ class ExpensesForm(ModelForm):
         fields = ['name', 'amount', 'envelope']
         widgets = {
             'name': TextInput(attrs={'class': 'form-input', 'placeholder': u'Название'}),
-            'amount': TextInput(attrs={'class': 'form-input', 'placeholder': u'Сумма'})
+            'amount': TextInput(attrs={'class': 'form-input', 'placeholder': u'Сумма'}),
         }
 
         labels = {

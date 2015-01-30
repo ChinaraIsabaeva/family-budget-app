@@ -1,15 +1,17 @@
+@import url(reset.css);
 body {
   margin: 0;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: 120%; }
 
 header {
-  margin: 10px 0px;
-  padding: 5px 0px;
-  background-color: #07113e; }
+  margin: auto;
+  padding: 5px 5px;
+  background-color: #172555; }
 
 img {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   padding-left: 30px; }
 
 .nav ul {
@@ -18,8 +20,7 @@ img {
   margin: 5px 20px;
   padding: 5px 0px;
   overflow: hidden;
-  height: 40px;
-  background-color: #07113e; }
+  height: 50px; }
 .nav li {
   display: inline-block;
   margin-top: 10px; }
@@ -38,59 +39,72 @@ img {
   text-transform: uppercase; }
 
 .container {
-  margin: 10px 100px; }
-  .container .table {
+  margin: auto;
+  width: 70%;
+  padding: 10px; }
+  .container .container-block {
     padding: 5px;
-    margin-right: 200px;
-    margin-left: 420px; }
-    .container .table table, .container .table .table_column_amount, .container .table .table_column_name, .container .table tr, .container .table td {
-      margin: 5px;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%; }
+    .container .container-block form {
+      padding: 10px;
+      margin: auto;
+      width: 80%; }
+    .container .container-block .form-section {
+      width: 70%;
+      padding: 7px;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+      align-items: center; }
+      .container .container-block .form-section .button {
+        margin-left: auto;
+        margin-right: auto;
+        width: auto; }
+      .container .container-block .form-section .form-input {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        height: 20px; }
+      .container .container-block .form-section input {
+        padding: 2px;
+        font-size: 90%; }
+      .container .container-block .form-section span {
+        color: #123a95;
+        font-weight: bold; }
+    .container .container-block .table {
+      margin: auto;
       padding: 5px;
-      vertical-align: middle; }
-    .container .table th {
       width: auto;
-      padding: 10px; }
-  .container .table_column_amount {
-    text-align: center; }
-    .container .table_column_amount td {
-      width: 170px; }
-  .container .table_column_name {
-    text-align: left; }
-    .container .table_column_name td {
-      width: 170px; }
-  .container .form {
-    margin-right: 400px;
-    margin-left: 420px;
-    padding: 5px; }
-    .container .form h4 {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #204b95;
-      text-align: center; }
-    .container .form form {
-      padding: 10px; }
-    .container .form .button {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      margin-left: 155px;
-      margin-right: 5px; }
-    .container .form .form-input {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      margin-left: 155px;
-      margin-right: 5px;
-      padding: 2px;
-      width: 200px; }
-  .container .data {
-    margin-right: 200px;
-    margin-left: 350px;
-    padding-bottom: 30px;
-    padding-top: 5px; }
-    .container .data table, .container .data .table_column_amount, .container .data .table_column_name, .container .data tr, .container .data td {
-      margin: 5px;
-      padding: 5px;
       vertical-align: middle; }
-    .container .data .data-table-column {
-      width: 230px; }
+      .container .container-block .table th {
+        width: auto;
+        padding: 10px;
+        border-bottom: double #204b95; }
+      .container .container-block .table td {
+        padding: 5px 0px; }
+    .container .container-block .table_column_amount {
+      text-align: center; }
+    .container .container-block .table_column_name {
+      text-align: left; }
+    .container .container-block .data {
+      margin: 15px auto;
+      width: 50%;
+      vertical-align: middle;
+      text-align: center;
+      height: auto; }
+      .container .container-block .data td {
+        width: 70%;
+        padding: 5px; }
+
+h4 {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #204b95;
+  text-align: center;
+  margin: 10px auto;
+  height: auto; }
 
 /*# sourceMappingURL=base.css.map */

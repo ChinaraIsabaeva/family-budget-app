@@ -1,21 +1,24 @@
-<div class="form">
-    <h4>Расходы</h4>
+<div class="container-block">
+    {% block header %}{% endblock header %}
     <form action="" method="post">
         {% csrf_token %}
-        <div>
+        <div class="form-section">
             {{ form.name }}
             {{ form.name.errors }}
         </div>
 
-        <div>
+        <div class="form-section">
             {{ form.amount }}
             {{ form.amount.errors }}
         </div>
 
-        <div class="form-input">
-            {{ form.envelope.label }}: {{ form.envelope }}
+        <div class="form-section">
+            <label>{{ form.envelope.label }}</label>: {{ form.envelope }}
             {{ form.envelope.errors }}
         </div>
-        <input class="button" type="submit" value="Сохранить">
+
+        <div class="form-section">
+            <input class="button" type="submit" value="Сохранить">
+        </div>
     </form>
 </div>

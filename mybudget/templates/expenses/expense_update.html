@@ -5,7 +5,8 @@
 {% block content %}
     <div class="container">
         {% block form %}
-             {% include 'expenses/expense_form.html' %}
+            {% block header %}<h4>Редактировать расход</h4>{% endblock header %}
+            {% include 'expenses/expense_form.html' %}
         {% endblock form %}
     </div>
 
