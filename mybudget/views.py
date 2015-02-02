@@ -11,7 +11,7 @@ from apps.budget.models import Envelopes, Incomes, Accounts, Expenses
 
 
 def home(request):
-    form = ExpensesForm(request.POST or None)
+    form = ExpensesForm(request.POST or None, initial={'envelope': '1'})
     envelopes = Envelopes.objects.all().order_by('cash', 'name')
     account = Accounts.objects.all().aggregate(total=Sum('current_amount'))
     if account['total'] is None:
@@ -22,7 +22,7 @@ def home(request):
         form.save()
         return redirect('/')
     else:
-        form = ExpensesForm()
+        form = ExpensesForm(initial={'envelope': '1'})
     return render(request, 'home.html',
                   {'form': form,
                   'envelopes': envelopes,
@@ -30,7 +30,7 @@ def home(request):
 
 
 def dashboard(request):
-    form = EnvelopesForm(request.POST or None)
+    form = EnvelopesForm(request.POST or None, initial={'account': '1'})
     envelopes = Envelopes.objects.all().order_by('name', 'cash')
     income = Incomes.objects.all().aggregate(total=Sum('amount'))
     available_amount = disposable_income()
@@ -67,18 +67,6 @@ class EnvelopeUpdate(UpdateView):
         else:
             message = "Envelope didn't update, some problem occurred"
             return redirect('/envelopes/', message=message)
-
-
-def envelope_close(request, pk):
-    envelope = Envelopes.objects.get(pk=pk)
-    name = envelope.name
-    amount = envelope.current_amount
-    if request.POST or None:
-        envelope.closed = True
-        envelope.save()
-        return redirect('/envelopes/')
-    return render(request, 'envelopes/envelope_close.html',
-                  {'envelope_name': name, 'envelope_amount': amount})
 
 
 class ExpensesList(ListView):

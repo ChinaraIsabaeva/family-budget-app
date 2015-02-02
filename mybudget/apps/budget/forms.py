@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from django.forms import ModelForm, TextInput
+from django.forms import ModelForm, TextInput, ModelChoiceField, CheckboxInput
 
-from .models import RegularMonthlyExpenses, Envelopes, Expenses
+from .models import RegularMonthlyExpenses, Envelopes, Expenses, Accounts
 
 
 class RegularExpensesForm(ModelForm):
@@ -11,13 +11,18 @@ class RegularExpensesForm(ModelForm):
 
 
 class EnvelopesForm(ModelForm):
+    account = ModelChoiceField(queryset=Accounts.objects.all(), empty_label=None)
+
     class Meta:
         model = Envelopes
         fields = ['name', 'monthly_replenishment', 'cash', 'account', 'closed', 'onetime_envelope', 'max_amount']
         widgets = {
             'name': TextInput(attrs={'class': 'form-input', 'placeholder': u'Название'}),
             'monthly_replenishment': TextInput(attrs={'class': 'form-input', 'placeholder': u'Месячное пополнение'}),
-            'max_amount': TextInput(attrs={'class': 'form-input', 'placeholder': u'Максимальная сумма коверта'})
+            'max_amount': TextInput(attrs={'class': 'form-input', 'placeholder': u'Максимальная сумма коверта'}),
+            'cash': CheckboxInput(attrs={'class': 'checkbox'}),
+            'onetime_envelope': CheckboxInput(attrs={'class': 'checkbox'}),
+            'closed': CheckboxInput(attrs={'class': 'checkbox'})
         }
 
         labels = {
@@ -36,6 +41,8 @@ class EnvelopesForm(ModelForm):
 
 
 class ExpensesForm(ModelForm):
+    envelope = ModelChoiceField(queryset=Envelopes.objects.all().order_by('name'), empty_label=None)
+
     class Meta:
         model = Expenses
         fields = ['name', 'amount', 'envelope']

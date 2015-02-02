@@ -2,7 +2,8 @@
 body {
   margin: 0;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  font-size: 120%; }
+  font-size: 120%;
+  color: #172555; }
 
 header {
   margin: auto;
@@ -62,16 +63,45 @@ img {
       .container .container-block .form-section .button {
         margin-left: auto;
         margin-right: auto;
-        width: auto; }
+        padding: 5px;
+        width: auto;
+        background-color: #172555;
+        color: #cae7ff;
+        border: 1px solid;
+        border-radius: 3px;
+        border-color: #204b95; }
       .container .container-block .form-section .form-input {
         margin-left: auto;
         margin-right: auto;
         width: 70%;
-        height: 20px; }
+        height: 20px;
+        border: 1px solid;
+        border-radius: 3px;
+        border-color: #204b95; }
       .container .container-block .form-section input {
         padding: 2px;
         font-size: 90%; }
-      .container .container-block .form-section span {
+        .container .container-block .form-section input::-webkit-input-placeholder {
+          color: rgba(32, 75, 149, 0.53); }
+      .container .container-block .form-section select {
+        border: 1px solid;
+        border-radius: 3px;
+        border-color: #204b95;
+        background-color: white;
+        font-size: 80%;
+        color: #204b95; }
+      .container .container-block .form-section label {
+        vertical-align: top; }
+    .container .container-block .checkbox {
+      -webkit-appearance: none;
+      background-color: white;
+      border: 1px solid #204b95;
+      border-radius: 2px;
+      margin: 0px;
+      padding: 0px;
+      width: 20px;
+      height: 20px; }
+      .container .container-block .checkbox span {
         color: #123a95;
         font-weight: bold; }
     .container .container-block .table {

@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="container-block">
     {% block header %} {% endblock header %}
     <form action="" method="post">
@@ -30,6 +32,11 @@
         <div class="form-section">
             {{ form.max_amount }}
             {{ form.max_amount.errors }}
+        </div>
+
+        <div class="form-section">
+            <label>Закрыть: </label>{{ form.closed }}
+            {{ form.closed.errors }}
         </div>
 
         <div class="form-section">
