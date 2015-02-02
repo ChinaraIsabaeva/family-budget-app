@@ -39,9 +39,7 @@ def dashboard(request):
     else:
         income_total = income['total']
     if form.is_valid():
-        my_form = form.save(commit=False)
-        my_form.current_amount = form.cleaned_data['monthly_replenishment']
-        my_form.save()
+        form.save()
         return redirect('/envelopes/')
     else:
         form = EnvelopesForm()
