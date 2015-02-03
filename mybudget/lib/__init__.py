@@ -6,7 +6,7 @@ from mybudget.apps.budget.models import Envelopes, Incomes, RegularMonthlyExpens
 def disposable_income():
     incomes = Incomes.objects.all().aggregate(total=Sum('amount'))
     regular_expenses = RegularMonthlyExpenses.objects.all().aggregate(total=Sum('amount'))
-    envelopes = Envelopes.objects.all().aggregate(total=Sum('monthly_replenishment'))
+    envelopes = Envelopes.objects.all().filter(closed=False).aggregate(total=Sum('monthly_replenishment'))
     if incomes['total'] is None:
         incomes_total = 0
     else:

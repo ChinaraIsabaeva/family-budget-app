@@ -21,8 +21,6 @@ def home(request):
     if form.is_valid():
         form.save()
         return redirect('/')
-    else:
-        form = ExpensesForm(initial={'envelope': '1'})
     return render(request, 'home.html',
                   {'form': form,
                   'envelopes': envelopes,

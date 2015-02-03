@@ -112,16 +112,26 @@ img
 
       label
         vertical-align: top
+        padding: auto
+        margin: auto
 
-    .checkbox
-      -webkit-appearance: none
-      background-color: white
-      border: 1px solid #204b95
-      border-radius: 2px
-      margin: 0px
-      padding: 0px
-      width: 20px
-      height: 20px
+      input[type='checkbox'].checkbox
+        -webkit-appearance: none
+        background-color: white
+        border: 1px solid #204b95
+        border-radius: 2px
+        margin: 0px
+        padding: 0px
+        width: 20px
+        height: 20px
+
+      input[type='checkbox'].checkbox:checked + label:after
+        display: inline-block
+        content: '\2714'
+        color: #204b95
+        margin-left: -15px
+        cursor: pointer
+        overflow: hidden
 
       span
         color: #123a95
@@ -157,6 +167,11 @@ img
       td
         width: 70%
         padding: 5px
+
+  .errorlist
+    color: rgb(149, 24, 12)
+    font-size: 80%
+    margin: 2px
 
 h4
   text-decoration: none

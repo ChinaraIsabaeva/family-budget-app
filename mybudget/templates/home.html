@@ -14,10 +14,12 @@
             </table>
         </div>
 
-        {% block form %}
-            {% block header %}<h4>Внести расход</h4>{% endblock header %}
-             {% include 'expenses/expense_form.html' %}
-        {% endblock form %}
+        <div class="container-block">
+            {% block form %}
+                {% block header %}<h4>Внести расход</h4>{% endblock header %}
+                {% include 'expenses/expense_form.html' %}
+            {% endblock form %}
+        </div>
 
         <div class="container-block">
             <h4>Накопленные суммы в конвертах</h4>

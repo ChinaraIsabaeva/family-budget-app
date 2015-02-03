@@ -4,9 +4,12 @@
     {% block header %} {% endblock header %}
     <form action="" method="post">
         {% csrf_token %}
+        {{ form.errors }}
+        {{ form.non_field_errors }}
+
         <div class="form-section">
-            {{ form.name }}
             {{ form.name.errors }}
+            {{ form.name }}
         </div>
 
         <div class="form-section">
@@ -15,7 +18,7 @@
         </div>
 
         <div class="form-section">
-            <label>{{ form.cash.label }}:</label> {{ form.cash }}
+            <label>{{ form.cash.label }}:</label> {{ form.cash }}<label for="id_cash"></label>
             {{ form.cah.errors }}
         </div>
 
@@ -25,7 +28,7 @@
         </div>
 
         <div class="form-section">
-            <label>{{ form.onetime_envelope.label }}:</label> {{ form.onetime_envelope }}
+            <label>{{ form.onetime_envelope.label }}:</label> {{ form.onetime_envelope }}<label for="id_onetime_envelope"></label>
             {{ form.onetime_envelope.errors }}
         </div>
 
@@ -35,8 +38,8 @@
         </div>
 
         <div class="form-section">
-            <label>Закрыть: </label>{{ form.closed }}
-            {{ form.closed.errors }}
+                <label>Закрыть: </label>{{ form.closed }}<label for="id_closed"></label>
+                {{ form.closed.errors }}
         </div>
 
         <div class="form-section">
