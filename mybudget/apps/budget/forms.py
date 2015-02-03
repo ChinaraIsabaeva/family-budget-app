@@ -38,7 +38,7 @@ class EnvelopesForm(ModelForm):
             self.fields['account'].required = True
         if self.fields['onetime_envelope'] is True:
             self.fields['max_amount'].required = True
-        message = u'Заполни поле'
+        message = u'Проебал что-то указать'
         for field in self.fields:
             self.fields[field].error_messages['required'] = message
 
@@ -60,6 +60,6 @@ class ExpensesForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(ExpensesForm, self).__init__(*args, **kwargs)
-        message = u'Заполни поле'
+        message = u'Проебал что-то указать'
         for field in self.fields:
             self.fields[field].error_messages['required'] = message

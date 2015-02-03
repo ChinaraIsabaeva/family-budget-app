@@ -1,15 +1,15 @@
+{% load static %}
+
 <div class="container-block">
     {% block header %}{% endblock header %}
     <form action="" method="post">
         {% csrf_token %}
-        <div class="form-section">
+        <div class="form-section {%  if form.name.errors %}expenses-errors{% endif %}">
             {{ form.name }}
-            {{ form.name.errors }}
         </div>
 
-        <div class="form-section">
+        <div class="form-section {%  if form.amount.errors %}expenses-errors{% endif %}">
             {{ form.amount }}
-            {{ form.amount.errors }}
         </div>
 
         <div class="form-section">

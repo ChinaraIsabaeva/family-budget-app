@@ -39,8 +39,6 @@ def dashboard(request):
     if form.is_valid():
         form.save()
         return redirect('/envelopes/')
-    else:
-        form = EnvelopesForm()
     return render(request, 'dashboard.html',
                   {'form': form,
                   'envelopes': envelopes,
