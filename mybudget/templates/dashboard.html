@@ -19,10 +19,12 @@
             </table>
         </div>
 
-        {% block form %}
-            {% block header %}<h4>Создать конверт</h4>{% endblock header %}
-            {% include 'envelopes/envelope_form.html' %}
-        {% endblock form %}
+        <div class="container-block">
+            {% block form %}
+                {% block header %}<h4>Создать конверт</h4>{% endblock header %}
+                {% include 'envelopes/envelope_form.html' %}
+            {% endblock form %}
+        </div>
 
         {% if message %}
             <h4> {{ message }} </h4>

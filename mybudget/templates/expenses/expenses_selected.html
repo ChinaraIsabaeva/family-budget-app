@@ -1,0 +1,36 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block title %}Финансовый кнут Варатаново-Исабаевых{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="container-block">
+        <table class="data">
+            <tr>
+                <td>Общам сумма выбранного конверта</td>
+                <td>{{ sum.total }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container">
+        <h4>Выбранные расходы</h4>
+        <div class="container-block">
+            <table class="table">
+                <tr>
+                    <th>Расход</th>
+                    <th>Сумма</th>
+                    <th></th>
+                </tr>
+                {% for expense in expenses %}
+                    <tr>
+                        <td class="table_column_name">{{ expense.name }}</td>
+                        <td class="table_column_amount">{{ expense.amount }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
+from string import split
 
-from django.shortcuts import render, redirect, get_object_or_404
+
+from django.shortcuts import render, redirect
 from django.db.models import Sum
-from django.views.generic import ListView, UpdateView
+from django.views.generic import UpdateView
 
 from mybudget.lib import disposable_income
 
-from apps.budget.forms import ExpensesForm, EnvelopesForm
+from apps.budget.forms import ExpensesForm, EnvelopesForm, ExpenseSelectForm
 from apps.budget.models import Envelopes, Incomes, Accounts, Expenses
 
 
@@ -63,10 +65,13 @@ class EnvelopeUpdate(UpdateView):
             return redirect('/envelopes/', message=message)
 
 
-class ExpensesList(ListView):
-    model = Expenses
-    queryset = Expenses.objects.all().order_by('-created_date', 'name')
-    template_name = 'expenses/expenses.html'
+def expenses(request):
+    all_expenses = Expenses.objects.all()
+    form = ExpenseSelectForm(request.POST or None)
+    if form.is_valid():
+        envelope = form.cleaned_data['envelope']
+        return redirect('/expenses/selected/', {'envelope': envelope})
+    return render(request, 'expenses/expenses.html', {'expenses': all_expenses, 'form': form})
 
 
 class ExpenseUpdate(UpdateView):
@@ -86,4 +91,9 @@ class ExpenseUpdate(UpdateView):
             return redirect('/expenses/', message=message)
 
 
-
+def expenses_selected(request):
+    envelope = request.POST.get('envelope')
+    print envelope
+    selected_expenses = Expenses.objects.all().filter(envelope=envelope)
+    sum_selected_expenses = selected_expenses.aggregate(total=Sum('amount'))
+    return render(request, 'expenses/expenses_selected.html', {'expenses': selected_expenses, 'sum': sum_selected_expenses})

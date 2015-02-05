@@ -63,7 +63,7 @@ class Expenses(models.Model):
         verbose_name_plural = u'Расходы'
 
     def __unicode__(self):
-        return u'%s %s %s' % (self.name, self.amount, self.envelope)
+        return u'%s ' % self.name
 
     def save(self, *args, **kwargs):
         try:
@@ -83,8 +83,8 @@ class Expenses(models.Model):
     def get_absolute_url(self):
         return reverse('expense_edit', kwargs={'pk': self.pk})
 
-    def update(self):
-        super(Expenses, self).save()
+    def update(self, *args, **kwargs):
+        super(Expenses, self).save(*args, **kwargs)
 
 
 class Incomes(models.Model):

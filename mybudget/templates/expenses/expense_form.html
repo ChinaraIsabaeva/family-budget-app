@@ -4,11 +4,11 @@
     {% block header %}{% endblock header %}
     <form action="" method="post">
         {% csrf_token %}
-        <div class="form-section {%  if form.name.errors %}expenses-errors{% endif %}">
+        <div class="form-section {%  if form.name.errors %}form-input-errors{% endif %}">
             {{ form.name }}
         </div>
 
-        <div class="form-section {%  if form.amount.errors %}expenses-errors{% endif %}">
+        <div class="form-section {%  if form.amount.errors %}form-input-errors{% endif %}">
             {{ form.amount }}
         </div>
 

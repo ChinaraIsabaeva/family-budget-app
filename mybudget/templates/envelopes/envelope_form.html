@@ -4,11 +4,11 @@
     {% block header %} {% endblock header %}
     <form action="" method="post">
         {% csrf_token %}
-        <div class="form-section {%  if form.name.errors %}envelopes-errors{% endif %}">
+        <div class="form-section {%  if form.name.errors %}form-input-errors{% endif %}">
             {{ form.name }}
         </div>
 
-        <div class="form-section {%  if form.monthly_replenishment.errors %}envelopes-errors{% endif %}">
+        <div class="form-section {%  if form.monthly_replenishment.errors %}form-input-errors{% endif %}">
             {{ form.monthly_replenishment }}
         </div>
 
@@ -26,7 +26,7 @@
             <label>{{ form.onetime_envelope.label }}:</label> {{ form.onetime_envelope }}<label for="id_onetime_envelope"></label>
         </div>
 
-        <div class="form-section {%  if form.max_amount.errors %}envelopes-errors{% endif %}">
+        <div class="form-section {%  if form.max_amount.errors %}form-input-errors{% endif %}">
             {{ form.max_amount }}
         </div>
 

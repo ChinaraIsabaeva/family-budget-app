@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+import datetime
 
-from django.forms import ModelForm, TextInput, ModelChoiceField, CheckboxInput
+from django.forms import ModelForm, TextInput, ModelChoiceField, CheckboxInput, Form, DateField
+from django.forms.extras.widgets import SelectDateWidget
 
 from .models import RegularMonthlyExpenses, Envelopes, Expenses, Accounts
 
@@ -63,3 +65,9 @@ class ExpensesForm(ModelForm):
         message = u'Проебал что-то указать'
         for field in self.fields:
             self.fields[field].error_messages['required'] = message
+
+
+class ExpenseSelectForm(Form):
+    envelope = ModelChoiceField(queryset=Envelopes.objects.all().order_by('name'), empty_label=None)
+
+#    def show(self):

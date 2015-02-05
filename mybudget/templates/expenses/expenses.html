@@ -11,6 +11,20 @@
                 <h3> {{ message }} </h3>
             </div>
         {% endif %}
+        <div class="container-block">
+            <h4>Посмотреть расходы по конвертам</h4>
+            <form action="{% url 'expenses_selected' %}" method="post">
+                {% csrf_token %}
+                <div class="form-section">
+                    <label>Конверт:</label>{{ form.envelope }}
+                    {{ form.envelope.errors }}
+                </div>
+
+                <div class="form-section">
+                    <input class="button" type="submit" value="Показать расходы">
+                </div>
+            </form>
+        </div>
 
         <h4>Все внесенные расходы</h4>
         <div class="container-block">
@@ -21,12 +35,12 @@
                     <th>Конверт</th>
                     <th></th>
                 </tr>
-                {% for expense in object_list %}
+                {% for expense in expenses %}
                     <tr>
                         <td class="table_column_name">{{ expense.name }}</td>
                         <td class="table_column_amount">{{ expense.amount }}</td>
                         <td class="table_column_amount">{{ expense.envelope }}</td>
-                        <td><a href="{% url 'expense_update' expense.id %}}"><img src="{% static 'images/edit-button-blue.png' %}"/></a></td>
+                        <td><a href="{% url 'expense_update' expense.id %}"><img src="{% static 'images/edit-button-blue.png' %}"/></a></td>
                     </tr>
                 {% endfor %}
             </table>
