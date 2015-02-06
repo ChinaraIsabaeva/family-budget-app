@@ -22,7 +22,7 @@ def home(request):
         account_total = account['total']
     if form.is_valid():
         form.save()
-        return redirect('/')
+        return redirect('/expenses/')
     return render(request, 'home.html',
                   {'form': form,
                   'envelopes': envelopes,
@@ -66,11 +66,11 @@ class EnvelopeUpdate(UpdateView):
 
 
 def expenses(request):
-    all_expenses = Expenses.objects.all()
+    all_expenses = Expenses.objects.all().order_by('-created_date', 'name')
     form = ExpenseSelectForm(request.POST or None)
     if form.is_valid():
-        envelope = form.cleaned_data['envelope']
-        return redirect('/expenses/selected/', {'envelope': envelope})
+        envelope = form.cleaned_data['envelope'].name
+        return redirect('filtered_expenses', envelope=envelope)
     return render(request, 'expenses/expenses.html', {'expenses': all_expenses, 'form': form})
 
 
@@ -91,9 +91,9 @@ class ExpenseUpdate(UpdateView):
             return redirect('/expenses/', message=message)
 
 
-def expenses_selected(request):
-    envelope = request.POST.get('envelope')
-    print envelope
-    selected_expenses = Expenses.objects.all().filter(envelope=envelope)
-    sum_selected_expenses = selected_expenses.aggregate(total=Sum('amount'))
-    return render(request, 'expenses/expenses_selected.html', {'expenses': selected_expenses, 'sum': sum_selected_expenses})
+def expenses_by_envelope(request, envelope):
+    selected_envelope = Envelopes.objects.get(name=envelope)
+    filtered_expenses = Expenses.objects.all().filter(envelope=selected_envelope.id)
+    sum_filtered_expenses = filtered_expenses.aggregate(total=Sum('amount'))
+    return render(request, 'expenses/expenses_selected.html',
+                  {'expenses': filtered_expenses, 'sum': sum_filtered_expenses})

@@ -13,7 +13,7 @@
         {% endif %}
         <div class="container-block">
             <h4>Посмотреть расходы по конвертам</h4>
-            <form action="{% url 'expenses_selected' %}" method="post">
+            <form action="" method="post">
                 {% csrf_token %}
                 <div class="form-section">
                     <label>Конверт:</label>{{ form.envelope }}

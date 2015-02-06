@@ -14,7 +14,7 @@ class ExpensesFormTests(MyTests):
 
     def test_expense_form(self):
         response = self.client.post('/', {'name': 'food', 'amount': 25, 'envelope': self.envelope.id}, follow=False)
-        self.assertRedirects(response, expected_url='/', status_code=302)
+        self.assertRedirects(response, expected_url='/expenses/', status_code=302)
         expenses = Expenses.objects.all()
         envelopes = Envelopes.objects.all()
         self.assertEqual(len(expenses), 1)

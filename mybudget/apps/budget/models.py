@@ -81,7 +81,7 @@ class Expenses(models.Model):
             'Something goes wrong!'
 
     def get_absolute_url(self):
-        return reverse('expense_edit', kwargs={'pk': self.pk})
+        return '/%i/' % self.id
 
     def update(self, *args, **kwargs):
         super(Expenses, self).save(*args, **kwargs)
