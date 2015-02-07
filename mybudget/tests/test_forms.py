@@ -12,7 +12,7 @@ class ExpensesFormTests(MyTests):
         self.envelope.current_amount = 50
         self.envelope.save()
 
-    def test_expense_form(self):
+    def test_expense_create(self):
         response = self.client.post('/', {'name': 'food', 'amount': 25, 'envelope': self.envelope.id}, follow=False)
         self.assertRedirects(response, expected_url='/expenses/', status_code=302)
         expenses = Expenses.objects.all()
@@ -24,9 +24,8 @@ class ExpensesFormTests(MyTests):
 class EnvelopeFormTest(MyTests):
     def setUp(self):
         self.account = mixer.blend(Accounts)
-        self.account.save()
 
-    def test_envelope_form(self):
+    def test_envelope_form_create(self):
         response = self.client.post('/envelopes/',
                                     {'name': 'food',
                                     'monthly_replenishment': 300,

@@ -7,6 +7,3 @@ class MyTests(TestCase):
     def setUp(self):
         self.client = Client()
 
-    def tearDown(self):
-        self.client.logout()
-
