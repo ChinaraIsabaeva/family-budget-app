@@ -4,6 +4,7 @@ from string import split
 
 from django.shortcuts import render, redirect
 from django.db.models import Sum
+from django.db import transaction
 from django.views.generic import UpdateView
 
 from mybudget.lib import disposable_income
@@ -81,14 +82,23 @@ class ExpenseUpdate(UpdateView):
     form_class = ExpensesForm
 
     def post(self, request, pk):
-        expense = Expenses.objects.get(pk=pk)
-        form = ExpensesForm(request.POST or None, instance=expense)
-        if form.is_valid():
-            expense.update()
-            return redirect('/expenses/')
-        else:
-            message = "Expense didn't update, some problem occurred"
-            return redirect('/expenses/', message=message)
+        with transaction.atomic():
+            expense = Expenses.objects.get(pk=pk)
+            form = ExpensesForm(request.POST or None, instance=expense)
+            envelope = Envelopes.objects.get(pk=expense.envelope_id)
+            expense_amount = expense.amount
+            envelope.current_amount = envelope.current_amount + expense_amount
+            envelope.save()
+            if envelope.cash is False:
+                account = Accounts.objects.get(id=envelope.account.id)
+                account.current_amount = account.current_amount + expense_amount
+                account.save()
+            if form.is_valid():
+                form.save()
+                return redirect('/expenses/')
+            else:
+                message = "Expense didn't update, some problem occurred"
+                return redirect('/expenses/', message=message)
 
 
 def expenses_by_envelope(request, envelope):

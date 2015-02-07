@@ -2,7 +2,6 @@
 
 from django.utils.translation import ugettext_lazy as _
 from django.db import models, transaction
-from django.core.urlresolvers import reverse
 
 
 class Accounts(models.Model):
@@ -82,9 +81,6 @@ class Expenses(models.Model):
 
     def get_absolute_url(self):
         return '/%i/' % self.id
-
-    def update(self, *args, **kwargs):
-        super(Expenses, self).save(*args, **kwargs)
 
 
 class Incomes(models.Model):
