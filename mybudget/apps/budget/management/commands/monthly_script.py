@@ -29,5 +29,6 @@ class Command(BaseCommand):
                     if envelope.closed is False:
                         envelope.current_amount = envelope.current_amount + envelope.monthly_replenishment
                         envelope.save()
+                print 'Done!'
         except:
             'Something goes wrong!'

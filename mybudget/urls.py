@@ -12,6 +12,8 @@ urlpatterns = patterns('mybudget.views',
     url(r'^envelopes/$', 'dashboard', name='envelopes'),
     url(r'^envelopes/(?P<pk>\d+)/update/$', EnvelopeUpdate.as_view(), name='envelope_update'),
     url(r'^expenses/$', 'expenses', name='expenses'),
+    url(r'^expenses/regular/$', 'regular_expenses', name='regular_expenses'),
+    url(r'^expenses/(?P<page>\d+)/$', 'expenses', name='expenses'),
     url(r'^expenses/(?P<pk>\d+)/update/$', ExpenseUpdate.as_view(), name='expense_update'),
     url(r'^expenses/(?P<envelope>\w.+)/$', 'expenses_by_envelope', name='filtered_expenses'),
 

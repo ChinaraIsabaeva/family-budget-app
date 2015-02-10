@@ -21,7 +21,7 @@ class EnvelopesForm(ModelForm):
         widgets = {
             'name': TextInput(attrs={'class': 'form-input', 'placeholder': u'Название'}),
             'monthly_replenishment': TextInput(attrs={'class': 'form-input', 'placeholder': u'Месячное пополнение'}),
-            'max_amount': TextInput(attrs={'class': 'form-input', 'placeholder': u'Максимальная сумма коверта'}),
+            'max_amount': TextInput(attrs={'class': 'form-input', 'placeholder': u'Максимальная сумма конверта'}),
             'cash': CheckboxInput(attrs={'class': 'checkbox'}),
             'onetime_envelope': CheckboxInput(attrs={'class': 'checkbox'}),
             'closed': CheckboxInput(attrs={'class': 'checkbox'})

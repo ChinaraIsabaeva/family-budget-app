@@ -10,7 +10,7 @@ from django.views.generic import UpdateView
 from mybudget.lib import disposable_income
 
 from apps.budget.forms import ExpensesForm, EnvelopesForm, ExpenseSelectForm
-from apps.budget.models import Envelopes, Incomes, Accounts, Expenses
+from apps.budget.models import Envelopes, Incomes, Accounts, Expenses, RegularMonthlyExpenses
 
 
 def home(request):
@@ -107,3 +107,9 @@ def expenses_by_envelope(request, envelope):
     sum_filtered_expenses = filtered_expenses.aggregate(total=Sum('amount'))
     return render(request, 'expenses/expenses_selected.html',
                   {'expenses': filtered_expenses, 'sum': sum_filtered_expenses})
+
+
+def regular_expenses(request):
+    all_regular_expenses = RegularMonthlyExpenses.objects.all()
+    sum_regular_expenses = RegularMonthlyExpenses.objects.all().aggregate(total=Sum('amount'))
+    return render(request, 'expenses/regular_expenses.html', {'expenses': all_regular_expenses, 'sum': sum_regular_expenses})

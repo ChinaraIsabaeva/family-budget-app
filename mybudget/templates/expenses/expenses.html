@@ -11,6 +11,7 @@
                 <h3> {{ message }} </h3>
             </div>
         {% endif %}
+
         <div class="container-block">
             <h4>Посмотреть расходы по конвертам</h4>
             <form action="" method="post">
@@ -43,6 +44,7 @@
                         <td><a href="{% url 'expense_update' expense.id %}"><img src="{% static 'images/edit-button-blue.png' %}"/></a></td>
                     </tr>
                 {% endfor %}
+
             </table>
         </div>
     </div>

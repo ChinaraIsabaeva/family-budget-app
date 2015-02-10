@@ -44,3 +44,6 @@ msgstr "envelopes"
 #: templates/layout/base.html:19
 msgid "расходы"
 msgstr "expenses"
+
+msgid "постоянные расходы"
+msgstr "regular expenses"
