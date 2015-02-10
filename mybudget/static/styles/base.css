@@ -19,22 +19,21 @@ img {
 .nav ul {
   list-style-type: none;
   text-align: center;
-  margin: 5px 20px;
-  padding: 5px 0px;
   overflow: hidden;
-  height: 50px; }
+  height: auto; }
 .nav li {
   display: inline-block;
-  margin-top: 10px; }
+  width: 180px;
+  padding: 3px;
+  margin: 10px 2px;
+  vertical-align: middle; }
 .nav a:link, .nav a:visited {
   font-weight: bold;
   color: #cae7ff;
   text-align: center;
-  padding: 10px 20px;
-  text-decoration: none; }
+  text-decoration: none;
+  vertical-align: middle; }
 .nav h1 {
-  height: 30px;
-  margin-top: 10px;
   color: #cae7ff;
   text-align: center;
   text-decoration: none;
