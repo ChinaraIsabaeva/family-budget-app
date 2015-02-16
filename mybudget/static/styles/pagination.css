@@ -1,0 +1,18 @@
+.pagination{
+    margin-top: 15px;
+}
+
+.pagination-btn{
+    float: left;
+    color: #cae7ff;
+    font-size:14px;
+    line-height:24px;
+    font-weight: normal;
+    text-align: center;
+    margin: 15px 2px;
+    min-width: 14px;
+    padding:  0 7px;
+    background-color: #172555;
+    border: 1px solid;
+    border-radius: 3px;
+}

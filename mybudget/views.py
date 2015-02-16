@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from string import split
 
 
 from django.shortcuts import render, redirect
@@ -72,7 +71,7 @@ def expenses(request):
     if form.is_valid():
         envelope = form.cleaned_data['envelope'].name
         return redirect('filtered_expenses', envelope=envelope)
-    return render(request, 'expenses/expenses.html', {'expenses': all_expenses, 'form': form})
+    return render(request, 'expenses/expenses.html', {'expenses': all_expenses})
 
 
 class ExpenseUpdate(UpdateView):

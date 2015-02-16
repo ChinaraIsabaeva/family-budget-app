@@ -115,6 +115,8 @@ img {
       padding: 5px;
       width: auto;
       vertical-align: middle; }
+      .container .container-block .table tbody {
+        margin-bottom: 15px; }
       .container .container-block .table th {
         width: auto;
         padding: 10px;

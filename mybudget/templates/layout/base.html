@@ -11,8 +11,9 @@
     <link href="{% static 'styles/reset.css' %}" rel="stylesheet" type="text/css" media="all">
     <link href="{% static 'styles/base.css' %}" rel="stylesheet" type="text/css" media="screen">
     <link href="{% static 'styles/narrow.css' %}" rel="stylesheet" type="text/css" media="(max-device-width: 360px)">
+    <link href="{% static 'styles/pagination.css' %}" rel="stylesheet" type="text/css" media="all">
     <link rel="shortcut icon" type="image" href="{% static 'images/favicon.png' %}"/>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
     <header>
