@@ -22,6 +22,6 @@ body {
     width: 100%; }
   .container .container-block .form-input-errors input {
     background-image: url("/static/images/error-mobile.png");
-    background-position: 390px -5px; }
+    background-position: 100% -5px; }
 
 /*# sourceMappingURL=narrow.css.map */

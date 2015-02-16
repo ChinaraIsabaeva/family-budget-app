@@ -98,7 +98,7 @@ img {
       border-color: #95180c;
       background-image: url("/static/images/error.png");
       background-repeat: no-repeat;
-      background-position: 200px -2px; }
+      background-position: 100% -2px; }
       .container .container-block .form-input-errors input::-webkit-input-placeholder {
         color: #95180c; }
     .container .container-block .form-input {
