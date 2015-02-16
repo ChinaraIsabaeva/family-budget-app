@@ -18,11 +18,11 @@
         <h4>Все постоянные расходы</h4>
         <div class="container-block">
             <table class="table">
-                <tr>
+                <thead>
                     <th>Расход</th>
                     <th>Сумма</th>
                     <th></th>
-                </tr>
+                </thead>
                 {% for expense in expenses %}
                     <tr>
                         <td class="table_column_name">{{ expense.name }}</td>

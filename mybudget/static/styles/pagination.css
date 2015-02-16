@@ -1,9 +1,12 @@
 .pagination{
-    margin-top: 15px;
+    padding: 5px;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: 25em;
+    width: 80%;
 }
 
 .pagination-btn{
-    float: left;
     color: #cae7ff;
     font-size:14px;
     line-height:24px;
@@ -15,4 +18,5 @@
     background-color: #172555;
     border: 1px solid;
     border-radius: 3px;
+    display: inline-block;
 }

@@ -33,14 +33,14 @@
         <div class="container-block">
             <h4>Месячное пополнение конвертов</h4>
             <table class="table">
-                <tr>
+                <thead>
                     <th>Конверт</th>
                     <th>Месячное пополнение</th>
                     <th>Наличными</th>
                     <th>Закрыт</th>
                     <th></th>
                     <th></th>
-                </tr>
+                </thead>
                 {% for envelope in envelopes %}
                     <tr>
                         <td class="table_column_name">{{ envelope.name }}</td>

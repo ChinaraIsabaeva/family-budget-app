@@ -58,7 +58,7 @@ THE SOFTWARE.
 				
 			// Pagination button
 				$('span.pagination').empty().remove();
-				var buildButtons = "<div class='pagination'>";
+				var buildButtons = "<span class='pagination'>";
 
 				// Get Total Pages
 				var totalPages = Math.ceil(totalRecords/defaults.recordPerPage);
@@ -83,7 +83,7 @@ THE SOFTWARE.
 				}
 				buildButtons += "</span>";
 				
-				(defaults.buttonPosition == 'after') ? $(this).before(buildButtons) : $(this).append(buildButtons);
+				(defaults.buttonPosition == 'before') ? $(this).before(buildButtons) : $(this).append(buildButtons);
 			
 
 			// Display records based on pagination settings

@@ -28,14 +28,14 @@
         </div>
 
         <h4>Все внесенные расходы</h4>
-        <div class="container-block">
-            <table class="table" id="all_expenses">
-                <tr>
+        <div class="container-block" id="all_expenses">
+            <table class="table" >
+                <thead>
                     <th>Расход</th>
                     <th>Сумма</th>
                     <th>Конверт</th>
                     <th></th>
-                </tr>
+                </thead>
 
                 {% for expense in expenses %}
                     <tr>
@@ -55,7 +55,7 @@
     <script src="{% static 'js/pagination.js' %}"></script>
     <script type="text/javaScript">
     $(document).ready(function(){
-        $('#all_expenses').tablePaginate({navigateType:'full',recordPerPage:25});
+        $('#all_expenses').tablePaginate({navigateType:'navigator', recordPerPage:15});
     });
 </script>
 {% endblock %}
