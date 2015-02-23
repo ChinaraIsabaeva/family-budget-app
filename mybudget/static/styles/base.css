@@ -63,7 +63,7 @@ img {
       .container .container-block .form-section input {
         font-size: 90%; }
         .container .container-block .form-section input::-webkit-input-placeholder {
-          color: rgba(32, 75, 149, 0.53); }
+          color: #204b95; }
       .container .container-block .form-section select {
         border: 1px solid;
         border-radius: 3px;
@@ -92,7 +92,7 @@ img {
         cursor: pointer;
         overflow: hidden; }
       .container .container-block .form-section span {
-        color: #123a95;
+        color: #204b95;
         font-weight: bold; }
     .container .container-block .form-input-errors input {
       border-color: #95180c;
