@@ -7,9 +7,14 @@
 <div class="container">
     <div class="container-block">
         <table class="data">
+            <p class="table_description">В конверте {{ envelope }}</p>
             <tr>
-                <td>Общам сумма выбранного конверта</td>
-                <td>{{ sum.total }}</td>
+                <td>Потрачено</td>
+                <td>{{ expenses_sum.total }}</td>
+            </tr>
+            <tr>
+                <td>Осталось</td>
+                <td>{{ envelope_sum }}</td>
             </tr>
         </table>
     </div>

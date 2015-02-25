@@ -129,7 +129,7 @@ img {
       text-align: left; }
     .container .container-block .data {
       margin: 15px auto;
-      width: 50%;
+      width: auto;
       vertical-align: middle;
       text-align: center;
       height: auto; }
@@ -156,5 +156,13 @@ h4 {
   text-align: center;
   margin: 10px auto;
   height: auto; }
+
+hr {
+  background-color: #172555;
+  height: 1px;
+  margin-bottom: 40px; }
+
+.table_description {
+  text-align: center; }
 
 /*# sourceMappingURL=base.css.map */

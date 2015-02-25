@@ -22,7 +22,7 @@ def home(request):
         account_total = account['total']
     if form.is_valid():
         form.save()
-        return redirect('/expenses/')
+        return redirect('/')
     return render(request, 'home.html',
                   {'form': form,
                   'envelopes': envelopes,
@@ -104,8 +104,9 @@ def expenses_by_envelope(request, envelope):
     selected_envelope = Envelopes.objects.get(name=envelope)
     filtered_expenses = Expenses.objects.all().filter(envelope=selected_envelope.id)
     sum_filtered_expenses = filtered_expenses.aggregate(total=Sum('amount'))
+    envelope_sum = selected_envelope.current_amount
     return render(request, 'expenses/expenses_selected.html',
-                  {'expenses': filtered_expenses, 'sum': sum_filtered_expenses})
+                  {'expenses': filtered_expenses, 'expenses_sum': sum_filtered_expenses, 'envelope': selected_envelope, 'envelope_sum': envelope_sum })
 
 
 def regular_expenses(request):
