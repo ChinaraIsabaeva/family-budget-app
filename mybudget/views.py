@@ -71,7 +71,7 @@ def expenses(request):
     if form.is_valid():
         envelope = form.cleaned_data['envelope'].name
         return redirect('filtered_expenses', envelope=envelope)
-    return render(request, 'expenses/expenses.html', {'expenses': all_expenses})
+    return render(request, 'expenses/expenses.html', {'expenses': all_expenses, 'form': form})
 
 
 class ExpenseUpdate(UpdateView):

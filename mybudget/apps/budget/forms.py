@@ -68,4 +68,4 @@ class ExpensesForm(ModelForm):
 
 
 class ExpenseSelectForm(Form):
-    envelope = ModelChoiceField(queryset=Envelopes.objects.all().order_by('name'), empty_label=None)
+    envelope = ModelChoiceField(queryset=Envelopes.objects.all().order_by('name'), empty_label=None, initial=1)
