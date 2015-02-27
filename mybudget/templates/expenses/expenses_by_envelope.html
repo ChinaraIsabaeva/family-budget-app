@@ -5,9 +5,27 @@
 
 {% block content %}
 <div class="container">
+
+    <div class="container-block">
+        <h4>Выбрать другой конверт</h4>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-section">
+                <label>Конверт:</label>{{ form.envelope }}
+                {{ form.envelope.errors }}
+            </div>
+
+            <div class="form-section">
+                <input class="button" type="submit" value="Показать">
+            </div>
+        </form>
+    </div>
+
+    <hr>
+
     <div class="container-block">
         <table class="data">
-            <p class="table_description">В конверте {{ envelope }}</p>
+            <p class="table_description">В конверте {{ envelope_name }}</p>
             <tr>
                 <td>Потрачено</td>
                 <td>{{ expenses_sum.total }}</td>
@@ -20,13 +38,12 @@
     </div>
 
     <div class="container">
-        <h4>Выбранные расходы</h4>
+        <h4>Pасходы в конверте</h4>
         <div class="container-block">
             <table class="table">
                 <tr>
                     <th>Расход</th>
                     <th>Сумма</th>
-                    <th></th>
                 </tr>
                 {% for expense in expenses %}
                     <tr>

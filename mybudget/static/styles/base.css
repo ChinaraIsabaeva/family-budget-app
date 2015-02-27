@@ -73,7 +73,6 @@ img {
         color: #204b95; }
       .container .container-block .form-section label {
         vertical-align: top;
-        padding: auto;
         margin: auto; }
       .container .container-block .form-section input[type='checkbox'].checkbox {
         -webkit-appearance: none;
@@ -136,6 +135,9 @@ img {
       .container .container-block .data td {
         width: 80%;
         padding: 5px; }
+    .container .container-block .link {
+      margin-left: 40%;
+      margin-top: 25px; }
   .container .button {
     margin-left: auto;
     margin-right: auto;
@@ -145,7 +147,8 @@ img {
     color: #cae7ff;
     border: 1px solid;
     border-radius: 3px;
-    border-color: #204b95; }
+    border-color: #204b95;
+    font-size: 90%; }
   .container .errorlist {
     color: #95180c; }
 

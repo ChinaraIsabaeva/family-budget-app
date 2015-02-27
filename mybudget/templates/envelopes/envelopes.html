@@ -6,6 +6,12 @@
 {% block content %}
     <div class="container">
         <div class="container-block">
+            <div class="link">
+                <a href="{% url 'envelope_create' %}"><button class="button">Создать конверт</button></a>
+            </div>
+        </div>
+
+        <div class="container-block">
             <table class="data">
                 <tr>
                     <td>Доход</td>
@@ -17,13 +23,6 @@
                     <td>{{ available_amount }}</td>
                 </tr>
             </table>
-        </div>
-
-        <div class="container-block">
-            {% block form %}
-                {% block header %}<h4>Создать конверт</h4>{% endblock header %}
-                {% include 'envelopes/envelope_form.html' %}
-            {% endblock form %}
         </div>
 
         {% if message %}
