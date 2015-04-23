@@ -8,7 +8,6 @@ from mybudget.apps.budget.models import Envelopes, Incomes, Accounts, RegularMon
 
 
 class Command(BaseCommand):
-    can_import_settings = True
 
     def handle(self, *args, **options):
         """ Команда для расчета суммы счета на начало месяца. К текущей сумме счета прибавляется доход (ЗП)
@@ -31,4 +30,3 @@ class Command(BaseCommand):
                         envelope.save()
                 print 'Done!'
         except:
-            'Something goes wrong!'
