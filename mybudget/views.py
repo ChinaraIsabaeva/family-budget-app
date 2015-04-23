@@ -50,7 +50,7 @@ class EnvelopeCreate(CreateView):
         form = EnvelopesForm(request.POST or None, initial={'account': '1'})
         if form.is_valid():
             form.save()
-            return redirect('envelopes')
+            return redirect('/envelopes/')
         return render(request, 'envelopes/envelope_create.html', {'form': form})
 
 
