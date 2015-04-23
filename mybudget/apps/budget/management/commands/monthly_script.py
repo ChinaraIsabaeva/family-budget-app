@@ -26,8 +26,6 @@ class Command(BaseCommand):
                 envelopes = Envelopes.objects.all()
                 for envelope in envelopes:
                     if envelope.closed is False:
-                        if envelope.current_amount is None:
-                            envelope.current_amount = 0
                         envelope.current_amount = envelope.current_amount + envelope.monthly_replenishment
                         envelope.save()
         except:
