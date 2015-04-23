@@ -30,3 +30,4 @@ class Command(BaseCommand):
                         envelope.save()
                 print 'Done!'
         except:
+            print 'Something goes wrong!'
