@@ -4,9 +4,9 @@
   &::-webkit-input-placeholder
     color: $color
 
-$main_color_dark: #204b95
+$main_color_light_dark: #204b95
 $main_color_light: #cae7ff
-$header_color: #172555
+$main_color_dark: #172555
 $error_color: #95180c
 $input_background_color: white
 
@@ -14,13 +14,13 @@ body
   margin: 0
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif
   font-size: 120%
-  color: $header_color
+  color: $main_color_dark
 
 
 header
   margin: auto
   padding: 5px 5px
-  background-color: $header_color
+  background-color: $main_color_dark
 
 img
   width: 20px
@@ -83,15 +83,15 @@ img
 
       input
         font-size: 90%
-        @include input-placeholder($main_color_dark)
+        @include input-placeholder($main_color_light_dark)
 
       select
         border: 1px solid
         border-radius: 3px
-        border-color: $main_color_dark
+        border-color: $main_color_light_dark
         background-color: $input_background_color
         font-size: 80%
-        color: $main_color_dark
+        color: $main_color_light_dark
 
       label
         vertical-align: top
@@ -100,7 +100,7 @@ img
       input[type='checkbox'].checkbox
         -webkit-appearance: none
         background-color: $input_background_color
-        border: 1px solid $main_color_dark
+        border: 1px solid $main_color_light_dark
         border-radius: 2px
         margin: 0px
         padding: 0px
@@ -110,13 +110,13 @@ img
       input[type='checkbox'].checkbox:checked + label:after
         display: inline-block
         content: '\2714'
-        color: $main_color_dark
+        color: $main_color_light_dark
         margin-left: -15px
         cursor: pointer
         overflow: hidden
 
       span
-        color: $main_color_dark
+        color: $main_color_light_dark
         font-weight: bold
 
     .form-input-errors
@@ -135,7 +135,7 @@ img
       height: 20px
       border: 1px solid
       border-radius: 3px
-      border-color: $main_color_dark
+      border-color: $main_color_light_dark
 
     .table
       margin: auto
@@ -149,10 +149,21 @@ img
       th
         width: auto
         padding: 10px
-        border-bottom: double $main_color_dark
+        border-bottom: double $main_color_light_dark
 
       td
         padding: 5px 0px
+
+      a:link
+        text-decoration: none
+        color: $main_color_dark
+
+      a:visited
+        color: $main_color_dark
+
+      a:hover
+        text-decoration: underline
+        color: $main_color_light_dark
 
     .table_column_amount
       text-align: center
@@ -180,11 +191,11 @@ img
     margin-right: auto
     padding: 7px
     width: auto
-    background-color: $header_color
+    background-color: $main_color_dark
     color: $main_color_light
     border: 1px solid
     border-radius: 3px
-    border-color: $main_color_dark
+    border-color: $main_color_light_dark
     font-size: 90%
 
   .errorlist
@@ -193,13 +204,13 @@ img
 h4
   text-decoration: none
   text-transform: uppercase
-  color: $main_color_dark
+  color: $main_color_light_dark
   text-align: center
   margin: 10px auto
   height: auto
 
 hr
-  background-color: $header_color
+  background-color: $main_color_dark
   height: 1px
   margin-bottom: 40px
 

@@ -82,7 +82,7 @@ def all_expenses(request):
 
 def expenses_by_envelope(request, envelope):
     selected_envelope = Envelopes.objects.get(name=envelope)
-    filtered_expenses = Expenses.objects.all().filter(envelope=selected_envelope.id)
+    filtered_expenses = Expenses.objects.all().filter(envelope=selected_envelope.id).order_by('-created_date')
     sum_filtered_expenses = filtered_expenses.aggregate(total=Sum('amount'))
     envelope_sum = selected_envelope.current_amount
     form = ExpenseSelectForm(request.POST or None)

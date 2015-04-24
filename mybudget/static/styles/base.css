@@ -122,6 +122,14 @@ img {
         border-bottom: double #204b95; }
       .container .container-block .table td {
         padding: 5px 0px; }
+      .container .container-block .table a:link {
+        text-decoration: none;
+        color: #172555; }
+      .container .container-block .table a:visited {
+        color: #172555; }
+      .container .container-block .table a:hover {
+        text-decoration: underline;
+        color: #204b95; }
     .container .container-block .table_column_amount {
       text-align: center; }
     .container .container-block .table_column_name {
