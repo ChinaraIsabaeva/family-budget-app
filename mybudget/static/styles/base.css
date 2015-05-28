@@ -64,6 +64,8 @@ img {
         font-size: 90%; }
         .container .container-block .form-section input::-webkit-input-placeholder {
           color: #204b95; }
+        .container .container-block .form-section input::-moz-placeholder {
+          color: #204b95; }
       .container .container-block .form-section select {
         border: 1px solid;
         border-radius: 3px;
@@ -99,6 +101,8 @@ img {
       background-repeat: no-repeat;
       background-position: 100% -2px; }
       .container .container-block .form-input-errors input::-webkit-input-placeholder {
+        color: #95180c; }
+      .container .container-block .form-input-errors input::-moz-placeholder {
         color: #95180c; }
     .container .container-block .form-input {
       margin-left: auto;
