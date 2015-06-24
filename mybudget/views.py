@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.shortcuts import render, redirect
+from django.core.urlresolvers import reverse
 from django.db.models import Sum
 from django.db import transaction
 from django.views.generic import UpdateView, CreateView
@@ -37,7 +38,7 @@ def all_envelopes(request):
     else:
         income_total = income['total']
     return render(request, 'envelopes/envelopes.html',
-                  {'envelopes': envelopes, 'income': income_total,'available_amount': available_amount})
+                  {'envelopes': envelopes, 'income': income_total, 'available_amount': available_amount})
 
 
 class EnvelopeCreate(CreateView):
@@ -65,7 +66,7 @@ class EnvelopeUpdate(UpdateView):
         form = EnvelopesForm(request.POST or None, instance=envelope)
         if form.is_valid():
             envelope.save()
-            return redirect('/envelopes/')
+            return redirect(reverse('envelopes'))
         else:
             message = "Envelope didn't update, some problem occurred"
             return redirect('/envelopes/', message=message)
@@ -76,7 +77,7 @@ def all_expenses(request):
     form = ExpenseSelectForm(request.POST or None)
     if form.is_valid():
         envelope = form.cleaned_data['envelope'].name
-        return redirect('filtered_expenses', envelope=envelope)
+        return redirect(reverse('filtered_expenses', args=(envelope, )))
     return render(request, 'expenses/expenses.html', {'expenses': expenses, 'form': form})
 
 
@@ -86,6 +87,9 @@ def expenses_by_envelope(request, envelope):
     sum_filtered_expenses = filtered_expenses.aggregate(total=Sum('amount'))
     envelope_sum = selected_envelope.current_amount
     form = ExpenseSelectForm(request.POST or None)
+    if form.is_valid():
+        envelope = form.cleaned_data['envelope'].name
+        return redirect(reverse('filtered_expenses', args=(envelope, )))
     return render(request, 'expenses/expenses_by_envelope.html',
                   {'expenses': filtered_expenses,
                    'expenses_sum': sum_filtered_expenses,
@@ -114,10 +118,7 @@ class ExpenseUpdate(UpdateView):
                 account.save()
             if form.is_valid():
                 form.save()
-                return redirect('/expenses/')
-            else:
-                message = "Expense didn't update, some problem occurred"
-                return redirect('/expenses/', message=message)
+                return redirect(reverse('expenses'))
 
 
 def regular_expenses(request):
