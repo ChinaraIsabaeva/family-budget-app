@@ -32,84 +32,78 @@ THE SOFTWARE.
         $.fn.extend({
             tablePaginate: function(options) {
                 var defaults = {
-						recordPerPage:20,				// Display records per page
-						pageNumber:1,					// GoTo Pagenumber - Default : 1
-						fullData:false,					// True : Disable pagination, False - Enable Pagination
-						buttonPosition:'before',		// before, after
-						navigateType:'navigator'		// navigator (first,prev,next,last buttons), full (display page numbers)
-						
-				};
-                
-				var options = $.extend(defaults, options);
-				var el = this;		
-				
-			// GET total Records length
-				var totalRecords=$(el).find('tbody').find('tr').length;
-				
-			// Pagination off
-				if (defaults.fullData == 'true'){
-					defaults.pageNumber = 1;
-					defaults.recordPerPage = totalRecords;
-				}
-							
-			// Identify Start & End values
-				var end = defaults.pageNumber * defaults.recordPerPage;
-				var start = end - defaults.recordPerPage;
-				
-			// Pagination button
-				$('span.pagination').empty().remove();
-				var buildButtons = "<span class='pagination'>";
+                        recordPerPage:30,				// Display records per page
+                        pageNumber:1,					// GoTo Pagenumber - Default : 1
+                        fullData:false,					// True : Disable pagination, False - Enable Pagination
+                        buttonPosition:'before',		// before, after
+                        navigateType:'navigator'		// navigator (first,prev,next,last buttons), full (display page numbers)
 
-				// Get Total Pages
-				var totalPages = Math.ceil(totalRecords/defaults.recordPerPage);
-				
-				
-				if (defaults.navigateType == 'navigator'){
-					//First,prev,next,Last buttons
-					var firstPage = 1;
-					var nextPage = parseInt(defaults.pageNumber) + 1;
-					var prevPage = parseInt(defaults.pageNumber) - 1;
-					nextPage = (nextPage >= totalPages) ? totalPages : nextPage;
-					prevPage = (prevPage < firstPage) ? firstPage : prevPage;
-					buildButtons += "<button type='button' id='"+firstPage+"' class='pagination-btn'><<</button>";
-					buildButtons += "<button type='button' id='"+prevPage+"' class='pagination-btn'><</button>";
-					buildButtons += "<button type='button' id='"+nextPage+"' class='pagination-btn'>></button>";
-					buildButtons += "<button type='button' id='"+totalPages+"' class='pagination-btn'>>></button>";
-				}else{				
-					// Display page numbers
-					for(var i=1;i<=totalPages;i++){	
-						buildButtons += "<button type='button' id='"+i+"' class='pagination-btn'>"+i+"</button>";
-					}
-				}
-				buildButtons += "</span>";
-				
-				(defaults.buttonPosition == 'before') ? $(this).before(buildButtons) : $(this).append(buildButtons);
-			
+                };
+                console.log(defaults.recordPerPage);
+                var options = $.extend(defaults, options);
+                var el = this;
+            // GET total Records length
+                var totalRecords=$(el).find('tbody').find('tr').length;
+            // Pagination off
+                if (defaults.fullData == 'true'){
+                    defaults.pageNumber = 1;
+                    defaults.recordPerPage = totalRecords;
+                }
 
-			// Display records based on pagination settings
-				$(el).find('tbody').find('tr').each(function(rowIndex,data) {	
-					$(this).hide();					
-					if (start <= rowIndex && end > rowIndex ){
-						$(this).show();
-						
-					}
-					
-				});
-				
-			// Pagination button live click
-				$(".pagination-btn").live("click",function(){ 
-					var id = $(this).attr("id");
-						$(el).tablePaginate({
-							pageNumber:id,
-							recordPerPage:defaults.recordPerPage,
-							fullData:defaults.fullData,
-							buttonPosition:defaults.buttonPosition,
-							navigateType:defaults.navigateType
-						});
-									
-				});
-				
-			}
+            // Identify Start & End values
+                var end = defaults.pageNumber * defaults.recordPerPage;
+                var start = end - defaults.recordPerPage;
+
+            // Pagination button
+                $('span.pagination').empty().remove();
+                var buildButtons = "<span class='pagination'>";
+
+                // Get Total Pages
+                var totalPages = Math.ceil(totalRecords/defaults.recordPerPage);
+
+
+                if (defaults.navigateType == 'navigator'){
+                    //First,prev,next,Last buttons
+                    var firstPage = 1;
+                    var nextPage = parseInt(defaults.pageNumber) + 1;
+                    var prevPage = parseInt(defaults.pageNumber) - 1;
+                    nextPage = (nextPage >= totalPages) ? totalPages : nextPage;
+                    prevPage = (prevPage < firstPage) ? firstPage : prevPage;
+                    buildButtons += "<button type='button' id='"+firstPage+"' class='pagination-btn'><<</button>";
+                    buildButtons += "<button type='button' id='"+prevPage+"' class='pagination-btn'><</button>";
+                    buildButtons += "<button type='button' id='"+nextPage+"' class='pagination-btn'>></button>";
+                    buildButtons += "<button type='button' id='"+totalPages+"' class='pagination-btn'>>></button>";
+                }else{
+                    // Display page numbers
+                    for(var i=1;i<=totalPages;i++){
+                        buildButtons += "<button type='button' id='"+i+"' class='pagination-btn'>"+i+"</button>";
+                    }
+                }
+                buildButtons += "</span>";
+
+                (defaults.buttonPosition == 'before') ? $(this).before(buildButtons) : $(this).append(buildButtons);
+
+
+            // Display records based on pagination settings
+                $(el).find('tbody').find('tr').each(function(rowIndex,data) {
+                    $(this).hide();
+                    if (start <= rowIndex && end > rowIndex ){
+                        $(this).show();
+
+                    }
+                });
+
+            // Pagination button live click
+                $(".pagination-btn").live("click",function(){
+                    var id = $(this).attr("id");
+                        $(el).tablePaginate({
+                            pageNumber:id,
+                            recordPerPage:defaults.recordPerPage,
+                            fullData:defaults.fullData,
+                            buttonPosition:defaults.buttonPosition,
+                            navigateType:defaults.navigateType
+                        });
+                });
+            }
         });
     })(jQuery);
-        

@@ -14,7 +14,7 @@ from apps.budget.models import Envelopes, Incomes, Accounts, Expenses, RegularMo
 
 def home(request):
     form = ExpensesForm(request.POST or None, initial={'envelope': '1'})
-    envelopes = Envelopes.objects.all().order_by('cash', 'name')
+    envelopes = Envelopes.objects.exclude(closed=True).order_by('cash', 'name')
     account = Accounts.objects.all().aggregate(total=Sum('current_amount'))
     if account['total'] is None:
         account_total = 0
