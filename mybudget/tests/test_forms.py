@@ -26,7 +26,7 @@ class EnvelopeFormTest(MyTests):
         self.account = mixer.blend(Accounts)
 
     def test_envelope_form_create(self):
-        response = self.client.post('/envelopes/',
+        response = self.client.post('/envelopes/create/',
                                     {'name': 'food',
                                     'monthly_replenishment': 300,
                                     'cash': False,
