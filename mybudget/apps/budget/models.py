@@ -33,10 +33,10 @@ class Envelopes(models.Model):
     name = models.CharField(max_length=255)
     current_amount = models.DecimalField(max_digits=8, decimal_places=2, default=0)
     monthly_replenishment = models.DecimalField(max_digits=8, decimal_places=2)
-    cash = models.BooleanField()
+    cash = models.NullBooleanField()
     account = models.ForeignKey(Accounts, null=True)
-    closed = models.BooleanField()
-    onetime_envelope = models.BooleanField()
+    closed = models.NullBooleanField()
+    onetime_envelope = models.NullBooleanField()
     max_amount = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
 
     class Meta:

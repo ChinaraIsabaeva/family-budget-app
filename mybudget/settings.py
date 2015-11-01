@@ -50,8 +50,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     #3rd parties apps
-    'south',
-    'django_cron',
 
     #my_app
     'mybudget.apps.budget',

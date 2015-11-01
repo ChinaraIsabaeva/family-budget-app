@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 import datetime
 
-from django.forms import ModelForm, TextInput, ModelChoiceField, CheckboxInput, Form, DateField
-from django.forms.extras.widgets import SelectDateWidget
+from django.forms import ModelForm, TextInput, ModelChoiceField, CheckboxInput, Form, ChoiceField
 
 from .models import RegularMonthlyExpenses, Envelopes, Expenses, Accounts
 
@@ -10,6 +9,7 @@ from .models import RegularMonthlyExpenses, Envelopes, Expenses, Accounts
 class RegularExpensesForm(ModelForm):
     class Meta:
         model = RegularMonthlyExpenses
+        fields = '__all__'
 
 
 class EnvelopesForm(ModelForm):
@@ -69,3 +69,24 @@ class ExpensesForm(ModelForm):
 
 class ExpenseSelectForm(Form):
     envelope = ModelChoiceField(queryset=Envelopes.objects.all().order_by('name'))
+
+    # EXTRA_CHOICES = (
+    #     ('ALL', 'All Expenses')
+    # )
+    #
+    # def __init__(self, *args, **kwargs):
+    #     super(ExpenseSelectForm, self).__init__(*args, **kwargs)
+    #     choices = [(env.id, unicode(env)) for env in Envelopes.objects.all().order_by('name')]
+    #     choices.extend(self.EXTRA_CHOICES)
+    #     self.fields['envelope'].choices = choices
+    #
+    # def clean(self):
+    #     data = self.cleaned_data.get('envelope')
+    #     if data == 'ALL':
+    #         return "somethins"
+    #     else:
+    #         try:
+    #             data = Envelopes.objects.get(name=data)
+    #         except Envelopes.DoesNotExist:
+    #             raise forms.ValidationError('foo')
+    #     return data
