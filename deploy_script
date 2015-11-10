@@ -1,0 +1,3 @@
+heroku pg:backups capture --app dachee
+git push heroku master
+heroku run python manage.py migrate --app dachee

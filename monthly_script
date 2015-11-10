@@ -1,0 +1,2 @@
+heroku pg:backups capture --app dachee
+heroku run python manage.py monthly_script --app dachee
