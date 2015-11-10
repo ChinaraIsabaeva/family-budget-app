@@ -1,4 +1,4 @@
-from . import MyTests
+from mybudget.lib.init_test import MyTests
 
 
 class OpenPagesTests(MyTests):

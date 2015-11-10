@@ -74,6 +74,16 @@ WSGI_APPLICATION = 'mybudget.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+class DisableMigrations(object):
+
+    def __contains__(self, item):
+        return True
+
+    def __getitem__(self, item):
+        return "notmigrations"
+
+
+TESTS_IN_PROGRESS = False
 
 if 'test' in sys.argv:
     DATABASES = {
@@ -81,6 +91,7 @@ if 'test' in sys.argv:
             'ENGINE': 'django.db.backends.sqlite3'
         }
     }
+    MIGRATION_MODULES = DisableMigrations()
 else:
     DATABASES = {
         'default': dj_database_url.config()

@@ -11,5 +11,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunSQL("INSERT into envelopes_envelopes (id, name, current_amount, monthly_replenishment, cash, account_id, closed, onetime_envelope, max_amount) (select id, name, current_amount, monthly_replenishment, cash, account_id, closed, onetime_envelope, max_amount from budget_envelopes); "),
+        migrations.RunSQL("INSERT into envelopes_envelopes (id, name, current_amount, monthly_replenishment, cash, account_id, closed, onetime_envelope, max_amount) select id, name, current_amount, monthly_replenishment, cash, account_id, closed, onetime_envelope, max_amount from budget_envelopes; "),
     ]

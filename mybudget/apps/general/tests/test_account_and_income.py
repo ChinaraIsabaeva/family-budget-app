@@ -1,8 +1,8 @@
 from mixer.backend.django import mixer
 
-from . import MyTests
 from mybudget.apps.envelopes.models import Envelopes
 from mybudget.apps.general.models import Incomes, Accounts
+from mybudget.lib.init_test import MyTests
 
 
 class IncomeAccountTest(MyTests):
