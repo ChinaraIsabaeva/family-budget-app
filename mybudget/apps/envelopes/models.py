@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+
+from django.db import models
+
+# Create your models here.
+from mybudget.apps.general.models import Accounts
+
+
+class Envelopes(models.Model):
+    name = models.CharField(max_length=255)
+    current_amount = models.DecimalField(max_digits=8, decimal_places=2, default=0)
+    monthly_replenishment = models.DecimalField(max_digits=8, decimal_places=2)
+    cash = models.BooleanField(default=False)
+    account = models.ForeignKey(Accounts, null=True)
+    closed = models.NullBooleanField()
+    onetime_envelope = models.NullBooleanField()
+    max_amount = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
+
+    class Meta:
+        verbose_name = u"конверт"
+        verbose_name_plural = u'Конверты'
+        ordering = ['name']
+
+    def __unicode__(self):
+        return u'%s' % self.name
+
+    def get_absolute_url(self):
+        return '/%i/' % self.id

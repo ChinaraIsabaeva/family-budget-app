@@ -35,7 +35,7 @@ msgstr "Accounts"
 
 #: templates/layout/base.html:17
 msgid "наш бюджет"
-msgstr "our budget"
+msgstr "our general"
 
 #: templates/layout/base.html:18
 msgid "конверты"

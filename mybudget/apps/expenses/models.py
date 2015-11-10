@@ -1,19 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from django.utils.translation import ugettext_lazy as _
 from django.db import models, transaction
 
-
-class Accounts(models.Model):
-    name = models.CharField(max_length=255)
-    current_amount = models.DecimalField(max_digits=7, decimal_places=2)
-
-    class Meta:
-        verbose_name = _(u'Счет')
-        verbose_name_plural = _(u'Счета')
-
-    def __unicode__(self):
-        return u'%(name)s %(amount)s' % {'name': self.name, 'amount': self.current_amount}
+# Create your models here.
+from mybudget.apps.envelopes.models import Envelopes
+from mybudget.apps.general.models import Accounts
 
 
 class RegularMonthlyExpenses(models.Model):
@@ -27,28 +18,6 @@ class RegularMonthlyExpenses(models.Model):
 
     def __unicode__(self):
         return u'%s %s' % (self.name, self.amount)
-
-
-class Envelopes(models.Model):
-    name = models.CharField(max_length=255)
-    current_amount = models.DecimalField(max_digits=8, decimal_places=2, default=0)
-    monthly_replenishment = models.DecimalField(max_digits=8, decimal_places=2)
-    cash = models.BooleanField(default=False)
-    account = models.ForeignKey(Accounts, null=True)
-    closed = models.NullBooleanField()
-    onetime_envelope = models.NullBooleanField()
-    max_amount = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
-
-    class Meta:
-        verbose_name = u"конверт"
-        verbose_name_plural = u'Конверты'
-        ordering = ['name']
-
-    def __unicode__(self):
-        return u'%s' % self.name
-
-    def get_absolute_url(self):
-        return '/%i/' % self.id
 
 
 class Expenses(models.Model):
@@ -81,18 +50,3 @@ class Expenses(models.Model):
 
     def get_absolute_url(self):
         return '/%i/' % self.id
-
-
-class Incomes(models.Model):
-    name = models.CharField(max_length=255)
-    amount = models.DecimalField(max_digits=7, decimal_places=2)
-    account = models.ForeignKey(Accounts, null=True)
-
-    class Meta:
-        verbose_name = u'Доход'
-        verbose_name_plural = u'Доходы'
-
-    def __unicode__(self):
-        return u'%s' % self.amount
-
-

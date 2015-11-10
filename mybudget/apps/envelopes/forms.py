@@ -1,15 +1,9 @@
 # -*- coding: utf-8 -*-
-import datetime
 
-from django.forms import ModelForm, TextInput, ModelChoiceField, CheckboxInput, Form, ChoiceField
+from django.forms import ModelForm, TextInput, ModelChoiceField, CheckboxInput
 
-from .models import RegularMonthlyExpenses, Envelopes, Expenses, Accounts
-
-
-class RegularExpensesForm(ModelForm):
-    class Meta:
-        model = RegularMonthlyExpenses
-        fields = '__all__'
+from .models import Envelopes
+from mybudget.apps.general.models import Accounts
 
 
 class EnvelopesForm(ModelForm):
@@ -44,28 +38,3 @@ class EnvelopesForm(ModelForm):
         for field in self.fields:
             self.fields[field].error_messages['required'] = message
 
-
-class ExpensesForm(ModelForm):
-    envelope = ModelChoiceField(queryset=Envelopes.objects.all().order_by('name'), empty_label=None)
-
-    class Meta:
-        model = Expenses
-        fields = ['name', 'amount', 'envelope']
-        widgets = {
-            'name': TextInput(attrs={'class': 'form-input', 'placeholder': u'Название'}),
-            'amount': TextInput(attrs={'class': 'form-input', 'placeholder': u'Сумма'}),
-        }
-
-        labels = {
-            'envelope': u'Конверт'
-        }
-
-    def __init__(self, *args, **kwargs):
-        super(ExpensesForm, self).__init__(*args, **kwargs)
-        message = u'Проебал что-то указать'
-        for field in self.fields:
-            self.fields[field].error_messages['required'] = message
-
-
-class ExpenseSelectForm(Form):
-    envelope = ModelChoiceField(queryset=Envelopes.objects.all().order_by('name'))

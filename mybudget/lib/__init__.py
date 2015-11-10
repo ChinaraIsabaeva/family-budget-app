@@ -1,6 +1,8 @@
 from django.db.models import Sum
+from mybudget.apps.envelopes.models import Envelopes
 
-from mybudget.apps.budget.models import Envelopes, Incomes, RegularMonthlyExpenses
+from mybudget.apps.general.models import Incomes
+from mybudget.apps.expenses.models import RegularMonthlyExpenses
 
 
 def disposable_income():

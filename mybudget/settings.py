@@ -52,7 +52,9 @@ INSTALLED_APPS = (
     #3rd parties apps
 
     #my_app
-    'mybudget.apps.budget',
+    'mybudget.apps.general',
+    'mybudget.apps.envelopes',
+    'mybudget.apps.expenses',
 )
 
 MIDDLEWARE_CLASSES = (

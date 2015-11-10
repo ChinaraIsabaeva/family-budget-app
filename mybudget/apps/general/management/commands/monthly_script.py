@@ -3,8 +3,10 @@
 from django.core.management.base import BaseCommand
 from django.db.models import Sum
 from django.db import transaction
+from mybudget.apps.envelopes.models import Envelopes
 
-from mybudget.apps.budget.models import Envelopes, Incomes, Accounts, RegularMonthlyExpenses
+from mybudget.apps.general.models import Incomes, Accounts
+from mybudget.apps.expenses.models import RegularMonthlyExpenses
 
 
 class Command(BaseCommand):

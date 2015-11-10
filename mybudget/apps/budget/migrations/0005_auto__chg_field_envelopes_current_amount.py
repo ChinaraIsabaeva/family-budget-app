@@ -18,42 +18,42 @@ class Migration(SchemaMigration):
         db.alter_column(u'budget_envelopes', 'current_amount', self.gf('django.db.models.fields.DecimalField')(null=True, max_digits=8, decimal_places=2))
 
     models = {
-        u'budget.accounts': {
+        u'general.accounts': {
             'Meta': {'object_name': 'Accounts'},
             'current_amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '7', 'decimal_places': '2'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
-        u'budget.envelopes': {
+        u'general.envelopes': {
             'Meta': {'object_name': 'envelopes'},
-            'account': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.Accounts']", 'null': 'True', 'blank': 'True'}),
+            'account': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['general.Accounts']", 'null': 'True', 'blank': 'True'}),
             'cash': ('django.db.models.fields.BooleanField', [], {}),
             'current_amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '8', 'decimal_places': '2'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'monthly_replenishment': ('django.db.models.fields.DecimalField', [], {'max_digits': '8', 'decimal_places': '2'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
-        u'budget.expenses': {
+        u'general.expenses': {
             'Meta': {'object_name': 'Expenses'},
             'amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '8', 'decimal_places': '2'}),
-            'envelope': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.envelopes']"}),
+            'envelope': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['general.envelopes']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
-        u'budget.incomes': {
+        u'general.incomes': {
             'Meta': {'object_name': 'Incomes'},
-            'account': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.Accounts']", 'null': 'True'}),
+            'account': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['general.Accounts']", 'null': 'True'}),
             'amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '7', 'decimal_places': '2'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
-        u'budget.regularmonthlyexpenses': {
+        u'general.regularmonthlyexpenses': {
             'Meta': {'object_name': 'RegularMonthlyExpenses'},
-            'account': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['budget.Accounts']", 'null': 'True'}),
+            'account': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['general.Accounts']", 'null': 'True'}),
             'amount': ('django.db.models.fields.DecimalField', [], {'max_digits': '8', 'decimal_places': '2'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         }
     }
 
-    complete_apps = ['budget']
+    complete_apps = ['general']
