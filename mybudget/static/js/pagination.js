@@ -32,7 +32,7 @@ THE SOFTWARE.
         $.fn.extend({
             tablePaginate: function(options) {
                 var defaults = {
-                        recordPerPage:30,				// Display records per page
+                        recordPerPage:50,				// Display records per page
                         pageNumber:1,					// GoTo Pagenumber - Default : 1
                         fullData:false,					// True : Disable pagination, False - Enable Pagination
                         buttonPosition:'before',		// before, after
