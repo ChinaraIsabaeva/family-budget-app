@@ -8,6 +8,10 @@ from mybudget.lib.init_test import MyTests
 class EnvelopeFormTest(MyTests):
     def setUp(self):
         self.account = mixer.blend(Accounts)
+        self.envelope = mixer.blend(Envelopes)
+        self.envelope.name = 'clothes'
+        self.envelope.monthly_replenishment = 150
+        self.envelope.save()
 
     def test_envelope_form_create(self):
         response = self.client.post('/envelopes/create/',
@@ -16,7 +20,16 @@ class EnvelopeFormTest(MyTests):
                                     'cash': False,
                                     'account': self.account.id},
                                     follow=False)
-        self.assertRedirects(response, expected_url='/envelopes/', status_code=302)
+        self.assertRedirects(response, expected_url='/envelopes/all/', status_code=302)
         envelopes = Envelopes.objects.all()
-        self.assertEqual(len(envelopes), 1)
+        self.assertEqual(len(envelopes), 2)
+
+    def test_envelope_update(self):
+        response = self.client.post('/envelopes/1/update/',
+                                    {'name': self.envelope.name,
+                                     'monthly_replenishment': 100,
+                                     'account': self.account.id}, follow=False)
+        self.assertRedirects(response, expected_url='/envelopes/all/', status_code=302)
+        envelopes = Envelopes.objects.all()
+        self.assertEqual(envelopes[0].monthly_replenishment, 100)
 

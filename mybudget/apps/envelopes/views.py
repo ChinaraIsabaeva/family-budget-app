@@ -25,7 +25,6 @@ def all_envelopes(request):
 
 class EnvelopeCreate(CreateView):
     model = Envelopes
-    success_url = '/envelopes/'
     template_name = 'envelopes/envelope_create.html'
     form_class = EnvelopesForm
 
@@ -33,13 +32,12 @@ class EnvelopeCreate(CreateView):
         form = EnvelopesForm(request.POST or None, initial={'account': '1'})
         if form.is_valid():
             form.save()
-            return redirect('/envelopes/')
+            return redirect(reverse('envelopes:all'))
         return render(request, 'envelopes/envelope_create.html', {'form': form})
 
 
 class EnvelopeUpdate(UpdateView):
     model = Envelopes
-    success_url = '/envelopes/'
     template_name = 'envelopes/envelope_update.html'
     form_class = EnvelopesForm
 
@@ -48,7 +46,7 @@ class EnvelopeUpdate(UpdateView):
         form = EnvelopesForm(request.POST or None, instance=envelope)
         if form.is_valid():
             envelope.save()
-            return redirect(reverse('envelopes'))
+            return redirect(reverse('envelopes:all'))
         else:
             message = "Envelope didn't update, some problem occurred"
             return redirect('/envelopes/', message=message)

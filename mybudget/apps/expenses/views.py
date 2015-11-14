@@ -17,7 +17,7 @@ def all_expenses(request):
     form = ExpenseSelectForm(request.POST or None)
     if form.is_valid():
         envelope = form.cleaned_data['envelope'].name
-        return redirect(reverse('filtered_expenses', args=(envelope, )))
+        return redirect(reverse('expenses:filtered_expenses', args=(envelope, )))
     return render(request, 'expenses/expenses.html', {'expenses': expenses, 'form': form})
 
 
@@ -31,7 +31,7 @@ def expenses_by_envelope(request, envelope):
     form = ExpenseSelectForm(request.POST or None)
     if form.is_valid():
         envelope = form.cleaned_data['envelope'].name
-        return redirect(reverse('filtered_expenses', args=(envelope, )))
+        return redirect(reverse('expenses:filtered_expenses', args=(envelope, )))
     return render(request, 'expenses/expenses_by_envelope.html',
                   {'expenses': filtered_expenses,
                    'expenses_sum': sum_filtered_expenses,
@@ -42,7 +42,6 @@ def expenses_by_envelope(request, envelope):
 
 class ExpenseUpdate(UpdateView):
     model = Expenses
-    success_url = '/expenses/'
     template_name = 'expenses/expense_update.html'
     form_class = ExpensesForm
 
@@ -60,7 +59,7 @@ class ExpenseUpdate(UpdateView):
                 account.save()
             if form.is_valid():
                 form.save()
-                return redirect(reverse('expenses'))
+                return redirect(reverse('expenses:all'))
 
 
 def regular_expenses(request):

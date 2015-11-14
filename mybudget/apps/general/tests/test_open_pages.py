@@ -8,8 +8,8 @@ class OpenPagesTests(MyTests):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, template_name='home.html')
 
-    def test_open_dashboard(self):
-        response = self.client.get('/envelopes/')
+    def test_open_envelopes(self):
+        response = self.client.get('/envelopes/all/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, template_name='envelopes/envelopes.html')
 
@@ -17,3 +17,8 @@ class OpenPagesTests(MyTests):
         response = self.client.get('/expenses/all/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, template_name='expenses/expenses.html')
+
+    def test_open_regular_expenses(self):
+        response = self.client.get('/expenses/regular/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, template_name='expenses/regular_expenses.html')

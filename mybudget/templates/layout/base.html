@@ -20,8 +20,8 @@
         <div class="nav">
             <ul>
                 <li><h1><a href="{% url 'home' %}">наш бюджет</a></h1></li>
-                <li><h1><a href="{% url 'envelopes:envelopes' %}">конверты</a></h1></li>
-                <li><h1><a href="{% url 'expenses:expenses' %}">расходы</a></h1></li>
+                <li><h1><a href="{% url 'envelopes:all' %}">конверты</a></h1></li>
+                <li><h1><a href="{% url 'expenses:all' %}">расходы</a></h1></li>
                 <li><h1><a href="{% url 'expenses:regular_expenses' %}">постоянные расходы</a></h1></li>
             </ul>
         </div>
@@ -30,4 +30,12 @@
         {% block form %}{% endblock form %}
     {% endblock content%}
 </body>
+<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>
+<script src="{% static 'js/tablePagination.js' %}"></script>
+<script type="text/javaScript">
+    $(document).ready(function(){
+        $('#all_expenses').tablePaginate({navigateType:'navigator'});
+    });
+</script>
 </html>

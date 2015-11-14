@@ -17,7 +17,7 @@ class IncomeAccountTest(MyTests):
 
 class IncomeTest(IncomeAccountTest):
     def test_incomes_summed(self):
-        response = self.client.get('/envelopes/')
+        response = self.client.get('/envelopes/all/')
         self.assertEqual(response.context['available_amount'], 600)
 
 
