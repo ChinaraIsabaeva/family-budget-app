@@ -33,3 +33,7 @@ class EnvelopeFormTest(MyTests):
         envelopes = Envelopes.objects.all()
         self.assertEqual(envelopes[0].monthly_replenishment, 100)
 
+    def test_select_by_envelope(self):
+        response = self.client.post('/envelopes/select/', {'envelope': self.envelope.id}, follow=False)
+        self.assertRedirects(response, expected_url='/expenses/clothes/', status_code=302)
+

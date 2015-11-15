@@ -32,7 +32,3 @@ class ExpensesFormTests(MyTests):
         self.assertEqual(expenses[0].amount, 25)
         self.assertEqual(expenses[0].name, 'Danik shoes')
         self.assertEqual(envelopes[0].current_amount, 75)
-
-    def test_expense_by_envelope(self):
-        response = self.client.post('/expenses/all/', {'envelope': self.envelope.id}, follow=False)
-        self.assertRedirects(response, expected_url='/expenses/general/', status_code=302)

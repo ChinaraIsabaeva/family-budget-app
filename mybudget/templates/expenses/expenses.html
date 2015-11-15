@@ -12,22 +12,7 @@
             </div>
         {% endif %}
 
-        <div class="container-block">
-            <h4>Выбрать конверт</h4>
-            <form action="" method="post">
-                {% csrf_token %}
-                <div class="form-section">
-                    <label>Конверт:</label>{{ form.envelope }}
-                    {{ form.envelope.errors }}
-                </div>
-
-                <div class="form-section">
-                    <input class="button" type="submit" value="Показать конверт">
-                </div>
-            </form>
-        </div>
-
-        <hr>
+        {% include 'envelopes/select_envelope_form.html' %}
 
         <h4>Все внесенные расходы</h4>
         <div class="container-block" id="all_expenses">

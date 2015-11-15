@@ -32,7 +32,3 @@ class ExpensesForm(ModelForm):
         message = u'Проебал что-то указать'
         for field in self.fields:
             self.fields[field].error_messages['required'] = message
-
-
-class ExpenseSelectForm(Form):
-    envelope = ModelChoiceField(queryset=Envelopes.objects.all().order_by('name'))

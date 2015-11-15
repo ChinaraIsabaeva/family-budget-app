@@ -7,31 +7,24 @@ from django.db import transaction
 from django.views.generic import UpdateView
 
 from .models import RegularMonthlyExpenses, Expenses
-from .forms import ExpensesForm, ExpenseSelectForm
+from .forms import ExpensesForm
 from mybudget.apps.general.models import Accounts
 from mybudget.apps.envelopes.models import Envelopes
+from mybudget.apps.envelopes.forms import EnvelopeSelectForm
 
 
 def all_expenses(request):
     expenses = Expenses.objects.all().order_by('-created_date', 'name')
-    form = ExpenseSelectForm(request.POST or None)
-    if form.is_valid():
-        envelope = form.cleaned_data['envelope'].name
-        return redirect(reverse('expenses:filtered_expenses', args=(envelope, )))
+    form = EnvelopeSelectForm(request.POST or None)
     return render(request, 'expenses/expenses.html', {'expenses': expenses, 'form': form})
 
 
 def expenses_by_envelope(request, envelope):
-    if envelope == 'All':
-        return redirect(reverse('expenses'))
     selected_envelope = Envelopes.objects.get(name=envelope)
     filtered_expenses = Expenses.objects.all().filter(envelope=selected_envelope.id).order_by('-created_date')
     sum_filtered_expenses = filtered_expenses.aggregate(total=Sum('amount'))
     envelope_sum = selected_envelope.current_amount
-    form = ExpenseSelectForm(request.POST or None)
-    if form.is_valid():
-        envelope = form.cleaned_data['envelope'].name
-        return redirect(reverse('expenses:filtered_expenses', args=(envelope, )))
+    form = EnvelopeSelectForm(request.POST or None)
     return render(request, 'expenses/expenses_by_envelope.html',
                   {'expenses': filtered_expenses,
                    'expenses_sum': sum_filtered_expenses,

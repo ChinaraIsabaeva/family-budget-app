@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from django.forms import ModelForm, TextInput, ModelChoiceField, CheckboxInput
+from django.forms import Form, ModelForm, TextInput, ModelChoiceField, CheckboxInput
 
 from .models import Envelopes
 from mybudget.apps.general.models import Accounts
@@ -38,3 +38,6 @@ class EnvelopesForm(ModelForm):
         for field in self.fields:
             self.fields[field].error_messages['required'] = message
 
+
+class EnvelopeSelectForm(Form):
+    envelope = ModelChoiceField(queryset=Envelopes.objects.all().order_by('name'))

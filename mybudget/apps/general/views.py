@@ -5,7 +5,7 @@ from django.db.models import Sum
 
 from mybudget.apps.envelopes.models import Envelopes
 from mybudget.apps.expenses.forms import ExpensesForm
-from apps.general.models import Accounts
+from .models import Accounts
 
 
 def home(request):

@@ -7,7 +7,7 @@ from django.views.generic import UpdateView, CreateView
 
 from mybudget.lib import disposable_income
 from .models import Envelopes
-from .forms import EnvelopesForm
+from .forms import EnvelopesForm, EnvelopeSelectForm
 from mybudget.apps.general.models import Incomes
 
 
@@ -50,3 +50,10 @@ class EnvelopeUpdate(UpdateView):
         else:
             message = "Envelope didn't update, some problem occurred"
             return redirect('/envelopes/', message=message)
+
+
+def envelope_select(request):
+    form = EnvelopeSelectForm(request.POST or None)
+    if form.is_valid():
+        envelope = form.cleaned_data['envelope'].name
+        return redirect(reverse('expenses:filtered_expenses', args=(envelope, )))

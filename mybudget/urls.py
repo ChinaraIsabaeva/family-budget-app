@@ -5,7 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'mybudget.views.home', name='home'),
+    url(r'^$', 'mybudget.apps.general.views.home', name='home'),
 
     #app urls
     url(r'expenses/', include('mybudget.apps.expenses.urls', namespace='expenses')),
