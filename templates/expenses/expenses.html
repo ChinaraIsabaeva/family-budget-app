@@ -20,9 +20,11 @@
                 <div class="col-md-3">{% include 'partials/paginator.html' %}</div>
                 <div class="col-md-6 mg-top">{% include 'envelopes/select_envelope_form.html' %}</div>
                 <div class="col-md-3 mg-top"><a href="{% url 'expenses:all' %}" class="form-control btn btn-primary">Все расходы</a></div>
-                <div class="col-md-12 text-center">
-                    <p>Всего потрачено в конверте {{ envelope.name }}: {{ expenses_total.total }}</p>
-                </div>
+                {% if envelope %}
+                    <div class="col-md-12 text-center {% if not is_paginated %}mg-top{% endif %}">
+                        <p>Всего потрачено в конверте {{ envelope.name }}: {{ expenses_total.total }}</p>
+                    </div>
+                {% endif %}
 
                 <table class="table" >
                     <thead>
