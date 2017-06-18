@@ -1,0 +1,47 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        {% if message %}
+            <div class="data">
+                <h3> {{ message }} </h3>
+            </div>
+        {% endif %}
+
+        {% include 'partials/aggregated_data.html' %}
+        {% include 'expenses/expense_create.html' %}
+
+{#        {% include 'envelopes/select_envelope_form.html' %}#}
+
+        <div class="row mg-top" id="all_expenses">
+            <div class="col-md-8 col-md-offset-2">
+                <h4 class="text-center">Все внесенные расходы</h4>
+                {% include 'partials/paginator.html' %}
+                <table class="table" >
+                    <thead>
+                        <th>Расход</th>
+                        <th>Сумма</th>
+                        <th>Конверт</th>
+                    </thead>
+
+                    {% for expense in expenses %}
+                        <tr>
+                            <td class="">
+                                <a href="{% url 'expenses:expense_update' expense.id %}">
+                                    <i class="fa fa-pencil text-right" aria-hidden="true"></i>
+                                    {{ expense.name }}
+                                </a>
+                            </td>
+                            <td>{{ expense.amount }}</td>
+                            <td>{{ expense.envelope }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                {% include 'partials/paginator.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

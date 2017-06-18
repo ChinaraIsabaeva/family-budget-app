@@ -1,0 +1,13 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mg-top">
+            <div class="col-md-4 col-md-offset-4">
+                {% block header %}<h4 class="text-center">Создать конверт</h4>{% endblock header %}
+                {% include 'envelopes/envelope_form.html' %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

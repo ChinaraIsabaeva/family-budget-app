@@ -1,0 +1,59 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}"/>
+    <link rel="shortcut icon" type="image" href="{% static 'images/favicon.png' %}"/>
+    <title>{% block title %}Финансовый кнут Вартабаевых-Исабанянов{% endblock %}</title>
+</head>
+<body>
+    <div class="blog-masthead">
+        <div class="container">
+            <div class="row1">
+                <div class="col-md-6 col-md-offset-3">
+                    <nav class="blog-nav">
+                        {% url 'home' as home %}
+                        <a class="blog-nav-item {% ifequal request.path home %}active{% endifequal %}" href="{{ home }}">
+                            <span class="text-uppercase">наш бюджет</span>
+                        </a>
+
+                        {% url 'envelopes:all' as envelopes_all %}
+                        <a class="blog-nav-item {% ifequal request.path envelopes_all %}active{% endifequal %}" href="{{ envelopes_all }}">
+                            <span class="text-uppercase">конверты</span>
+                        </a>
+
+                        {% url 'expenses:all' as expenses_all %}
+                        <a class="blog-nav-item {% ifequal request.path expenses_all %}active{% endifequal %}" href="{{ expenses_all }}">
+                            <span class="text-uppercase">расходы</span>
+                        </a>
+
+                        {% url 'expenses:regular_expenses' as regular_expenses %}
+                        <a class="blog-nav-item {% ifequal request.path regular_expenses %}active{% endifequal %}" href="{{ regular_expenses }}">
+                            <span class="text-uppercase">постоянные расходы</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+    {% block content %}{% endblock content%}
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>
+    </body>
+</html>

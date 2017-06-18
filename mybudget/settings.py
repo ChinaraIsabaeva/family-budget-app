@@ -16,7 +16,7 @@ import dj_database_url
 from django.utils.translation import ugettext_lazy as _
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -25,23 +25,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '4wcr-7lv-9mjm!4v#ktnd$uew=%-((gih_ex26uh%@v(z7k7xf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-TEMPLATE_DEBUG = DEBUG
-TEMPLATE_DIRS = (os.path.join(BASE_DIR, "mybudget/templates"),)
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.request',
-    'django.contrib.auth.context_processors.auth',
-    'django.contrib.messages.context_processors.messages',
-)
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
-INSTALLED_APPS = (
-    'wpadmin',
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,12 +43,40 @@ INSTALLED_APPS = (
     #3rd parties apps
 
     #my_app
-    'mybudget.apps.general',
-    'mybudget.apps.envelopes',
-    'mybudget.apps.expenses',
-)
+    'mybudget.general',
+    'mybudget.envelopes',
+    'mybudget.expenses',
+]
 
-MIDDLEWARE_CLASSES = (
+if os.environ['ENV'] == 'development':
+    INSTALLED_APPS += [
+        'ipdb'
+    ]
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+                'mybudget.general.context_processors.get_aggregated_data',
+                'mybudget.general.context_processors.get_expense_form',
+            ],
+        },
+    },
+]
+
+MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -65,7 +84,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+]
 
 ROOT_URLCONF = 'mybudget.urls'
 
@@ -108,7 +127,7 @@ LANGUAGES = (
 )
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, "mybudget/locale"),
+    os.path.join(BASE_DIR, "mybudget/../locale"),
 )
 
 TIME_ZONE = 'UTC'
@@ -121,12 +140,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
-
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_PATH, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 

@@ -1,0 +1,26 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        {% include 'partials/aggregated_data.html' %}
+
+        <div class="row mg-top" id="all_expenses">
+            <div class="col-md-6 col-md-offset-3">
+                <h4 class="text-center">Все постоянные расходы</h4>
+                <table class="table">
+                    <thead>
+                        <th>Расход</th>
+                        <th>Сумма</th>
+                    </thead>
+                    {% for expense in expenses %}
+                        <tr>
+                            <td>{{ expense.name }}</td>
+                            <td>{{ expense.amount }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

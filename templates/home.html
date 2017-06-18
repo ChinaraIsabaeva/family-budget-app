@@ -1,0 +1,31 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    {% include 'partials/aggregated_data.html' %}
+    {% include 'expenses/expense_create.html' %}
+
+    <div class="row mg-top">
+        <div class="col-md-6 col-md-offset-3">
+            <h4 class="text-center">Накопленные суммы в конвертах</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <th>Конверт</th>
+                        <th>Отложенная сумма</th>
+                    </thead>
+                    {% for envelope in envelopes %}
+                        <tr>
+                            <td class="col-md-8">
+                                <a href="{% url 'envelopes:envelope_update' envelope.id %}">
+                                    <i class="fa fa-pencil text-right" aria-hidden="true"></i>
+                                    {{ envelope.name }}
+                                </a>
+                            </td>
+                            <td class="col-md-4">{{ envelope.current_amount }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content%}
