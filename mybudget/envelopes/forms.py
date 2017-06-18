@@ -65,6 +65,6 @@ class EnvelopeSelectForm(Form):
     choices = Envelopes.objects.all()
     envelope = ModelChoiceField(
         queryset=Envelopes.objects.all().order_by('name'),
-        widget=Select(attrs={'class': 'form-control'}),
+        widget=Select(attrs={'class': 'form-control max-width'}),
         empty_label=u'Выбрать конверт'
     )
