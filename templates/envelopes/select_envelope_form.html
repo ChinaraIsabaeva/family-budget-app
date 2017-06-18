@@ -1,18 +1,9 @@
 {% load static %}
 
-<div class="container-block">
-    <h4>Выбрать другой конверт</h4>
-    <form action="{% url 'envelopes:envelope_select' %}" method="post">
-        {% csrf_token %}
-        <div class="form-section">
-            <label>Конверт:</label>{{ form.envelope }}
-            {{ form.envelope.errors }}
-        </div>
-
-        <div class="form-section">
-            <input class="button" type="submit" value="Показать">
-        </div>
-    </form>
-</div>
-
-<hr>
+<form class="form-inline" action="{% url 'expenses:all' %}" method="get">
+    <div class="form-group">
+        {{ form.envelope }}
+        {{ form.envelope.errors }}
+    </div>
+    <button type="submit" class="btn btn-primary">Показать</button>
+</form>

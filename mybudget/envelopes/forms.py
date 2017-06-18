@@ -2,7 +2,7 @@
 
 from django.forms import (
     Form, ModelForm, TextInput, ModelChoiceField,
-    CheckboxInput, ValidationError)
+    CheckboxInput, ValidationError, Select)
 
 from mybudget.envelopes.models import Envelopes
 
@@ -62,4 +62,9 @@ class EnvelopesForm(ModelForm):
 
 
 class EnvelopeSelectForm(Form):
-    envelope = ModelChoiceField(queryset=Envelopes.objects.all().order_by('name'))
+    choices = Envelopes.objects.all()
+    envelope = ModelChoiceField(
+        queryset=Envelopes.objects.all().order_by('name'),
+        widget=Select(attrs={'class': 'form-control'}),
+        empty_label=u'Выбрать конверт'
+    )

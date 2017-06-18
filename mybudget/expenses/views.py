@@ -6,6 +6,7 @@ from django.shortcuts import redirect
 from django.urls import reverse
 from django.views.generic import UpdateView, ListView, CreateView
 
+from mybudget.envelopes.forms import EnvelopeSelectForm
 from mybudget.envelopes.models import Envelopes
 from mybudget.expenses.forms import ExpensesForm
 from mybudget.expenses.models import RegularMonthlyExpenses, Expenses
@@ -18,8 +19,24 @@ class ExpenseListView(ListView):
     paginate_by = 25
     context_object_name = 'expenses'
 
+    def get_queryset(self):
+        queryset = super(ExpenseListView, self).get_queryset()
+        if 'envelope' in self.request.GET.keys():
+            envelope_id = self.request.GET.get('envelope')
+            queryset = queryset.filter(envelope__id=envelope_id)
+        return queryset
+
     def get_context_data(self, **kwargs):
         context = super(ExpenseListView, self).get_context_data(**kwargs)
+        context['form'] = EnvelopeSelectForm()
+        if 'envelope' in self.request.GET.keys():
+            context['form'] = EnvelopeSelectForm(
+                initial={'envelope': self.request.GET.get('envelope')}
+            )
+            expenses = self.get_queryset()
+            envelope_id = self.request.GET.get('envelope')
+            context['expenses_total'] = expenses.aggregate(total=Sum('amount'))
+            context['envelope'] = Envelopes.objects.get(id=envelope_id)
         return context
 
 
@@ -59,11 +76,3 @@ class RegularExpenseListView(ListView):
     template_name = 'expenses/regular_expenses.html'
     model = RegularMonthlyExpenses
     context_object_name = 'expenses'
-
-    def get_context_data(self, **kwargs):
-        context = super(RegularExpenseListView, self).get_context_data(**kwargs)
-        sum_regular_expenses = RegularMonthlyExpenses.objects.all().aggregate(
-            total=Sum('amount')
-        )
-        context['sum'] = sum_regular_expenses
-        return context

@@ -28,5 +28,6 @@ class Envelopes(models.Model):
     def __unicode__(self):
         return u'%s' % self.name
 
+    @property
     def get_absolute_url(self):
-        return '/%i/' % self.id
+        return '/%i/' % self.name
