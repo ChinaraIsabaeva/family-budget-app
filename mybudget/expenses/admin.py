@@ -6,5 +6,10 @@ from django.contrib import admin
 
 from mybudget.expenses.models import RegularMonthlyExpenses, Expenses
 
+
+class RegularMonthlyExpensesAdmin(admin.ModelAdmin):
+    list_display = ('name', 'amount')
+
+
 admin.site.register(Expenses)
-admin.site.register(RegularMonthlyExpenses)
+admin.site.register(RegularMonthlyExpenses, RegularMonthlyExpensesAdmin)

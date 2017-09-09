@@ -2,7 +2,11 @@
 
 from django.contrib import admin
 
-# Register your models here.
 from mybudget.envelopes.models import Envelopes
 
-admin.site.register(Envelopes)
+
+class EnvelopesAdmin(admin.ModelAdmin):
+    list_display = ('name', 'current_amount', 'monthly_replenishment')
+
+
+admin.site.register(Envelopes, EnvelopesAdmin)

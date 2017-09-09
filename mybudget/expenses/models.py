@@ -17,7 +17,7 @@ class RegularMonthlyExpenses(models.Model):
         verbose_name_plural = u'Постоянные месячные расходы'
 
     def __unicode__(self):
-        return u'%s %s' % (self.name, self.amount)
+        return u'%s %s' % self.name
 
 
 class Expenses(models.Model):
