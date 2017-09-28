@@ -17,7 +17,7 @@ class RegularMonthlyExpenses(models.Model):
         verbose_name_plural = u'Постоянные месячные расходы'
 
     def __unicode__(self):
-        return u'%s %s' % self.name
+        return u'%s' % self.name
 
 
 class Expenses(models.Model):
@@ -32,7 +32,7 @@ class Expenses(models.Model):
         ordering = ['-created_date', 'name']
 
     def __unicode__(self):
-        return u'%s ' % self.name
+        return u'%s' % self.name
 
     def save(self, *args, **kwargs):
         try:
