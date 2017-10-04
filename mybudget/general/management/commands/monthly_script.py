@@ -23,7 +23,7 @@ class Command(BaseCommand):
         "текушей суммой" счета.
         """
         today = datetime.date.today()
-        if today.day() == 28:
+        if today.day == 28:
             try:
                 with transaction.atomic():
                     accounts_beginning = Accounts.objects.all().aggregate(total=Sum('current_amount'))
