@@ -43,6 +43,7 @@
                             </td>
                             <td>{{ expense.amount }}</td>
                             <td>{{ expense.envelope }}</td>
+                            <td>{{ expense.created_date|date:"d M Y" }}</td>
                         </tr>
                     {% endfor %}
                 </table>

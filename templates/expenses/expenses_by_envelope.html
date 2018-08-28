@@ -32,8 +32,9 @@
                 </tr>
                 {% for expense in expenses %}
                     <tr>
-                        <td class="table_column_name">{{ expense.name }}</td>
-                        <td class="table_column_amount">{{ expense.amount }}</td>
+                        <td>{{ expense.name }}</td>
+                        <td>{{ expense.amount }}</td>
+                        <td>{{ expense.created_date|date:"d M Y" }}</td>
                     </tr>
                 {% endfor %}
             </table>

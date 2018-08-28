@@ -14,8 +14,8 @@ class Envelopes(models.Model):
     monthly_replenishment = models.DecimalField(max_digits=8, decimal_places=2)
     cash = models.BooleanField(default=False)
     account = models.ForeignKey(Accounts, null=True, blank=True)
-    closed = models.NullBooleanField()
-    onetime_envelope = models.NullBooleanField()
+    closed = models.NullBooleanField(default=False)
+    onetime_envelope = models.NullBooleanField(default=True)
     max_amount = models.DecimalField(
         max_digits=8, decimal_places=2, blank=True, null=True
     )
