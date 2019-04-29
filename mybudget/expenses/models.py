@@ -15,6 +15,7 @@ class RegularMonthlyExpenses(models.Model):
     class Meta:
         verbose_name = u'Постоянный месячный расход'
         verbose_name_plural = u'Постоянные месячные расходы'
+        ordering = ['name']
 
     def __unicode__(self):
         return u'%s' % self.name
