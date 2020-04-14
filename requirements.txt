@@ -6,7 +6,7 @@ Django==1.11.2
 django-common-helpers==0.6.0
 django-cron==0.3.5
 django-debug-toolbar==1.4
-ecdsa==0.11
+ecdsa==0.13.3
 enum34==1.1.6
 extras==0.0.3
 Fabric==1.10.0
