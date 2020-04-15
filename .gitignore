@@ -5,5 +5,5 @@
 run_watcher.txt
 monthly_script.txt
 deploy_script
-mybudget/local_settings.py
+core/local_settings.py
 latest.dump
