@@ -18,12 +18,6 @@ class Envelopes(models.Model):
         decimal_places=2
     )
     cash = models.BooleanField(default=False)
-    account = models.ForeignKey(
-        Accounts,
-        null=True,
-        blank=True,
-        on_delete=models.CASCADE
-    )
     closed = models.NullBooleanField(default=False)
     onetime_envelope = models.NullBooleanField(default=True)
     max_amount = models.DecimalField(

@@ -22,11 +22,6 @@ class Accounts(models.Model):
 class Incomes(models.Model):
     name = models.CharField(max_length=255)
     amount = models.DecimalField(max_digits=7, decimal_places=2)
-    account = models.ForeignKey(
-        Accounts,
-        null=True,
-        on_delete=models.CASCADE
-    )
 
     class Meta:
         verbose_name = 'Доход'

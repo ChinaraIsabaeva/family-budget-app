@@ -4,7 +4,6 @@ from django.db import models, transaction
 
 # Create your models here.
 from envelopes.models import Envelopes
-from core.models import Accounts
 
 
 class RegularMonthlyExpenses(models.Model):
@@ -12,11 +11,6 @@ class RegularMonthlyExpenses(models.Model):
     amount = models.DecimalField(
         max_digits=8,
         decimal_places=2
-    )
-    account = models.ForeignKey(
-        Accounts,
-        null=True,
-        on_delete=models.CASCADE
     )
 
     class Meta:
@@ -51,10 +45,6 @@ class Expenses(models.Model):
                 envelope = Envelopes.objects.get(name=self.envelope)
                 envelope.current_amount = envelope.current_amount - self.amount
                 envelope.save()
-                if envelope.cash is False:
-                    account = Accounts.objects.get(id=envelope.account.id)
-                    account.current_amount = account.current_amount - self.amount
-                    account.save()
                 super(Expenses, self).save(*args, **kwargs)
                 print('transaction goes!')
         except Exception as e:

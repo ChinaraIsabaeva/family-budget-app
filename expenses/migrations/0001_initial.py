@@ -8,7 +8,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('envelopes', '__first__'),
-        ('core', '__first__'),
     ]
 
     operations = [
